@@ -1,0 +1,178 @@
+\section{Hairball Plugins} \locallabel{sec:plugins}
+In this section we describe four Hairball plugins written to perform Scratch
+static analysis.  The plugins were designed to analyze projects submitted as
+part of our two-week interdisciplinary Animal Tlatoque summer
+camp~\cite{Franklin:2013:SBO}.  Notice that some of the traditional topics,
+i.e., variables and conditionals, are not represented, and that loops are
+represented in a very specific way (defined as animation). The plugins target
+the CS concepts used in the camp's cumulative project, an interactive movie
+about an animal. For this project, students were to demonstrate state
+initialization, use of broadcast and receive blocks, synchronization between
+say and sound blocks, and creation of complex animation. While these plugins
+were developed for our summer camp, each provides valuable feedback that is
+generally useful both as a lint-like tool for individual developers of Scratch
+programs and for others who are tasked with analyzing numerous Scratch
+programs.
+
+Each Hairball plugin for the camp strives to evaluate whether, or to what
+extent, the program demonstrated competence in an area. These plugins attempt
+to discover instances of the aforementioned concepts contained within a Scratch
+program and label each instance as {\bf correct}, {\bf semantically incorrect},
+{\bf incorrect}, or {\bf incomplete}. Instances labeled ``correct'' should
+indicate that the concept was implemented correctly. Instances labeled
+``semantically incorrect'' should indicate that the concept was implemented in
+a way that may not always work when executed. Intuitively, instances labeled
+``incorrect'' should indicate the concept was implemented incorrectly. Finally,
+instances labeled ``incomplete'' should indicate that only a subset of the
+required blocks for a concept were discovered. A single program may contain
+multiple instances of a concept distributed across any or all of the
+labels. Ideally instances labeled ``correct'' should not require manual
+analysis, whereas instances with any other label should be inspected manually.
+
+
+\subsubsection*{Initial State}
+
+\begin{table}
+\centering
+{\arialnarrowsm %fontsize
+\begin{tabular}{|c|c|c|} \hline
+Category & Relative&Absolute\\ \hline \hline
+Costume& next costume & switch to costume x\\ \hline
+Visibility& & show/hide\\ \hline
+Orientation&turn clockwise x degrees&point in direction x\\ \hline
+Position&move x steps, go to x,y,&go to x,y\\
+&glide z secs to x,y, etc.&go to x,y\\ \hline
+Size&change size by x\% & set size to x\%\\ \hline
+Background&next background & switch to background x\\ \hline
+\end{tabular}
+}%fontsize
+\caption{Five categories of initial state, along with example relative and
+  absolute modification blocks}
+\locallabel{table:initialstate}
+\end{table}
+
+
+In any program, correctly setting the initial state is important.  In Scratch
+programs, the significance is different.  Scratch programs are comprised of
+animations, and in the runtime environment, they may run from start to finish
+and be restarted again.  Alternatively, they may be stopped in the middle and
+restarted again.  We want to determine statically whether the code runs the
+same way in these two events.  For reasons described below, the environment is
+different than in traditional programming.
+
+The first problem is where to start the analysis.  In traditional programs,
+execution starts at ``main''.  Scratch programs have no such globally-defined
+starting point.  We taught our students to start their programs using the green
+flag button, so the starting point for our evaluation is the ``when green flag
+clicked'' block.
+
+The most complex problem, and the problem that introduces the possibility of
+error into our analysis, is that sprites are placed on the stage during
+implementation thus giving them an implicit set of attributes, which we will
+refer to as the base attributes. Explicit initialization for a particular
+attribute, e.g., position or orientation, is only required when one of the
+program's scripts modifies the attribute. Thus, the challenge is distinguishing
+segments of scripts that perform initialization from those that perform general
+modification. To discover instances of initialization, we first determine the
+set of blocks that can be considered initialization blocks and then we restrict
+the location such blocks can appear in a script. We call this location the
+``initilization zone''
+
+Attribute modifying Scratch blocks can be labeled as ``relative'' or
+``absolute''. Relative Scratch blocks alter the attribute based upon its
+current value whereas absolute Scratch blocks directly set the attribute. As
+such only absolute blocks can be considered initialization
+blocks. Table~\localref{table:initialstate} shows our categorization for a
+subset of attribute modifying Scratch blocks.
+
+For an absolute block to be considered an initialization block, it must appear
+in the initialization zone. We define the initialization zone only for scripts
+beginning with a ``when green flag clicked'' block. The initialization zone
+begins at the start of the script and ends when either a relative block or a
+broadcast block is encountered. We take a conservative approach when
+encountering blocks contained within loops or conditionals---absolute blocks
+are ignored due to the possibility that the block is not executed, and relative
+blocks continue to signify the end of the initialization zone due to the
+possibility that the block is executed.
+
+The initialization plugin considers a modified attribute of a sprite as
+correctly initialized when an absolute block for the same attribute exists in
+the initialization zone. Instances are labeled as incorrect
+otherwise. Non-modified attributes are ignored. Finally, despite this plugin's
+ability to detect unnecessary initialization, we did not include it as part of
+our analysis.
+
+
+\subsubsection*{Say/Sound Synchronization}
+Synchronization between a speech bubble (say block) and sound file (play sound
+block) is not straightforward in Scratch.  The desired behavior is that, at the
+same time, a speech bubble appears with the message, and a sound file plays of
+a voice speaking the message.  When the sound is complete, the speech bubble
+disappears.
+
+Achieving this effect is complicated by the timing semantics of the two forms
+of the say block, and the two forms of the play sound block in Scratch.  One
+form of the say block places the speech bubble on the screen indefinitely
+(until replaced by another say block, or ``erased'' with an empty say block),
+while the other puts a speech bubble on the screen for $n$ seconds (and, as a
+side-effect, delays execution of the script for $n$ seconds.)  Similarly, there
+are two forms of the block for playing a sound clip: ``play sound until done''
+plays the sound synchronously, while ``play sound'' plays the sound
+asynchronously.
+
+There are two methods to produce the desired effect.  The first is to
+asynchronously play the sound via the ``play sound block'' followed by a ``say
+for'' block with a duration equal to the elapsed time of the sound.
+Unfortunately, the timing must be manually determined and needs to be updated
+whenever the sound file changes.  The second, is to use a ``say'' block to
+display the message, followed by a ``play sound until done'' block, ending with
+an empty ``say'' block to clear the previous speech bubble. The campers were
+taught the latter method as the correct approach.
+
+This plugin detects instances of this concept by looking for sequential say and
+sound blocks and verifies the instances are implemented using the appropriate
+method.  A correct instance contains the previously described three blocks in
+the proper order.  Instances following the method requiring manual timing are
+labeled semantically incorrect. Instances that have both say and sound blocks
+but do not match either of these methods are labeled incorrect, and isolated
+uses of say or sound blocks are labeled incomplete.
+
+
+\subsubsection*{Broadcast and Receive}
+One use of Scratch's broadcast blocks is to trigger the execution of other
+sprites' scripts beginning with the appropriate receive block. We taught our
+campers the broadcast and receive concept in the context of two animal sprites
+conversing, where each sprite would signal the other's turn via broadcasting an
+event. In the camp's cumulative project, campers demonstrated an understanding
+of the broadcast and receive concept by triggering scene changes in their
+interactive movie.
+
+The broadcast and receive plugin verifies that for each broadcast or receive
+event, there is a broadcast block and at least one corresponding receive
+block. Such instances are labeled correct. All instances with a broadcast block
+appearing in the same script with another instance's broadcast block are
+labeled as semantically incorrect. All other instances are labeled
+incomplete. Note that this plugin does not use the incorrect label.
+
+\subsubsection*{Complex Animation}
+We have a very specific definition of the term {\em complex animation} for
+purposes of assessment.  We use this term to refer to animation involving
+integration of costumes, motion, timing, and repetition control structures such
+as loops. This definition of complex animation is to distinguish from, for
+example, the ``glide to'' block built into Scratch.  One example of complex
+animation is realistic motion of sprites that represent people and
+animals. E.g., people walking, birds flying and snakes slithering.  Creating
+such animations requires the correct integration of several Scratch and CS
+concepts.  For example, creating an animation sequence where a sprite spins
+around requires integration of loops, rotation, and timing.
+
+A necessary component of a complex animation instance is either rotation
+blocks, or motion blocks paired with costume change blocks. We define a complex
+animation instance as either a loop containing these necessary components or a
+sequence of these necessary components, since a sequence can be considered an
+unrolled loop. In order to be labeled correct, an instance must also make use
+of a Scratch block that introduces a delay, otherwise the instance is labeled
+semantically incorrect. The plugin additionally labels instances that use
+sequences instead of loops as semantically incorrect because the student did
+not demonstrate competence in the CS concept of loops. Finally, if the program
+is missing any critical element, e.g., repetition, it is labeled incomplete.

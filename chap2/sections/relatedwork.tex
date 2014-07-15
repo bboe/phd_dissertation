@@ -1,0 +1,70 @@
+\section{Background and Related Work}\locallabel{sec:background}
+
+Providing automation for analyzing programs is not a new concept.  ASSYST is an
+automated assessment system that performs end-to-end, or input/output, type
+testing of submissions~\cite{Jackson:1997:GSP:268084.268210}. Both the Marmoset
+system by Spacco et al., and the Web-CAT system, by Edwards, perform testing of
+code using student written unit tests~\cite{Spacco:2006:EMD:1140124.1140131,
+  Edwards:2003:RCS:949344.949390}. All of the aforementioned tools supplement
+the feedback the student receives with code coverage analysis and feedback from
+static analysis tools such as FindBugs by Cole et
+al.~\cite{Cole:2006:IYS:1176617.1176667}. Douce et al. performed a more
+detailed analysis of existing automated assessment
+systems~\cite{Douce:2005:ATA:1163405.1163409}.  The problem with existing
+assessment systems is that they are not applicable to Scratch programs.
+
+Scratch is a block-based programming language from MIT~\cite{ScratchTOCE2010}.
+Programs consist of 2-dimensional interactive animations.  Objects, or sprites,
+move on the screen as a result of user input or scripts in the program.  Sound
+and video can also be integrated into Scratch programs.  Scratch was designed
+to allow students to learn computer science projects while employing great
+creativity in their work.  This creative freedom is one of the reasons that
+Scratch projects are challenging to analyze.
+
+An additional challenge in Scratch analysis is that Scratch programs are
+developed and run within a graphical user interface (GUI).  Independent
+segments of code, known as scripts, are associated with Scratch sprites
+(e.g. the Scratch Cat) and tied to a triggering event.  There is no central
+``main'' point of execution.  Instead, programs might begin when a parallel set
+of scripts beginning with a ``when green flag clicked'' hat block are
+triggered.
+
+At least two other projects have looked at automated Scratch analysis.  Adams
+and Webster describe using scripts and custom modifications to the Squeak
+source code of Scratch to perform their quantitative analysis of programs from
+the Imaginary Worlds summer camp~\cite{Adams:2012:SLP:2157136.2157319}.
+Additionally, Burke and Kafai developed Scrape~\cite{scrape-poster} as a
+visualization tool to aid humans in understanding patterns across Scratch
+files. Scrape was used to assess Scratch projects produced in a middle school
+writing workshop~\cite{Burke:2012:WWY:2157136.2157264}. Scrape is useful in
+answering questions such as:
+\begin{itemize}
+\vspace*{-.025in}
+\item How many programs use loops?
+\vspace*{-.025in}
+\item How  many loops are present in each program?
+\vspace*{-.025in}
+\item What level of nesting does the program use?
+\vspace*{-.025in}
+\end{itemize}
+
+Hairball has two purposes.  Like Scrape, Hairball can help verify the use of
+the required constructs of an assignment.  The main contribution of Hairball,
+however, is the framework and set of available plugins that support more
+sophisticated analysis.  We want to answer questions not just about the use of
+Computer Science (CS) constructs, but about the competence demonstrated for
+different CS concepts. Hairball can be used to answer questions such as:
+\begin{itemize}
+\vspace*{-.025in}
+\item Which programs contain unmatched broadcast and receive blocks?
+\vspace*{-.025in}
+\item Which programs contain broadcast/receive events that result in infinite
+  loops?
+\vspace*{-.025in}
+\item Which programs do not properly initialize the start state?
+\vspace*{-.025in}
+\item Which programs do not properly implement complex animations (requiring
+  the application of timing, costume changes, motion, and loops)?
+\vspace*{-.025in}
+\end{itemize}
+\vspace*{0.25in}
