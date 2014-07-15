@@ -1,34 +1,14 @@
 % Root File for a UCSB Dissertation
-%
-%
-
 \documentclass[12pt,oneside,final]{ucthesis}
 
-%\usepackage{graphics,epsfig,slashbox}
+\usepackage{array}
+\usepackage{cite}
+\usepackage{color}
 \usepackage{graphicx}
 \usepackage{import}
 \usepackage[super]{nth}
+\usepackage{times}
 \usepackage{url}
-
-
-%% \usepackage{array}
-%% \usepackage{cite}
-%% \usepackage{color}
-%% \usepackage{ifthen}
-%% \usepackage{multirow}
-%% \usepackage{times}
-%% \usepackage{url}
-%% \newcolumntype{Z}{>{\global\let\currentrowstyle\relax}}
-%% \newcolumntype{^}{>{\currentrowstyle}}
-%% \newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
-%%   #1\ignorespaces
-%% }
-%% \newcommand{\arialnarrow}{\fontfamily{phv}\fontseries{mc}\selectfont}
-
-%% \newcommand{\arialnarrowxs}{\fontfamily{phv}\fontseries{mc}\fontsize{8}{10}\selectfont}
-%% \newcommand{\arialnarrowxxs}{\fontfamily{phv}\fontseries{mc}\fontsize{7}{9}\selectfont}
-%% \newcommand{\ignore}[1]{}
-
 
 % http://tex.stackexchange.com/questions/73112/how-to-create-local-labels-refs-in-latex
 % macro to define a local label
@@ -60,6 +40,18 @@
 \newcommand{\snake}{\textbf{Snake}}
 \newcommand{\zebra}{\textbf{Zebra}}
 \newcommand{\stage}{\emph{stage}}
+% For Feedback Chapter
+\newcommand{\AM}[1]{#1AM}
+\newcommand{\PM}[1]{#1PM}
+\newcommand{\cw}[2][A]{\emph{#1W#2}}
+\newcommand{\cs}[2][A]{\emph{#1S#2}}
+\newcommand{\cm}[2][A]{\emph{#1M#2}}
+\newcommand{\cf}[2][A]{\emph{#1F#2}}
+\newcommand{\imp}{\emph{Improvement}}
+\newcommand{\worse}{\emph{Worse}}
+\newcommand{\noi}{\emph{No Improvement}}
+\newcommand{\noii}{\emph{No Improvement 2}}
+\newcommand{\spacco}{Spacco et al.}
 
 
 %%% Document Portion:
@@ -96,6 +88,7 @@
 \include{sections/introduction}
 \subimport{chap2/}{hairball}
 \subimport{chap3/}{curriculum}
+\subimport{chap4/}{feedback}
 \include{sections/conclusion}
 
 \ssp   % bibliography can be single-spaced for UC thesis format
