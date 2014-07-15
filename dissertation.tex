@@ -2,12 +2,64 @@
 %
 %
 
-%\documentclass[12pt,twoside,draft]{ucthesis}
 \documentclass[12pt,oneside,final]{ucthesis}
-% todo: final options: [12pt,oneside,final]
 
-\usepackage{graphics,epsfig,slashbox}
-%\usepackage{amssymb, amsmath, amsfonts, epsfig, graphicx, graphics, latexsym, makeidx, psfig, subeqn, verbatim, xspace,textcomp}
+%\usepackage{graphics,epsfig,slashbox}
+\usepackage{graphicx}
+\usepackage{import}
+\usepackage[super]{nth}
+\usepackage{url}
+
+
+%% \usepackage{array}
+%% \usepackage{cite}
+%% \usepackage{color}
+%% \usepackage{ifthen}
+%% \usepackage{multirow}
+%% \usepackage{times}
+%% \usepackage{url}
+%% \newcolumntype{Z}{>{\global\let\currentrowstyle\relax}}
+%% \newcolumntype{^}{>{\currentrowstyle}}
+%% \newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+%%   #1\ignorespaces
+%% }
+%% \newcommand{\arialnarrow}{\fontfamily{phv}\fontseries{mc}\selectfont}
+
+%% \newcommand{\arialnarrowxs}{\fontfamily{phv}\fontseries{mc}\fontsize{8}{10}\selectfont}
+%% \newcommand{\arialnarrowxxs}{\fontfamily{phv}\fontseries{mc}\fontsize{7}{9}\selectfont}
+%% \newcommand{\ignore}[1]{}
+
+
+% http://tex.stackexchange.com/questions/73112/how-to-create-local-labels-refs-in-latex
+% macro to define a local label
+\newcommand\locallabel[1]{\label{\currentprefix:#1}}
+% macro to use a local reference
+\newcommand\localref[1]{\ref{\currentprefix:#1}}
+
+% For Hairball chapter
+\newcommand{\arialnarrowsm}{\fontfamily{phv}\fontseries{mc}\fontsize{9}{11}\selectfont}
+% For Curriculum chapter
+\newcommand{\sone}{\emph{Sequential1}}
+\newcommand{\stwo}{\emph{Sequential2}}
+\newcommand{\catch}[1]{\emph{catch#1}}
+\newcommand{\caught}{\emph{caught}}
+\newcommand{\com}{\emph{complete}}
+\newcommand{\incom}{\emph{incomplete}}
+\newcommand{\abs}{\emph{absolute}}
+\newcommand{\rel}{\emph{relative}}
+\newcommand{\dce}{\emph{double click to execute}}
+\newcommand{\exe}[1]{execution sequence#1}
+\newcommand{\glideDIST}[1][NUM]{\emph{glide #1 steps}}
+\newcommand{\glideto}[1][SPRITE]{\emph{glide to #1}}
+\newcommand{\pointtoward}[1][SPRITE]{\emph{point towards #1}}
+\newcommand{\pointDIR}[1][X]{\emph{point in direction #1}}
+\newcommand{\netclicked}{\emph{when NET clicked}}
+\newcommand{\bear}{\textbf{Bear}}
+\newcommand{\horse}{\textbf{Horse}}
+\newcommand{\net}{\textbf{Net}}
+\newcommand{\snake}{\textbf{Snake}}
+\newcommand{\zebra}{\textbf{Zebra}}
+\newcommand{\stage}{\emph{stage}}
 
 
 %%% Document Portion:
@@ -42,14 +94,9 @@
 
 
 \include{sections/introduction}
-
-%\include{Literature}
-
-%\include{Chapter1}
-
-%\include{Chapter2}
-
-%\include{Conclusions}
+\subimport{chap2/}{hairball}
+\subimport{chap3/}{curriculum}
+\include{sections/conclusion}
 
 \ssp   % bibliography can be single-spaced for UC thesis format
 \bibliography{resources/references}

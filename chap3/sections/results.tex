@@ -1,0 +1,434 @@
+\section{Results}\locallabel{sec:results}
+In this section we describe the results of our analysis of the \sone{} and
+\stwo{} data. In general we wanted to gain insight into the following
+questions:
+
+\begin{itemize}
+\item How successful were students in creating a program that completed the
+  assignment?
+\item Did the changes we made after \sone{} improve student completion rates?
+\item How pervasive were the challenges identified by researchers via direct
+  student observation?
+\end{itemize}
+
+To answer these questions we (\localref{sub:by_class})~look at the completion
+rate of students by class, (\localref{sub:snapshots})~compare the difficulty of
+\sone{} and \stwo{} based on the number of snapshots to completion,
+(\localref{sub:approach})~analyze the approach students used in solving the
+assignment, (\localref{sub:race})~quantify the number of students who may have
+experienced a race condition in Scratch, and (\localref{sub:dce})~quantify the
+number of students who may have utilized the \dce{} approach when initially
+working on the assignment.
+
+
+\subsection{Students by Class}
+\locallabel{sub:by_class}
+
+\begin{figure}[!t]
+\centering \includegraphics[width=3.3in]{graphs/by_class_students.eps}
+\caption{Compares the maximum number of sprites \caught{} by student by
+  class. A student is considered \com{} if any of their snapshots' \catch{es}
+  two or more sprites.}
+\locallabel{fig:by_class_students}
+\end{figure}
+
+We analyzed data from seven of the ten classes listed in
+Table~\localref{table:classes}, two for \sone{}, and five for \stwo{}. This
+data include a total of 297 snapshots, 29 students for \sone{}, and 638
+snapshots, 120 students for \stwo{}. We have more data for \stwo{} due to
+having more participating classes, all of which contained more consent-giving
+students.
+
+The total height of each bar in Figure~\localref{fig:by_class_students}
+indicates the number of students by class; this number is displayed above each
+bar. The different colored portions of each bar groups students by the maximum
+number of sprites \caught{}. Green, pink, and yellow respectively indicate that
+all, two, or only one of the three sprites were \caught{}. Purple indicates
+none of those students' snapshots result in the \net{} \catch{ing} a sprite
+upon execution. The four students in the \emph{0 Sprites} group are interesting
+because the base project provided to all students \catch{es} one sprite, the
+\zebra{}, on execution. Thus, these four students made changes resulting in
+negative progress towards the goal. Also of note is that of the 102 students
+who \caught{} at least two sprites, only twelve did not \catch{} the final
+sprite.
+
+We determine the success of a snapshot by running it through a Hairball plugin
+that emulates the \net{}'s movement according to the \net{}'s \emph{script}
+beginning with the \netclicked{} block. A snapshot is considered \com{} if the
+emulated movement of the \net{} results in intersection with any two or more
+sprites corresponding to the \bear{}, \horse{}, and \zebra{}. In the event
+intersection with the \snake{} occurs (only valid for \sone{}), the snapshot is
+considered \incom{}. Of the 297 \sone{} snapshots, only one was \incom{} due to
+intersection with the \snake{}. A student is considered \com{} if they have at
+least one \com{} snapshot.
+
+\subsection{Number of Snapshots to Completion}
+\locallabel{sub:snapshots}
+
+\begin{figure}[!t]
+\centering \includegraphics[width=3.3in]{graphs/snapshots_to_completion.eps}
+\caption{Depicts the percentage of students by class who completed the
+  assignment by the x-axis number of snapshots. The dashed cyan line
+  representing \emph{S1A} was truncated; it would otherwise extend horizontally
+  out to the twenty-first snapshot.}
+\locallabel{fig:snapshots_to_completion}
+\end{figure}
+
+In the previous section we looked at the total number of sprites \caught{} by
+students in the seven classes analyzed. While this information provides us with
+the overall completion rate, it does not provide any insight related to the
+difficulty of the assignment. We approximate the assignment difficulty for a
+student as the number of snapshots saved up to their first \com{}
+snapshot. Recall from section~\localref{sub:collection} that we consider each
+snapshot to be a unit of work.
+
+Figure~\localref{fig:snapshots_to_completion} plots the number of snapshots
+saved for students in each class on their path to completion. An increase in
+the \emph{y-value} for a line indicates what percent more students were able to
+\com{} the assignment after the corresponding number of snapshots. The end of a
+line indicates the maximum number of snapshots generated on the path to
+completion for students of that class. This figure clearly conveys two
+discrepancies between \sone{}, indicated by dashed-lines, and \stwo{},
+indicated by solid-lines:
+
+\begin{itemize}
+\item All \stwo{} classes, save for \emph{S2B}, had a higher completion rate
+  than the two \sone{} classes.
+\item More importantly, this figure shows that \stwo{} was considerably less
+  difficult to complete than \sone{} based on the strictly fewer number of
+  snapshots to completion for all \stwo{} classes, again save for \emph{S2B}.
+\end{itemize}
+
+Over 50\% of \stwo{} students completed by snapshot three, whereas fewer than
+25\% of \sone{} students completed by that snapshot. Furthermore, approximately
+20\% of \sone{} students completed after nine snapshots. \stwo{} was less
+challenging to the students due in part to the addition of the \glideto{}
+block. We look specifically at the impact of the \glideto{} block in the next
+section.
+
+\subsection{Approach to Solving the Assignment}
+\locallabel{sub:approach}
+As previously described, this assignment asks students to program a set of
+directions to navigate the \net{} to \catch{} the \bear{}, the \horse{},
+and the \zebra{}. This set of directions can be constructed in a number of
+ways. At the highest level, there are two approaches:
+
+\textbf{Glide to SPRITE}: With a single \glideto{} block the \net{} will glide
+on a direct path to the target sprite resulting in an intersection between
+two. The simplest \com{} solution requires only three of these blocks, one for
+each of the \bear{}, the \horse{}, and the \zebra{}. This approach was only
+available in \stwo{}.
+
+\textbf{Orient and Glide}: The other high-level approach is to modify the
+\net{}'s orientation via one of three classes of orientation changing blocks,
+and then to glide an appropriate number of steps via a \glideDIST{} block in
+order to reach the desired target or waypoint. The three classes of orientation
+changing blocks are:
+
+\textbf{Absolute orientation}: This orientation change is accomplished via a
+\pointDIR{} block where \emph{X} can be selected as \emph{up (0)}, \emph{right
+  (90)}, \emph{down (-180)}, or \emph{left (-90)}. Alternatively, any number
+can be manually entered for a more precise orientation. These orientations are
+absolute with respect to the \stage{} meaning \emph{up} always orients towards
+the top of the \stage{}.
+
+\textbf{Relative orientation}: This orientation change is accomplished via
+either a \emph{turn clockwise NUM degrees}, or a \emph{turn counterclockwise
+  NUM degrees} block. The use of one of these blocks results in a modification
+to the current orientation of the \net{}. That is, if the \net{} is oriented
+towards the right of the \stage{}, a \emph{turn clockwise 90 degrees} block
+will result in the \net{} being oriented towards the bottom of the \stage{}; in
+this case, the \abs{} orientation block \pointDIR[down]{} would have the same
+effect.
+
+\textbf{Sprite orientation}: The third class of orientation changing blocks is
+accomplished via a \pointtoward{} block. When invoked as
+\pointtoward[\zebra{}]{}, the \net{} will orient itself toward the
+\zebra{}. This block was only made available in \stwo{}.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.3in]{graphs/approach_student_success.eps}
+\caption{Shows the completion rate of each approach by student grouped by
+  \sone{} and \stwo{}. An approach for a student is \com{} if any of the
+  student's \com{} snapshots utilizes that approach. An approach for a student
+  is \incom{} if they utilize the approach in any \incom{} snapshot and the
+  approach is not found in any of the student's \com{} snapshots.}
+\locallabel{fig:approach_student_success}
+\end{figure}
+
+\begin{figure}[!t]
+\centering \includegraphics[width=3.3in]{graphs/approach_bar_Sequential2.eps}
+\caption{Shows how many students utilized each approach in snapshots for the
+  \stwo{} for three categories: \emph{all} snapshots, snapshots up to the first
+  \com{} or last \incom{} (referred to as \emph{last}), and the \emph{last}
+  snapshot.}
+\locallabel{fig:approach_bar_s2}
+\end{figure}
+
+A student may utilize a combination of these high-level approaches to complete
+the assignment. For instance, in a single snapshot a student may use the
+\emph{orient and glide} approach via a \rel{} orientation block to \catch{} the
+\bear{} and subsequently use the \glideto{} approach to \catch{} the
+\horse{}. Alternatively, students utilize several different classes of
+orientation blocks. We wanted to see which combination of approaches was most
+preferred amongst students who completed the assignment.
+
+As mentioned in section~\localref{sub:s1}, the base project used as the
+starting point for all students utilized an \abs{} orientation approach. In
+order to accurately assess what approach combination was explicitly utilized by
+the students, the code provided in the base project was excluded from our
+approach combination analysis.
+
+Figure~\localref{fig:approach_student_success} shows a comparison of the
+overall completion rate by student of each approach by assignment
+iteration. Only snapshots up to the students first \com{} snapshot are included
+in this analysis as some teachers provided additional challenges to students
+who had completed the assignment. The height of each bar indicates the total
+number of students who had at least one snapshot that utilized the approach;
+this value is provided as the upper-most number above the bar. The lower number
+is the completion rate as a percentage, and the number within the lower segment
+of the bar quantifies the number of \com{} students for the approach. An
+approach is \com{} for a student if the student has at least one \com{}
+snapshot utilizing that approach, otherwise an approach is \incom{} for a
+student if none of their snapshots utilizing the approach are \com{}. An
+approach is counted even when used in combination with another approach. Only
+two and fifteen students utilized a combination of approaches in their first
+\com{} snapshot for \sone{} and \stwo{} respectively.
+
+This figure shows overwhelming evidence that students understood how to use
+\glideto{} as the approach was \com{} for all but four students. Conceptually
+this observation makes sense as the approach requires only a single block per
+\catch{} rather than two or more blocks as required by other approaches.
+
+The \abs{} approach had around a 50\% completion rate for both \sone{} and
+\stwo{}. When considering that all students were provided with an \abs{}
+approach example that \catch{es} the \zebra{}, this result indicates students
+struggled with the \abs{} approach
+
+While there are not many students for \sone{}, the figure does not convey that
+all of the \com{} snapshots for the \rel{} approach belong to students in the
+\emph{S1A} class. In fact, only one \emph{S1B} student attempted a \rel{}
+approach, whereas all but four \emph{S1A} students attempted an \abs{}
+approach. None of our field notes provide any insight as to why the \rel{}
+approach was so prominent with the \emph{S1A} class, especially when compared
+to the insignificance of the \rel{} approach with \stwo{}.
+
+Finally for all students we look at the their usage of an approach across
+snapshots in three categories:
+
+\begin{description}
+\item[all] the student utilized the approach in at least one snapshot,
+  including snapshots made following a \com{} snapshot
+\item[up to last] the student utilized the approach in at least one snapshot up
+  to and including their first \com{} snapshot (includes all snapshots for
+  students who had no \com{} snapshot)
+\item[last] The approaches used only in either the first \com{}, or last
+  snapshot for \incom{} students
+\end{description}
+
+Figure~\localref{fig:approach_bar_s2} quantifies the number of students who
+utilize each approach in \stwo{} snapshots for each of the aforementioned
+categories. There are two primary observations: The first is that for each
+category the difference in height between the pink and yellow bars show the
+number of students who abandoned an approach. The minuscule difference for the
+\glideto{} approach provides additional evidence for the ease-of-use of that
+approach. We make no claims about the abandonment of other approaches due to
+the low number of students utilizing those approaches. The second observation
+is the difference in height between the pink and green bars for each
+category. This difference indicates student who tried a new approach only after
+a \com{} snapshot. The figure shows very little growth in the \abs{} and \rel{}
+approaches, but a nearly 15\% increase in the \glideto{} approach once again
+providing support for the ease-of-use of the \glideto{} approach. A figure for
+\sone{} is not provided as there are only two possible approaches, and none of
+the students switched approaches after their first \com{} snapshot.
+
+\subsection{Quantifying Students Affected by a Scratch Race Condition}
+\locallabel{sub:race}
+
+\begin{figure}[!t]
+\centering \includegraphics[width=3.3in]{graphs/race_condition_Sequential1.eps}
+\caption{Shows the breakdown of students affected by the race condition issue
+  in Scratch for \sone{}.}
+\locallabel{fig:rc_s1}
+\end{figure}
+
+\begin{figure}[!t]
+\centering \includegraphics[width=3.3in]{graphs/race_condition_Sequential2.eps}
+\caption{Shows the breakdown of students affected by the race condition issue
+  in Scratch \stwo{}.}
+\locallabel{fig:rc_s2}
+\end{figure}
+
+Our curriculum development and test process as described in
+section~\localref{sec:classes} and visualized in Figure~\localref{fig:process}
+allowed us to focus analysis on issues we were aware of based on the field
+notes collected. However, the field notes were not always complete. During
+manual assessment of the students' snapshots we noticed a number of snapshots
+whose execution did not produce consistent results. These snapshots should have
+consistently \caught{} the \zebra{}, however, only did so approximately 50\% of
+the time. We discovered the problem to be a race condition within Scratch where
+the detection of the intersection between two sprites may not occur in the
+brief period of time that the sprites intersected. Instead, the next block in
+the script, always a rotation block, would execute and the rotation would
+result in separation of the two sprites; i.e., the two sprites were no longer
+intersecting. Our in-class researchers confirmed having observed this issue,
+however, we had no data to quantify the number of students affected. We
+hypothesized that students affected by this issue may have struggled completing
+the assignment.
+
+In order to quantify the students affected we wrote a Hairball plugin to track
+the \net{}'s \exe{}, that is, the sequence of blocks beginning with
+\netclicked{}. We wanted to discover snapshots where the \net{}'s \exe{}
+matches that of one we manually verified as exhibiting the race condition. We
+labeled \exe{s} by programming them in Scratch, and executing the program up to
+twenty times. If within these twenty executions we observed inconsistency in
+the \catch{ing} of the \zebra{} the \exe{} was labeled as exhibiting the race
+condition; otherwise it was not. While it is possible for a race condition to
+emerge at a lessor frequency, we assume that in such cases few, if any,
+students would experience the same low-frequency race condition. No race
+condition exhibiting \exe{s} required more than eight executions to detect.
+
+The result was a state machine that handled all \exe{s} of the \net{} shared by
+more than any ten snapshots. We only handled \exe{s} up to the point that we
+could label them as exhibiting the race condition or not. Of the 297 and 638
+snapshots for \sone{} and \stwo{} respectively, only 39 (13\%) and 38 (6\%)
+respective snapshots contained an \exe{} not explicitly handled by our plugin.
+
+In addition to labeling \exe{s} exhibiting the race condition, we labeled those
+resulting in a consistent intersection with the \zebra{}. Students with such a
+snapshot subsequent to a snapshot exhibiting the race condition are likely to
+have expended effort to resolve the race condition. We label such cases as
+``fixed''. Additionally, for each student with one or more snapshots exhibiting
+the race condition, we consider whether or not they completed the assignment.
+
+Figure~\localref{fig:rc_s1} and Figure~\localref{fig:rc_s2} show the breakdown
+of all students who do or do not have at least one snapshot exhibiting the race
+condition. In total eleven and forty-four students (38\% and 37\%) have
+snapshots exhibiting the race condition for \sone{} and \stwo{}
+respectively. Of those, three and nine students (27\% and 20\%) were unable to
+complete the assignment. Six and twenty-four students (55\% and 55\%) took a
+completely separate approach to completing the assignment after experiencing
+the race condition, whereas only two and eleven students (18\% and 25\%) solved
+the assignment by the addition of one or more blocks that explicitly prevented
+the race condition.
+
+Fortunately, a majority of students were able to avoid the race condition. We
+sampled a few of those students and discovered the following three ways that
+students completely avoided the race condition:
+
+\begin{itemize}
+\item The student immediately removed some or all of the provided code thus
+  starting with a modified base-project.
+\item In \stwo{}, the student simply appended \glideto{} blocks to the code.
+\item The student immediately added an additional \glideDIST{} block resulting
+  in consistent intersection between the \net{} and \zebra{}.
+\end{itemize}
+
+Of these three items, the middle item was how two of the thirteen students
+resolved the race condition and solved the assignment, and the last item was
+how the remaining eleven students did the same. In these two cases, the primary
+difference between the labeling of students, is that students who ``fixed'' the
+problem must have first had a snapshot exhibiting the problem.
+
+The results show that over one third of students experienced the race
+condition. Interestingly, the students who experienced the race condition were
+statistically significantly more likely to complete the assignment: 73\% and
+82\% compared to 39\% and 68\% (chi square, p < 0.028). This result was
+unexpected, nevertheless, the labels provided by our static analysis allowed us
+to discover the primary reason why students who did not experience the race
+condition, did not complete the assignment. Manual inspection revealed that a
+significant majority of these students' removed or significantly altered the
+provided code in their first snapshot. The only other reason we discovered was
+a handful of students used the last item from the list above to avoid the race
+condition. In each of these cases it was apparent the addition was accidental
+based on the subsequent modifications.
+
+Overall, the effect of these results is that we were able to adjust our
+assignment so that students are less likely to encounter a Scratch race
+condition. Moreover, given the negative impact of students removing the
+provided code, we learned that preventing students from modifying the provided
+code may have a positive effect on learning.
+
+\subsection{Snapshots Exhibiting the ``Double Click to Execute'' Behavior}
+\locallabel{sub:dce}
+Scratch is built such that students can double click on any script, i.e., one
+or more connected blocks, in order to execute that script. During \sone{},
+in-class researchers noted that some students took advantage of this behavior
+in order to execute scripts they created. While manually executing disjoint
+scripts in this manner may trigger the success screen built into the
+assignment, the researchers found that students exhibiting this behavior did
+not understand the concept of a script. Instead these students viewed the
+blocks as independent entities not triggered by an event (i.e., \netclicked)
+and therefore these students did not exhibit the conceptual understanding we
+had intended. Furthermore, staff members noted that students would \dce{} a
+script in order to move from the start location to the first sprite, and then
+alter that script to perform the next step of the sequence. Thus, as another
+use of scaffolding in the assignment, we disabled the \dce{} feature in \stwo{}
+in attempt to prevent students from going down an unintended path whilst
+completing the assignment.
+
+\subsubsection{Double Click to Execute Filters}
+Once aware of the problem we sought to retroactively identify students who may
+have utilized this \dce{} approach. We wrote a Hairball plugin to filter out
+snapshots determined to not demonstrate the \dce{} behavior. The following
+paragraphs detail, in-order, our approach to filtering snapshots to approximate
+the students affected by the \dce{} behavior.
+
+\textbf{\emph{Complete} Snapshots}: Any snapshots that when emulated by our
+plugin result in the \net{} \catch{ing} any two or more sprites are
+filtered. Furthermore, any chronologically subsequent snapshots by the same
+student are filtered. The subsequent snapshots are filtered because once a
+student demonstrates success, we are not concerned about their \dce{} use.
+
+\textbf{Motionless Snapshots}: Any snapshots that result in no movement due to
+either having zero scripts or having only a single \netclicked{} script with no
+movement blocks are filtered. These snapshots do not result in any motion and
+thus are not indicative of the \dce{} behavior.
+
+\textbf{\net{} Ends in Expected Location}: The Scratch save file stores the
+location of all the sprites at the time the save occurred. We compare the
+stored location of the \net{} to the final location of the \net{} as reported
+by our \net{} emulation Hairball plugin. Snapshots containing movement whose
+emulated \net{} location matches its stored location are filtered. These
+snapshots are filtered because the \net{}'s stored location matches the
+emulated location only when the in-Scratch execution matches the execution of
+our emulation plugin and our emulation plugin does not support the \dce{}
+behavior.
+
+\textbf{Multiple \net{} Clicks}: We expect a student's script to execute only
+once on \netclicked{} following a reset of the environment via a click on the
+\emph{green flag}. However, it is possible to click the \net{} multiple times
+resulting in an execution for each click where the \net{}'s position is not
+reset. Thus, by performing the expected location test multiple times we are
+able to both identify and filter snapshots exhibiting this multiple \net{}
+click behavior. These snapshots are filtered for the same reason as those
+filtered in the preceding paragraph.
+
+\subsubsection{Double Click to Execute Snapshots}
+
+\begin{figure}[!t]
+\centering \includegraphics[width=3.3in]{graphs/dc_submissions.eps}
+\caption{Depicts the number of \dce{} snapshots we identified for each
+  student.}
+\locallabel{fig:dc_snapshots}
+\end{figure}
+
+After applying all the filters, we counted the number of snapshots per student
+that may exhibit the \dce{} behavior. Figure~\localref{fig:dc_snapshots} shows
+the number of potential snapshots by student for both \sone{} and
+\stwo{}. Recall that the \dce{} functionality was disabled completely in
+\stwo{} thus we see that this filtering is not effective as it only removed
+three of twenty-nine and thirty of 120 students respectively. We had hoped that
+our filtering would result in a significant decrease in the number of snapshots
+to manually inspect, however, that was not the case. Unfortunately without more
+precise field notes, we cannot quantify the number of students affected as
+there is not sufficient information in the snapshots for us to neither
+automatically nor manually identify students exhibiting the \dce{} behavior.
+
+It is important to note that while we could not proceed, it was not due to a
+limitation of static analysis. The Hairball plugin we wrote considerably helped
+us come to the conclusion that we simply had not gathered enough information to
+neither manually nor automatically determine the students affected by the
+\dce{} behavior. Based on this experience with a lack of data, we are altering
+our data collection to capture every change made by students.
