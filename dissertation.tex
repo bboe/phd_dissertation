@@ -1,0 +1,65 @@
+% Root File for a UCSB Dissertation
+%
+%
+
+%\documentclass[12pt,twoside,draft]{ucthesis}
+\documentclass[12pt,oneside,final]{ucthesis}
+% todo: final options: [12pt,oneside,final]
+
+\usepackage{graphics,epsfig,slashbox}
+%\usepackage{amssymb, amsmath, amsfonts, epsfig, graphicx, graphics, latexsym, makeidx, psfig, subeqn, verbatim, xspace,textcomp}
+
+
+%%% Document Portion:
+
+\begin{document}
+
+%% Front Matter:
+\input{sections/title}          % First Page
+\maketitle             % Make Title Page
+
+\begin{frontmatter}
+\approvalpage
+\copyrightpage
+\input{sections/dedication}
+\input{sections/acknowledgements}
+\input{sections/vitae}
+\input{sections/abstract}
+\tableofcontents
+\listoffigures
+\listoftables
+\end{frontmatter}
+
+
+% the chapters
+
+% spacing in figures and tables and their captions can be
+% changed here (\ssp for single-space, empty for same as surrounding
+% text); for this to work, the command \figsp has to be included
+% in every figure and table right after the \begin{figure}
+\def\figsp{\ssp}
+%\def\figsp{}
+
+
+\include{sections/introduction}
+
+%\include{Literature}
+
+%\include{Chapter1}
+
+%\include{Chapter2}
+
+%\include{Conclusions}
+
+\ssp   % bibliography can be single-spaced for UC thesis format
+\bibliography{resources/references}
+\bibliographystyle{abbrv}%{unsrt}%{alpha}{siam}{apalike}{ieeetr}{plain}{acm}{abbrv}
+%\bibliographystyle{IEEE-Alpha}
+
+
+%\part*{\addcontentsline{toc}{part}{Appendices}Appendices}
+%\appendix
+
+%\include{Appendix}
+
+\end{document}
