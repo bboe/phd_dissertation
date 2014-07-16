@@ -82,7 +82,7 @@ other twenty-one, the last 10\% scored significantly worse.
 In the cases where the first 10\% of groups did not receive 100\% there are a
 few outliers where the average is higher than the first 10\% of students to
 submit. Of those five cases, all of them were lab assignments in which there
-were multiple lab periods. It's likely that a subset of the first 10\% groups
+were multiple lab periods. It is likely that a subset of the first 10\% groups
 are a group from one of the earlier labs who made an early submission as
 directed, but didn't necessarily intentionally start earlier on the assignment.
 
@@ -402,28 +402,12 @@ their previous score.
 \locallabel{sec:session} Section~\localref{sec:sub_impact} showed that a delay
 in feedback has an impact on both the time between submissions and the
 likeliness for submissions to improve upon the previous submission. In this
-section we attempt to group submissions into a work session and look at the
-affect of the feedback delay. We define a work session similarly to
-\spacco{}. Specifically, we define a work session as a collection of
-submissions by the same group for the same assignment where in which there is
-no gap between any two of these submissions larger than some window size.
-
-\spacco{} arbitrarily chose a window size of twenty
-minutes~\cite{Spacco:2013:TIP:2462476.2465594}. While this window size may have
-been appropriate for their data set where snapshots were collected passively
-upon changes, it is not appropriate for our data set due to the fact that
-students actively submitted only when they desired feedback. Furthermore, we
-have assignments with a feedback delay of fifty minutes, where students
-regularly make no more than one submission in any fifty minute
-period. Therefore, the window size we select to group submissions into work
-sessions must be at least fifty minutes in length.
-
-We acknowledge that longer window sizes result in more error as we cannot
-determine what percentage of the window size students actually worked. For
-instance, with a window size of one hour, students may work the entire hour, or
-they may have taken a break for fifty five minutes and only worked for five. We
-accept this error, and assume that it equally effects working sessions
-independent of the feedback delay time.
+section we attempt to group submissions into a work session. This grouping
+allows us to both look at the affect of the feedback delay on work session, and
+to compare our work session results to prior work. We define a work session
+similarly to \spacco{}. Specifically, we define a work session as a collection
+of submissions by the same group for the same assignment where in which there
+is no gap between any two of these submissions larger than some window size.
 
 \subsubsection{Determining an Appropriate Window Size}
 \locallabel{sec:window}
@@ -443,10 +427,37 @@ independent of the feedback delay time.
 \locallabel{fig:window_size}
 \end{figure}
 
-In this section, we investigate the ideal window size for which to discover
-work sessions. Rather than arbitrarily choosing a value, we attempt to select
-an idea window size based on our features of our
-data. Figure~\localref{fig:work_sessions} shows the effect of increasing the
+We investigate the ideal window size for which to discover work
+sessions. \spacco{} arbitrarily chose a window size of twenty
+minutes~\cite{Spacco:2013:TIP:2462476.2465594}. While this window size may have
+been appropriate for their data set where snapshots were collected passively
+upon changes, it is not appropriate for our data set due to the fact that
+students actively submitted only when they desired feedback. Furthermore, we
+have assignments with a feedback delay of fifty minutes, where students
+regularly make no more than one submission in any fifty minute
+period. Therefore, the window size we select to group submissions into work
+sessions must be at least fifty minutes in length.
+
+There are two forms of error that we must mitigate when selecting a window
+size. The first is error in distinguishing between work and non-work time
+within the window size. Intuitively, this error is reduced by minimizing the
+window size due to the fact that any non-work periods longer than the window
+size will not be included as part of the work session. The second is error in
+classifying the time between two submissions as part of the previous work
+session or not. For instance, if we select the window size as sixty minutes,
+then this error corresponds to the number of subsequent submissions that occur
+over sixty minutes which represent work time. While we can measure the number
+of subsequent submissions over a given window size, we cannot measure either
+error due to a lack of information as to when students are actually working. We
+accept these errors, and assume that it equally effects working sessions
+independent of the feedback delay time.
+
+Rather than arbitrarily choosing a value, we attempt to select an idea window
+size based on features of our data. We use the maximum session length as a
+heuristic for limiting the window size as it is unlikely that more than a
+handful of all sessions are longer than eight hours plus some additional time
+to account for error due to breaks during one or more
+windows. Figure~\localref{fig:work_sessions} shows the effect of increasing the
 window size on the number of work sessions created. This figure shows that for
 our data the maximum number of work sessions occurs with a window size of
 approximately twenty minutes, after which the number of work sessions gradually
@@ -473,14 +484,16 @@ highlight the window sizes of interest, that is, they are the window sizes just
 prior to a significant increase in maximum work session length. We excluded
 consideration of points of interest at larger window sizes as it is infeasible
 for 10\% of all work sessions to be over eight hours in length. Additionally we
-exclude the point of interest the occurs just after fifty minutes due to is
+exclude the point of interest that occurs just after fifty minutes due to its
 proximity with our longest feedback delay.
 
-In order to minimize the amount of error by longer window sizes, we select the
-left-most point of interest, seventy-nine minutes, as the window size we use in
-the remainder of the results section. Note, however, that where statistical
-significance is concerned, we verified that the results are consistent for each
-of the window sizes highlighted in Figure~\localref{fig:window_size}.
+We select the left-most point of interest, seventy-nine minutes, as the window
+size we use in the remainder of the results section. Note, however, that where
+statistical significance is concerned, we verified that each highlighted window
+size in Figure~\localref{fig:window_size} produces consistent results with
+those produced using the seventy-nine minute window size. This comparison shows
+that our analysis is unaffected by the specific choice of window size from
+those we highlighted.
 
 \subsubsection{Properties of Work Session Lengths}
 
