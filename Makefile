@@ -1,4 +1,5 @@
 pdf:
+	touch dissertation.tex
 	rubber -pd dissertation.tex
 
 clean:
