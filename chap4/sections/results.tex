@@ -513,6 +513,22 @@ those we highlighted.
 \locallabel{fig:time_score}
 \end{figure}
 
+\begin{table}
+\centering
+\begin{tabular}{|c||c|c|c|c|c|} \hline
+Score & Count & Mean Work Time & stderr & No Progress & stderr \\ \hline \hline
+0\% & 142 & 54m & 6 & 50\% & 4 \\ \hline
+0\% -- 100\% & 616 & 119m & 6 & 58\% & 2 \\ \hline
+100\% & 1509 & 60m & 2 & 34\% & 1 \\ \hline
+\end{tabular}
+\caption{Properties of group work times (79 minute window) grouped by those who
+  scored 0\%, between 0\% and 100\%, and 100\%. The \emph{mean work time} is
+  the mean time groups in each grouping spent working on the assignment along
+  with its corresponding stderr. \emph{No progress} represents the mean percent
+  of time that groups in each grouping spent without improving their maximum
+  score.}  \locallabel{table:times}
+\end{table}
+
 Before considering the impact the feedback delay has on work session, we first
 compare some general properties of our work sessions to that of the work
 sessions discovered by \spacco{}.
@@ -535,11 +551,24 @@ with those of \spacco{}~\cite{Spacco:2013:TIP:2462476.2465594}.
 An approximation of total time spent on an assignment can be made by summing
 the length of all the work sessions by group for an
 assignment. Figure~\localref{fig:time_score} plots the final score compared to
-the total time spent on an assignment. The red-line shows there is a
-statistically significant negative trend. This indicates that the longer
+the total time spent on an assignment. The red trend-line shows there is a
+statistically significant negative correlation. This indicates that the longer
 students work on an assignment the less likely they are to score well. These
 results contradict the results of \spacco{} where they found a statistically
 significant positive correlation.
+
+This negative correlation intuitively makes sense under the assumption that a
+majority of groups who do not complete an assignment do not do so due to a lack
+of effort. In such case, groups that do not complete an assignment will often
+work up to the deadline, whereas groups that complete an assignment cease
+working once completed. While groups who complete an assignment are more likely
+to start earlier, these groups, on average, spend much less time working on an
+assignment. Table~\ref{table:times} confirms this intuition by showing that the
+mean work time of groups who receive 100\% on an assignment is nearly half that
+of all scores between 0\% and 100\% with little error. The \emph{No progress}
+column shows that students who complete an assignment spend more time improving
+upon their assignment score, whereas students who do not, on average, spend
+over 50\% of their assignment time without making forward progress.
 
 \subsubsection{Impact of Feedback Delay on Work Sessions}
 \locallabel{sec:session_impact}
