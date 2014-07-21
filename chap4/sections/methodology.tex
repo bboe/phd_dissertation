@@ -44,7 +44,7 @@ from assignment to assignment.
 The average number of submissions is low for \cw[24]{13} due to only using the
 submission system for half of the quarter. The average number of submissions
 per student for \cm[24]{13} is relatively high due to students making
-post-deadline submissions as discussed in section~\localref{sec:deadline}.
+post-deadline submissions as discussed in Section~\localref{sec:deadline}.
 
 
 \subsection{Feedback Delay}
@@ -85,7 +85,7 @@ increased the feedback delay in five minute increments for each subsequent
 assignment. Those classes were \cs[24]{13}, \cm[24]{13}, and \cf[24]{13}. In
 all other classes the delay was not intentionally altered between
 assignments. The impact of the delay is covered in
-section~\localref{sec:sub_impact} and section~\localref{sec:session_impact}.
+Section~\localref{sec:sub_impact} and Section~\localref{sec:session_impact}.
 
 
 \subsection{The Submission and Feedback System}
@@ -146,17 +146,17 @@ upfront time required to prepare all the test cases for an assignment.
 \subsubsection{Architecture Overview}
 Figure~\localref{fig:architecture} provides a diagram of the system
 architecture. In a nutshell, the primary interface to the system for
-instructors, teaching assistants, and students is their web browser which they
+instructors, teaching assistants, and students is their web browser, which they
 use to access the web interface through the \emph{Internet}. An \emph{NGINX}
 web server distributes requests across a number of \emph{app servers} that run
 the actual web service code. The system data is stored either in a
 \emph{PostgresSQL} database, or deduplicated via an on-disk \emph{file
   store}. A \emph{submission verifier} process exists that checks submissions
-for proper files prior to triggering one or more more-expensive build and test
-jobs. Finally, a one-to-one mapping exists between a \emph{worker proxy} and a
-\emph{worker} where the \emph{worker proxy} is responsible for selecting a
-machine for the \emph{worker} to run on, initiating the build and test process,
-and comparing the generated results to the assignment's expected
+for proper files prior to triggering one or more relatively moreexpensive build
+and test jobs. Finally, a one-to-one mapping exists between a \emph{worker
+  proxy} and a \emph{worker} where the \emph{worker proxy} is responsible for
+selecting a machine for the \emph{worker} to run on, initiating the build and
+test process, and comparing the generated results to the assignment's expected
 results. \emph{RabbitMQ} is used to pass messages that trigger the jobs run by
 \emph{submission verifier} and the \emph{worker proxies}.
 
