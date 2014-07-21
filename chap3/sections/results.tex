@@ -11,14 +11,14 @@ questions:
   student observation?
 \end{itemize}
 
-To answer these questions we (\localref{sub:by_class})~look at the completion
-rate of students by class, (\localref{sub:snapshots})~compare the difficulty of
-\sone{} and \stwo{} based on the number of snapshots to completion,
-(\localref{sub:approach})~analyze the approach students used in solving the
-assignment, (\localref{sub:race})~quantify the number of students who may have
-experienced a race condition in Scratch, and (\localref{sub:dce})~quantify the
-number of students who may have utilized the \dce{} approach when initially
-working on the assignment.
+To answer these questions we (Section~\localref{sub:by_class}) look at the
+completion rate of students by class, (Section~\localref{sub:snapshots})
+compare the difficulty of \sone{} and \stwo{} based on the number of snapshots
+to completion, (Section~\localref{sub:approach})analyze the approach students
+used in solving the assignment, (Section~\localref{sub:race}) quantify the
+number of students who may have experienced a race condition in Scratch, and
+(Section~\localref{sub:dce}) quantify the number of students who may have
+utilized the \dce{} approach when initially working on the assignment.
 
 
 \subsection{Students by Class}
@@ -48,9 +48,8 @@ none of those students' snapshots result in the \net{} \catch{ing} a sprite
 upon execution. The four students in the \emph{0 Sprites} group are interesting
 because the base project provided to all students \catch{es} one sprite, the
 \zebra{}, on execution. Thus, these four students made changes resulting in
-negative progress towards the goal. Also of note is that of the 102 students
-who \caught{} at least two sprites, only twelve did not \catch{} the final
-sprite.
+negative progress toward the goal. Also of note is that of the 102 students who
+\caught{} at least two sprites, only twelve did not \catch{} the final sprite.
 
 We determine the success of a snapshot by running it through a Hairball plugin
 that emulates the \net{}'s movement according to the \net{}'s \emph{script}
@@ -79,7 +78,7 @@ students in the seven classes analyzed. While this information provides us with
 the overall completion rate, it does not provide any insight related to the
 difficulty of the assignment. We approximate the assignment difficulty for a
 student as the number of snapshots saved up to their first \com{}
-snapshot. Recall from section~\localref{sub:collection} that we consider each
+snapshot. Recall from Section~\localref{sub:collection} that we consider each
 snapshot to be a unit of work.
 
 Figure~\localref{fig:snapshots_to_completion} plots the number of snapshots
@@ -129,16 +128,16 @@ changing blocks are:
 \pointDIR{} block where \emph{X} can be selected as \emph{up (0)}, \emph{right
   (90)}, \emph{down (-180)}, or \emph{left (-90)}. Alternatively, any number
 can be manually entered for a more precise orientation. These orientations are
-absolute with respect to the \stage{} meaning \emph{up} always orients towards
+absolute with respect to the \stage{} meaning \emph{up} always orients toward
 the top of the \stage{}.
 
 \textbf{Relative orientation}: This orientation change is accomplished via
 either a \emph{turn clockwise NUM degrees}, or a \emph{turn counterclockwise
   NUM degrees} block. The use of one of these blocks results in a modification
 to the current orientation of the \net{}. That is, if the \net{} is oriented
-towards the right of the \stage{}, a \emph{turn clockwise 90 degrees} block
-will result in the \net{} being oriented towards the bottom of the \stage{}; in
-this case, the \abs{} orientation block \pointDIR[down]{} would have the same
+toward the right of the \stage{}, a \emph{turn clockwise 90 degrees} block will
+result in the \net{} being oriented toward the bottom of the \stage{}; in this
+case, the \abs{} orientation block \pointDIR[down]{} would have the same
 effect.
 
 \textbf{Sprite orientation}: The third class of orientation changing blocks is
@@ -174,7 +173,7 @@ the assignment. For instance, in a single snapshot a student may use the
 orientation blocks. We wanted to see which combination of approaches was most
 preferred amongst students who completed the assignment.
 
-As mentioned in section~\localref{sub:s1}, the base project used as the
+As mentioned in Section~\localref{sub:s1}, the base project used as the
 starting point for all students utilized an \abs{} orientation approach. In
 order to accurately assess what approach combination was explicitly utilized by
 the students, the code provided in the base project was excluded from our
@@ -261,7 +260,7 @@ the students switched approaches after their first \com{} snapshot.
 \end{figure}
 
 Our curriculum development and test process as described in
-section~\localref{sec:classes} and visualized in Figure~\localref{fig:process}
+Section~\localref{sec:classes} and visualized in Figure~\localref{fig:process}
 allowed us to focus analysis on issues we were aware of based on the field
 notes collected. However, the field notes were not always complete. During
 manual assessment of the students' snapshots we noticed a number of snapshots
