@@ -1,8 +1,8 @@
 \section{Results}\locallabel{sec:results}
 
 In this section, we present the results of using Hairball to assist in
-determining the level of competence demonstrated by students' Scratch projects
-for several CS concepts. For each concept, we will compare the labels Hairball
+determining the level of competence demonstrated by students' \sprogram{s} for
+several CS concepts. For each concept, we will compare the labels Hairball
 assigned to instances of the concept with those assigned via manual
 analysis. We will use the second manual analysis as the ground truth, and look
 at both false positive and false negative rates for Hairball and the manual
@@ -33,17 +33,17 @@ We begin with initialization. Recall from Section~\localref{sec:plugins} that
 Hairball looks for attributes that are modified, and expects to find a
 corresponding absolute block in the initialization zone in order to consider an
 instance correct. The manual analysis, on the other hand, only involved running
-the program twice, and confirming that the two executions matched.
+the \sprogram{} twice, and confirming that the two executions matched.
 
 Figure~\localref{fig:initialization} provides the classification of the 348
-initialization instances discovered across the 58 projects. Of the 65 instances
-that Hairball and the manual analysis labeled differently, Hairball was correct
-for 32 of the instances. Many of the remaining 33 instances were not possible
-for Hairball to label as correct due to initialization taking place outside of
-the initialization zone. For example, an initially hidden sprite, can correctly
-have its position initialized just before the sprite becomes visible. In spite
-of this discrepancy, these results overall indicate that Hairball is successful
-at pointing out problems in initialization.
+initialization instances discovered across the 58 \sprogram{s}. Of the 65
+instances that Hairball and the manual analysis labeled differently, Hairball
+was correct for 32 of the instances. Many of the remaining 33 instances were
+not possible for Hairball to label as correct due to initialization taking
+place outside of the initialization zone. For example, an initially hidden
+sprite, can correctly have its position initialized just before the sprite
+becomes visible. In spite of this discrepancy, these results overall indicate
+that Hairball is successful at pointing out problems in initialization.
 
 \subsection{Say and Sound Synchronization}
 \begin{figure}[!t]

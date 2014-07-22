@@ -34,3 +34,10 @@ if [ $? -eq 0 ]; then
     echo -e "replace instances of 'project' with 'assignment'"
     echo -n  "$(tput setaf 0)"
 fi
+
+grep -iPR "scratch (-|\s+)program(s)?[^a-z]" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "replace instances of 'scratch program' with '\sprogram{}'"
+    echo -n  "$(tput setaf 0)"
+fi

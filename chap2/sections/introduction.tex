@@ -1,14 +1,14 @@
 \section{Introduction}
-There is a movement toward less industrial and more engaging projects and
+There is a movement toward less industrial and more engaging assignments and
 languages for introductory and AP computer science courses.  This movement
 includes the push for Python with Multimedia
 approaches~\cite{Adams:2012:SLP:2157136.2157319, Forte:2004:CCC:962752.962945,
-Simon:2010:ERC:1822090.1822151}, the various approaches to the AP CS Principles
-course~\cite{Snyder:2012:FFC:2189835.2189852}, as well as
+  Simon:2010:ERC:1822090.1822151}, the various approaches to the AP CS
+Principles course~\cite{Snyder:2012:FFC:2189835.2189852}, as well as
 Alice~\cite{Cooper:2003:TOI:611892.611966} and
 Scratch~\cite{Maloney:2010:SPL:1868358.1868363}.
 
-One drawback of visual and auditory projects is that their evaluation can be
+One drawback of visual and auditory assignments is that their evaluation can be
 more difficult than traditional text-based programming assignments.  A common
 and straightforward practice in evaluating text-based assignments is to perform
 functional testing. That is, to write a script to run all submitted programs
@@ -17,35 +17,34 @@ files~\cite{Jackson:1997:GSP:268084.268210}.  More recently, unit-testing
 frameworks have been employed as part of automated
 assessment~\cite{Spacco:2006:EMD:1140124.1140131,
   Edwards:2003:RCS:949344.949390}.  When students are given creative freedom
-with a sensory project---which is an integral feature of languages such as
+with a sensory assignment---which is an integral feature of languages such as
 Alice and Scratch---there is neither a text-based output file with which to
 diff, nor a straightforward way to perform unit-testing.  For Scratch, for
-example, evaluation typically requires that each project be individually opened
-and run.  Inspection of the code requires many mouse clicks and navigation
-through the stage, sprites, and all of their associated scripts.
+example, evaluation typically requires that each \sprogram{} be individually
+opened and run.  Inspection of the code requires many mouse clicks and
+navigation through the stage, sprites, and all of their associated scripts.
 
-To assist with assessment of Scratch projects, we propose a static analysis
-tool.  Inspired by the Scratch mascot (a cat), and the concept of lint (a
-static analysis utility for C that looks for potential
-defects~\cite{Johnson78lint}), we call our system Hairball.  We propose two
-roles for Hairball: (1)~formative assessment---inspired by lint, we envision
-students using Hairball to check their Scratch programs for potential problems,
-and (2)~summative assessment---accelerating manual analysis of assignments by
-verifying the presence and correctness of certain programming constructs as
-well as directing the manual analysis toward potential problems.  We have
-developed a plugin architecture so that, in Python, Hairball can be extended
-and adapted for evaluation of specific assignments.
+To assist with assessment of \sprogram{s}, we propose a static analysis tool.
+Inspired by the Scratch mascot (a cat), and the concept of lint (a static
+analysis utility for C that looks for potential defects~\cite{Johnson78lint}),
+we call our system Hairball.  We propose two roles for Hairball: (1)~formative
+assessment---inspired by lint, we envision students using Hairball to check
+their \sprogram{s} for potential problems, and (2)~summative
+assessment---accelerating manual analysis of assignments by verifying the
+presence and correctness of certain programming constructs as well as directing
+the manual analysis toward potential problems.  We have developed a plugin
+architecture so that, in Python, Hairball can be extended and adapted for
+evaluation of specific assignments.
 
-The challenges we explore in this study relate to where the line
-should be drawn between what Hairball can do with static analysis, and
-where manual examination of the Scratch program is necessary.  We find
-that each has its own strengths.  Hairball can quickly differentiate
-between Scratch programs that do, or do not, contain certain targeted
-constructs, and is particularly helpful for identifying instances of
-particular constructs and implementations that are not robust but may
-not immediately cause obvious errors at runtime.  Manual analysis,
-however, is still needed to evaluate the overall aesthetic effect and
-cohesion of a visual or auditory project.
+The challenges we explore in this study relate to where the line should be
+drawn between what Hairball can do with static analysis, and where manual
+examination of the \sprogram{} is necessary.  We find that each has its own
+strengths.  Hairball can quickly differentiate between \sprogram{s} that do, or
+do not, contain certain targeted constructs, and is particularly helpful for
+identifying instances of particular constructs and implementations that are not
+robust but may not immediately cause obvious errors at runtime.  Manual
+analysis, however, is still needed to evaluate the overall aesthetic effect and
+cohesion of a visual or auditory assignment.
 
 We begin in Section~\localref{sec:background} by giving background on automated
 analysis in general and Scratch in particular. We then describe our Hairball
