@@ -28,7 +28,7 @@ if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 0)"
 fi
 
-grep -iPR "[^-]project(s?)[^a-z]" sections/ chap*/
+grep -iPR "(\s+)project(s?)([^a-z]|$)" sections/ chap*/
 if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 1)"
     echo -e "replace instances of 'project' with 'assignment'"
