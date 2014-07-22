@@ -41,3 +41,10 @@ if [ $? -eq 0 ]; then
     echo -e "replace instances of 'scratch program' with '\sprogram{}'"
     echo -n  "$(tput setaf 0)"
 fi
+
+grep -iPR "(^|\s+)CS(\s+|$)" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "replace instances of 'Computer Science' with 'computer science'"
+    echo -n  "$(tput setaf 0)"
+fi
