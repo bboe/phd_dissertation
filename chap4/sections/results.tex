@@ -82,7 +82,7 @@ in twenty-six, with only five where the last 10\% also received 100\%. In the
 other twenty-one, the last 10\% scored significantly worse.
 
 In the cases where the first 10\% of groups did not receive 100\% there are a
-few outliers where the average is higher than the first 10\% of students to
+few outliers where the average is higher than the first 10\% of groups to
 submit. Of those five cases, all of them were lab assignments in which there
 were multiple lab periods. It is likely that a subset of the first 10\% groups
 are a group from one of the earlier labs who made an early submission as
@@ -190,9 +190,9 @@ submission efficiency. One metric is to look at amount of change in source code
 between submissions. Another is to look at the change in cyclomatic complexity
 between submissions. While each of these metrics may provide interesting
 insights into student behavior, we are more interested in correlations with
-changes in students' scores between submissions. Thus, we consider efficiency
-by looking at improvements and regressions in subsequent submissions based on
-the change in score. The score is altered by a submission passing more or fewer
+changes in groups' scores between submissions. Thus, we consider efficiency by
+looking at improvements and regressions in subsequent submissions based on the
+change in score. The score is altered by a submission passing more or fewer
 tests. We quantify changes in submission efficiency by classifying subsequent
 submissions into one of four categories:
 
@@ -225,7 +225,7 @@ groups explicitly make submissions in order to receive feedback. One other
 difference is our \imp{} submissions are only submissions that improve upon a
 group's maximum score. It is unclear from \spacco{}'s description if a snapshot
 that improves the score of a \emph{negative} snapshot is considered
-\emph{positive} even its score does not improve the student's maximum score. If
+\emph{positive} even its score does not improve the group's maximum score. If
 this is the case, then the number of \emph{positive} snapshots is inflated in
 their results when compared to ours.
 
@@ -387,9 +387,9 @@ provide two insights:
   categories. Recall that \noii{} submissions occur in the period after a
   \worse{} submission and prior to an \imp{} submission. The short period of
   time between these submissions and their corresponding former submissions is
-  too small for students to have understood any feedback they may have received
-  and suggests the students did not independently test whatever changes they
-  made prior to resubmission.
+  too small to have understood any feedback these groups may have received and
+  suggests these groups did not independently test whatever changes they made
+  prior to resubmission.
 \item Interestingly, with respect to \worse{} submissions, the spike around the
   1,000-minute mark is the most significant compared to other categories. This
   data suggest that long breaks have an initially negative impact on assignment
