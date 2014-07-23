@@ -3,7 +3,7 @@ In this section we describe four Hairball plugins written to perform Scratch
 static analysis.  The plugins were designed to analyze \sprogram{s} submitted
 as part of our two-week interdisciplinary Animal Tlatoque summer
 camp~\cite{Franklin:2013:SBO}.  Notice that some of the traditional topics,
-i.e., variables and conditionals, are not represented, and that loops are
+e.g., variables and conditionals, are not represented, and that loops are
 represented in a very specific way (defined as animation). The plugins target
 the computer science concepts used in the camp's cumulative assignment, an
 interactive movie about an animal. For this assignment, students were to
@@ -55,14 +55,13 @@ In any program, correctly setting the initial state is important.  In
 animations, and in the runtime environment, they may run from start to finish
 and be restarted again.  Alternatively, they may be stopped in the middle and
 restarted again.  We want to determine statically whether the code runs the
-same way in these two events.  For reasons described below, the environment is
-different than in traditional programming.
+same way in these two events.
 
 The first problem is where to start the analysis.  In traditional programs,
-execution starts at \emph{main}.  \sprogram{s} have no such globally defined
-starting point.  We taught our students to start their \sprogram{} using the
-green flag button, so the starting point for our evaluation is the \greenflag{}
-block.
+execution starts at \emph{main}. However, \sprogram{s} have no such globally
+defined starting point. Therefore, we taught our students to start their
+\sprogram{} using the green flag button, so the starting point for our
+evaluation is the \greenflag{} block.
 
 The most complex problem, and the problem that introduces the possibility of
 error into our analysis, is that sprites are placed on the stage during
@@ -78,8 +77,8 @@ location the \initzone{}.
 
 Attribute modifying Scratch blocks can be labeled as \rel{} or
 \abs{}. \emph{Relative} Scratch blocks alter the attribute based upon its
-current value whereas \abs{} Scratch blocks directly set the attribute. As such
-only \abs{} blocks can be considered initialization
+current value whereas \abs{} Scratch blocks directly set the attribute. As
+such, only \abs{} blocks can be considered initialization
 blocks. Table~\localref{table:initialstate} shows our categorization for a
 subset of attribute modifying Scratch blocks.
 
@@ -117,30 +116,30 @@ sound clip: \playsounddone{} plays the sound synchronously, while \playsound{}
 plays the sound asynchronously.
 
 There are two methods to produce the desired effect.  The first is to
-asynchronously play the sound via the \playsound{} followed by a \sayfor{}
-block with duration equal to the elapsed time of the sound.  Unfortunately, the
-timing must be manually determined and needs to be updated whenever the sound
-file changes.  The second, is to use a \say{} block to display the message,
-followed by a \playsounddone{} block, ending with an empty \say{} block to
-clear the previous speech bubble. The campers were taught the latter method as
-the correct approach.
+asynchronously play the sound via the \playsound{} block followed by a
+\sayfor{} block with duration equal to the elapsed time of the sound.
+Unfortunately, the timing must be manually determined and needs to be updated
+whenever the sound file changes.  The second, is to use a \say{} block to
+display the message, followed by a \playsounddone{} block, ending with an empty
+\say{} block to clear the previous speech bubble. The campers were taught the
+latter method as the correct approach.
 
-This plugin detects instances of this concept by looking for sequential \say{}
-and \playsound{} blocks and verifies the instances are implemented using the
-appropriate method.  A \correct{} instance contains the previously described
-three blocks in the proper order.  Instances following the method requiring
-manual timing are labeled \semincor{}. Instances that have both \say{} and
-\playsound{} blocks but do not match either of these methods are labeled
-\incor{}, and isolated uses of \say{} or \playsound{} blocks are labeled
-\incom{}.
+Thus the say and sound synchronization plugin detects instances of this concept
+by looking for sequential \say{} and \playsound{} blocks and verifies the
+instances are implemented using the appropriate method.  A \correct{} instance
+contains the previously described three blocks in the proper order.  Instances
+following the method requiring manual timing are labeled \semincor{}. Instances
+that have both \say{} and \playsound{} blocks but do not match either of these
+methods are labeled \incor{}, and isolated uses of \say{} or \playsound{}
+blocks are labeled \incom{}.
 
 
 \subsubsection{Broadcast and Receive}
 One use of Scratch's \broadcast{} blocks is to trigger the execution of other
 sprites' scripts beginning with the appropriate \receive{} block. We taught our
 campers the broadcast and receive concept in the context of two animal sprites
-conversing, where each sprite would signal the other's turn via broadcasting an
-event. In the camp's cumulative assignment, campers demonstrated an
+conversing, where each sprite would signal the other's turn via an event
+broadcast. In the camp's cumulative assignment, campers demonstrated an
 understanding of the broadcast and receive concept by triggering scene changes
 in their interactive movie.
 
