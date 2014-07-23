@@ -24,11 +24,11 @@ work.  This creative freedom is one of the reasons that \sprogram{s} are
 challenging to analyze.
 
 An additional challenge in Scratch analysis is that \sprogram{s} are developed
-and run within a graphical user interface (GUI).  Independent segments of code,
-known as scripts, are associated with Scratch sprites, e.g., the Scratch Cat,
-and tied to a triggering event.  There is no central ``main'' point of
+and run within a graphical user interface.  Independent segments of code, known
+as scripts, are associated with Scratch sprites, e.g., the Scratch Cat, and
+tied to a triggering event.  There is no central \emph{main} point of
 execution.  Instead, \sprogram{s} might begin when a parallel set of scripts
-beginning with a ``when green flag clicked'' hat block are triggered.
+beginning with a \greenflag{} hat block are triggered.
 
 Little prior work has looked at automated Scratch analysis.  Adams and Webster
 describe using scripts and custom modifications to the Squeak source code of
@@ -58,7 +58,7 @@ different computer science concepts. Hairball can be used to answer questions
 such as:
 \begin{itemize}
 \vspace*{-.025in}
-\item Which \sprogram{s} contain unmatched broadcast and receive blocks?
+\item Which \sprogram{s} contain unmatched \broadcast{} and \receive{} blocks?
 \vspace*{-.025in}
 \item Which \sprogram{s} contain broadcast and receive events that result in
   infinite loops?

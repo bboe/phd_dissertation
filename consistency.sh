@@ -48,3 +48,17 @@ if [ $? -eq 0 ]; then
     echo -e "replace instances of 'Computer Science' with 'computer science'"
     echo -n  "$(tput setaf 0)"
 fi
+
+grep -iPR "[^{](absolute|relative)(\s+|$)" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "replace relative and absolute with \\\\rel{} and \\\\abs{}"
+    echo -n  "$(tput setaf 0)"
+fi
+
+grep -iPR "\`\`" sections/ chap*/sections/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "minimize quote usage"
+    echo -n  "$(tput setaf 0)"
+fi
