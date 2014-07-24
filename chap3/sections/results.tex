@@ -7,8 +7,8 @@ questions:
 \item How successful were students in creating a \sprogram{} that completed the
   assignment?
 \item Did the changes we made after \sone{} improve student completion rates?
-\item How pervasive were the challenges identified by researchers via direct
-  student observation?
+\item How pervasive were the challenges identified by education researchers via
+  direct student observation?
 \end{itemize}
 
 To answer these questions we (Section~\localref{sub:by_class}) look at the
@@ -274,8 +274,8 @@ the detection of the intersection between two sprites may not occur in the
 brief period of time that the sprites intersect. Instead, the next block in the
 script, always a rotation block, would execute and the rotation would result in
 the separation of the two sprites; i.e., the two sprites were no longer
-intersecting. Our in-class researchers confirmed having observed this issue,
-however, we had no data to quantify the number of students affected. We
+intersecting. In-class education researchers confirmed having observed this
+issue, however, we had no data to quantify the number of students affected. We
 hypothesized that students affected by this issue may have struggled completing
 the assignment.
 
@@ -360,24 +360,26 @@ positive effect on learning.
 
 \subsection{Snapshots Exhibiting the \emph{Double Click to Execute} Behavior}
 \locallabel{sub:dce}
+
 Scratch is built such that students can double click on any script, i.e., one
 or more connected blocks, in order to execute that script. During \sone{},
-in-class researchers noted that some students took advantage of this behavior
-in order to execute scripts they created. While manually executing disjoint
-scripts in this manner may trigger the success screen built into the
-assignment, the researchers found that students exhibiting this behavior did
-not understand the concept of a script. Instead these students viewed the
-blocks as independent entities not triggered by an event (i.e., \netclicked)
-and therefore these students did not exhibit the conceptual understanding we
-had intended. Furthermore, staff members noted that students would \dce{} a
-script in order to move from the start location to the first sprite, and then
-alter that script to perform the next step of the sequence. Thus, as another
-use of scaffolding in the assignment, we disabled the \dce{} feature in \stwo{}
-in attempt to prevent students from going down an unintended path while
-completing the assignment.
+in-class education researchers noted in their field notes that some students
+took advantage of this behavior in order to execute scripts they created. While
+manually executing disjoint scripts in this manner may trigger the success
+screen we built into the assignment, the education researchers found that
+students exhibiting this behavior did not understand the concept of a
+script. Instead, these students viewed the blocks as independent entities not
+sequentially triggered by an event (i.e., \netclicked{}), and therefore these
+students did not exhibit the conceptual understanding of sequential execution
+we had intended. Furthermore, the education researchers noted in their field
+notes that students would \dce{} a script in order to move from the start
+location to the first sprite, and then alter that script to perform the next
+step of the sequence. Thus, as another use of scaffolding in the assignment, we
+disabled the \dce{} feature in \stwo{} in attempt to prevent students from
+going down an unintended path while completing the assignment.
 
 \subsubsection{Double Click to Execute Filters}
-Once aware of the problem we sought to retroactively identify students who may
+Once aware of the problem, we sought to retroactively identify students who may
 have utilized this \dce{} approach. We wrote a Hairball plugin to filter out
 snapshots determined to not demonstrate the \dce{} behavior. The following
 paragraphs detail, in-order, our approach to filtering snapshots to approximate
@@ -394,24 +396,24 @@ either having zero scripts or having only a single \netclicked{} script with no
 movement blocks are filtered. These snapshots do not result in any motion and
 thus are not indicative of the \dce{} behavior.
 
-\textbf{\net{} Ends in Expected Location}: The Scratch save file stores the
-location of all the sprites at the time the save occurred. We compare the
-stored location of the \net{} to the final location of the \net{} as reported
-by our \net{} emulation Hairball plugin. Snapshots containing movement whose
-emulated \net{} location matches its stored location are filtered. These
-snapshots are filtered because the \net{}'s stored location matches the
-emulated location only when the in-Scratch execution matches the execution of
-our emulation plugin and our emulation plugin does not support the \dce{}
-behavior.
+\textbf{\net{} Ends in Expected Location}: Each \sprogram{} file, i.e., each
+snapshot, stores the last location of all its sprites. We compare the stored
+location of the \net{} to the final location of the \net{} as reported by our
+\net{} emulation Hairball plugin. Snapshots containing movement whose emulated
+\net{} location matches its stored location are filtered. These snapshots are
+filtered because the \net{}'s stored location matches the emulated location
+only when the in-Scratch execution matches the execution of our emulation
+plugin, and our emulation plugin does not support the \dce{} behavior.
 
-\textbf{Multiple \net{} Clicks}: We expect a student's script to execute only
-once on \netclicked{} following a reset of the environment via a click on the
-\emph{green flag}. However, it is possible to click the \net{} multiple times
-resulting in an execution for each click where the \net{}'s position is not
-reset. Thus, by performing the expected location test multiple times we are
-able to both identify and filter snapshots exhibiting this multiple \net{}
-click behavior. These snapshots are filtered for the same reason as those
-filtered in the preceding paragraph.
+\textbf{Multiple \net{} Clicks}: We expect students' scripts to execute only
+once \netclicked{} following a reset of the environment via a click on the
+\emph{green flag}. However, it is still possible to click on the \net{}
+multiple times resulting in an execution for each click. In such cases, the
+\net{} will initially be in an invalid state for all but the first click. Thus,
+by performing the expected location test multiple times we are able to both
+identify and filter snapshots exhibiting this multiple \net{} click
+behavior. These snapshots are filtered for the same reason as those filtered
+due to ending in an expected location.
 
 \subsubsection{Double Click to Execute Snapshots}
 
@@ -426,17 +428,17 @@ After applying all the filters, we counted the number of snapshots per student
 that may exhibit the \dce{} behavior. Figure~\localref{fig:dc_snapshots} shows
 the number of potential snapshots by student for both \sone{} and
 \stwo{}. Recall that the \dce{} functionality was disabled completely in
-\stwo{} thus we see that this filtering is not effective as it only removed
-three of twenty-nine and thirty of 120 students respectively. We had hoped that
-our filtering would result in a significant decrease in the number of snapshots
-to manually inspect, however, that was not the case. Unfortunately without more
-precise field notes, we cannot quantify the number of students affected as
-there is not sufficient information in the snapshots for us to neither
-automatically nor manually identify students exhibiting the \dce{} behavior.
+\stwo{}, thus we hoped that this filtering would result in a significant
+decrease in the number of snapshots to manually inspect. However, that was not
+the case. In reality, this filtering only removed three of twenty-nine (10.3\%)
+and thirty of 120 (25.0\%) students respectively. Unfortunately, without more
+precise field notes, we cannot quantify the number of students affected because
+there is not sufficient information in the snapshots for us to even manually
+identify students exhibiting the \dce{} behavior.
 
 It is important to note that while we could not proceed, it was not due to a
 limitation of static analysis. The Hairball plugin we wrote considerably helped
 us come to the conclusion that we simply had not gathered enough information to
-neither manually nor automatically determine the students affected by the
-\dce{} behavior. Based on this experience with a lack of data, we are altering
-our data collection to capture every change made by students.
+either manually or automatically determine the students affected by the \dce{}
+behavior. Based on this experience with a lack of data, we are altering our
+data collection to capture every change made by students.
