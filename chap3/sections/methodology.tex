@@ -38,19 +38,22 @@ turn change the learning outcomes. As we are in the initial stages of what will
 be both a technological (modified interface) and curricular innovation, we
 require a research plan that is able to inform the simultaneous separate but
 coordinated development along both technological and curricular
-directions. Wang defines design-based research as ``a systematic but flexible
-methodology aimed to improve educational practices through iterative analysis,
-design, development, and implementation, based on collaboration among
-researchers and practitioners in real-world settings, and leading to
-contextually-sensitive design principals and theories''~\cite{wang05}.
+directions. Wang defines design-based research as:
+
+\begin{quote}
+A systematic but flexible methodology aimed to improve educational practices
+through iterative analysis, design, development, and implementation, based on
+collaboration among researchers and practitioners in real-world settings, and
+leading to contextually-sensitive design principals and theories~\cite{wang05}.
+\end{quote}
 
 \subsection{Classes} \locallabel{sec:classes}
 This study involved eight \nth{4} grade, one \nth{5} grade, and one \nth{6}
-grade class across California. In all classes we collected snapshots of the
-students' work. Additionally, in the first five classes we observed instruction
-and interviewed students. Each class had a varying number of students and
-snapshots, and each class had different start dates. The participating classes
-are presented in Table~\localref{table:classes}.
+grade classes across California. In all classes we collected snapshots of the
+students' \sprogram{s}. Additionally, in the first five classes we observed
+instruction and interviewed students. Each class had a varying number of
+students and snapshots, and each class had different start dates. The
+participating classes are presented in Table~\localref{table:classes}.
 
 In what we refer to as \emph{wave 0}, classes \emph{S0A}, \emph{S0B}, and
 \emph{S0C} piloted the curriculum. This wave was used exclusively to work out
@@ -59,50 +62,50 @@ this wave are therefore inconsistent, thus we do not analyze the snapshots and
 field notes as part of this study.
 
 All classes, save for \emph{S2A}, were local. Education researchers went to the
-local classes to assist in teaching and helping students. The researcher's
+local classes to assist in teaching and helping students. The researchers'
 presence in the classes as participant observers allowed us to discover
 concepts the students were struggling to learn as the researchers wrote field
 notes following each visit~\cite{spradley80}. In addition, for all classes, we
-automatically generated and captured multiple snapshots of each student's
-development process as prior work has found that the final result of student's
-development process does not accurately reflect student
+automatically generated and captured multiple snapshots of the students'
+\sprogram{s}. We did this because prior work has found that the final result of
+students' development process does not accurately reflect student
 understanding~\cite{Piech:2012:MSL:2157136.2157182,brennan12}. The snapshot
 generation, collection, and verification process is described in
 Section~\localref{sub:collection}.
 
 Computer science researchers read the field notes and manually inspected a
-subset of student snapshots to discover how student approaches deviated from
-what was intended. This process allowed us to identify features of snapshots
-that indicated challenges to students. For example, a snapshot may have
-unexpected code-blocks, code-blocks associated with incorrect sprites, or
-missing code-blocks.  After we identified those features of snapshots that
-could indicate challenges, the entire set of student snapshots was
-automatically assessed to quantify the manifestation of each feature. Finally,
-computer science and education researchers met to discuss conceptual issues,
-sources of those conceptual issues, and changes to make to the lesson,
-assignment, and Scratch programming environment. This process was repeated with
-each subsequent wave of classes. The entire process is visualized in
-Figure~\localref{fig:process}.
+subset of student snapshots to discover how student approaches to the
+assignment deviated from what we intended. This process allowed us to identify
+features of snapshots that represent challenges students encountered. For
+example, a snapshot may have unexpected code-blocks, code-blocks associated
+with incorrect sprites, or missing code-blocks.  After we identified those
+features of snapshots that could indicate challenges, the entire set of student
+snapshots was automatically assessed to quantify the manifestation of each
+feature. Finally, computer science and education researchers met to discuss
+conceptual issues, sources of those conceptual issues, and changes to make to
+the lesson, the assignment, and the Scratch programming environment. This
+process was repeated with each subsequent wave of
+classes. Figure~\localref{fig:process} visualizes the process.
 
-\subsection{Our Scratch Interface}
-\locallabel{sub:interface}
-Prior work by Lewis showed that students using Scratch, aged 10--12, had less
+\subsection{Our Scratch Interface} \locallabel{sub:interface}
+Prior work by Lewis showed that students using Scratch, ages 10--12, had less
 confidence in their response to the statement ``I am good at writing computer
-programs'' than students using Logo, a text-based language. Lewis hypothesizes
+programs'' than students using Logo, a text-based language. Lewis hypothesized
 that the students had not used all the blocks available within Scratch, thus
 distorting the students' view of their
 abilities~\cite{Lewis:2010:PES:1734263.1734383}. As part of our prior work, we
-ran a two week Scratch summer camp where our staff members noted that students
-of similar age to those in the camp were often distracted or overwhelmed by the
+ran a two week Scratch-based summer camp where our staff members noted that
+students of similar age to Lewis's were often distracted or overwhelmed by the
 plethora of blocks available when the assignment only required use of a small
-subset of them~\cite{Franklin:2013:SBO}. Furthermore, Halgren et al., reported
-that children aged 5--14 have a curiosity to explore available functionality in
-their movie-making program:
+subset of them~\cite{Franklin:2013:SBO}. Furthermore, Halgren et al. reported
+that children, ages 5--14, have a curiosity to explore available functionality
+in their movie-making program:
 
-\begin{quote}Our kids quickly got themselves trapped in
-advanced paint and move-making modes which surpassed their expertise. They also
-loved clicking on the character buttons at the bottom of the screen. Each click
-of a character button placed a new character on the center of the
+\begin{quote}
+Our kids quickly got themselves trapped in advanced paint and movie-making
+modes which surpassed their expertise. They also loved clicking on the
+character buttons at the bottom of the screen. Each click of a character button
+placed a new character on the center of the
 screen~\cite{Halgren:1995:AAM:223904.223974}.
 \end{quote}
 
@@ -116,8 +119,8 @@ removed all but the following blocks:
 \item \glideDIST{} (and a variation that adjusted speed)
 \item \emph{turn clockwise NUM degrees}
 \item \emph{turn counterclockwise NUM degrees}
-\item \pointDIR{} (where X is \emph{left}, \emph{right},
-  \emph{up} or \emph{down})
+\item \pointDIR{} (where X is \emph{left}, \emph{right}, \emph{up}, or
+  \emph{down})
 \end{itemize}
 
 \subsection{The Sequential Execution Assignment}
@@ -205,16 +208,16 @@ functionality.
 
 \subsection{Capturing, Collecting, and Verifying the Accuracy of Snapshot Generation}
 \locallabel{sub:collection}
-Scratch, like many computer programs, only saves the most recent version of
-work when explicitly directed to do so through a \emph{save} action. In order
-to possess snapshots of students' in-progress work, we modified Scratch to
-automatically generate a snapshot when two conditions are met: the \emph{green
-  flag} button is clicked, and at least four modifications to the student's
-program have occurred since the last snapshot. We consider clicking the
-\emph{green flag} to be a unit of work, because that is how students test their
-program. Snapshots are also created whenever the student explicitly invokes the
-\emph{save} action. All snapshots for a student are labeled by time and
-combined in one zip archive to reduce both the size and number of files we
+Scratch, like many computer programs, only saves the most recent version of a
+\sprogram{} when explicitly directed to do so through a \emph{save} action. In
+order to possess snapshots of students' in-progress \sprogram{s}, we modified
+Scratch to automatically generate a snapshot when two conditions are met: the
+\emph{green flag} button is clicked, and at least four modifications to the
+student's program have occurred since the last snapshot. We consider clicking
+the \emph{green flag} to be a unit of work, because that is how students test
+their program. Snapshots are also created whenever the student explicitly
+invokes the \emph{save} action. All snapshots for a student are labeled by time
+and combined in one zip archive to reduce both the size and number of files we
 needed to collect.
 
 We did not create a snapshot on every \emph{green flag} button click due to a
@@ -234,14 +237,14 @@ than the researchers manually fetching files from computers, it was not without
 issue; there were three:
 
 \begin{enumerate}
-\item A few students accidentally submitted the work of a student who had used
-  the same computer in a previous class due to the web browser's recall of the
-  directory of the last uploaded file.
+\item A few students accidentally submitted the snapshots of a student who had
+  used the same computer in a previous class due to the web browser's recall of
+  the directory of the last uploaded file.
 \item Instead of starting with the provided base-project, a few students
   accidentally started with a snapshot of a student who had used the same
   computer in a previous class.
-\item Some students submitted only the final version of their work due to
-  selecting the final version file rather than the snapshot archive file.
+\item Some students submitted only the most recent snapshot due to selecting
+  the final version file rather than the snapshot archive file.
 \end{enumerate}
 
 Fortunately, we were able to utilize the save-log contained within each Scratch
