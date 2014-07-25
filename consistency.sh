@@ -7,6 +7,20 @@ if [ $? -eq 0 ]; then
     echo -n "$(tput setaf 0)"
 fi
 
+grep -iPzoR "feedback\s+system" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo "replace instances of 'feedback system' with 'feedback and assessment system'"
+    echo -n "$(tput setaf 0)"
+fi
+
+grep -iPzoR "submission\s+system" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo "replace instances of 'submission system' with 'feedback and assessment system'"
+    echo -n "$(tput setaf 0)"
+fi
+
 grep -iPzoR "large(-|\s+)scale" sections/ chap*/
 if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 1)"

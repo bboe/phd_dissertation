@@ -31,30 +31,32 @@ unique groups to make submissions on the class's assignments, and the pink bars
 indicate the average number of submissions made by each student. Submissions
 for non-programming assignments are excluded.
 
-We distinguish between students and groups because the submission system
-supports an instructor defined group size on a per assignment basis allowing
-students to manually form groups for such assignments. Where groups are
-concerned, only submissions for which we have the consent of all group members
-are included. This grouping functionality was only introduced in September
-2014, and thus it was only utilized in \cf[24]{13} and \cw[24]{14}. In those
-classes, the groups did not remain consistent as students could change
-partners, or chose to work independently (considered a single student group)
-from assignment to assignment.
+We distinguish between students and groups because the feedback and assessment
+system supports an instructor defined group size on a per assignment basis
+allowing students to manually form groups for such assignments. Where groups
+are concerned, only submissions for which we have the consent of all group
+members are included. This grouping functionality was only introduced in
+September 2014, and thus it was only utilized in \cf[24]{13} and
+\cw[24]{14}. In those classes, the groups did not remain consistent as students
+could change partners, or chose to work independently (considered a single
+student group) from assignment to assignment.
 
 The average number of submissions is low for \cw[24]{13} due to only using the
-submission system for half of the quarter. The average number of submissions
-per student for \cm[24]{13} is relatively high due to students making
-post-deadline submissions as discussed in Section~\localref{sec:deadline}.
+feedback and assessment system for half of the quarter. The average number of
+submissions per student for \cm[24]{13} is relatively high due to students
+making post-deadline submissions as discussed in
+Section~\localref{sec:deadline}.
 
 
 \subsection{Feedback Delay} \locallabel{sec:delay}
-The purpose of the real-time feedback system is simply to provide feedback to
-the students so they may iteratively achieve mastery of an assignment. The
-usage of such systems has positive side effects including reducing assessment
-time while increasing assessment equitability. However, as many have previously
-observed, student usage of such systems may result in dependency upon the
-system. This dependency could inhibit students from expanding their knowledge
-of the compilation, execution, testing, and debugging processes.
+The purpose of the real-time feedback and assessment system is simply to
+provide feedback to the students so they may iteratively achieve mastery of an
+assignment. The usage of such systems has positive side effects including
+reducing assessment time while increasing assessment equitability. However, as
+many have previously observed, student usage of such systems may result in
+dependency upon the system. This dependency could inhibit students from
+expanding their knowledge of the compilation, execution, testing, and debugging
+processes.
 
 Web-CAT ensures students develop testing skills by requiring students to submit
 test cases along with their code~\cite{Edwards:2003:RCS:949344.949390}. While
@@ -87,7 +89,7 @@ assignments. The impact of the delay is covered in
 Section~\localref{sec:sub_impact} and Section~\localref{sec:session_impact}.
 
 
-\subsection{The Submission and Feedback System}
+\subsection{The Feedback and Assessment System}
 
 \begin{figure}[!t]
 \centering \includegraphics[width=3.3in]{graphs/architecture.eps}
@@ -98,15 +100,16 @@ Section~\localref{sec:sub_impact} and Section~\localref{sec:session_impact}.
 \locallabel{fig:architecture}
 \end{figure}
 
-In this section we describe why we built a submission system, and provide a
-high-level overview of its architecture.
+In this section we describe why we built a feedback and assessment system, and
+provide a high-level overview of its architecture.
 
 \subsubsection{Why}
-While a number of submissions systems were available for use, we chose to
-design and build our own system for a number of reasons. First, and foremost,
-was for the system to be as easy to adopt into existing curriculum in order to
-reduce the barriers to entry for instructors in our department. We specifically
-designed our system to match existing submission and assessment work flows.
+While a number of feedback and assessment systems were available for use, we
+chose to design and build our own system for a number of reasons. First, and
+foremost, was for the system to be as easy to adopt into existing curriculum in
+order to reduce the barriers to entry for instructors in our department. We
+specifically designed our system to match existing submission and assessment
+work flows.
 
 In a similar vein, the \emph{workers} that execute student code needed to run
 on existing lab machines in order to provide a consistent test and development
