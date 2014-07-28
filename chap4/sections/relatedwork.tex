@@ -1,48 +1,62 @@
 \section{Related Work}\locallabel{sec:relatedwork}
 
-A number of educators have designed and built automated assessment systems. Two
-notable surveys of this field were completed by Douce et al., and Ihantola et
-al.~\cite{Douce:2005:ATA:1163405.1163409, Ihantola:2010:RRS:1930464.1930480}.
-
-Recently, a number of studies have looked at the behaviors of students
-utilizing automated feedback and assessment systems in order to gain insight on
-behaviors more likely to contribute to successfully completing assignments.
+A number of educators have designed and built automated assessment and feedback
+systems going back in time as far as 1960. A survey of the history and
+application of these systems was performed by Douce et al.\ in
+1995~\cite{Douce:2005:ATA:1163405.1163409}. Ihantola et al.\ picks up where
+Douce et al.\ left off with a review of automated assessment and feedback
+system literature published between 2006 and
+2010~\cite{Ihantola:2010:RRS:1930464.1930480}. Despite the plethora of
+publications pertaining to these systems, little was reported on student
+submission behavior in the presence of these systems. Only recently have
+researchers begun to look at the behavior of students utilizing automated
+feedback and assessment systems in order to gain insight into behaviors that
+are more likely to contribute to successful assignment completion.
 
 \spacco{} analyzed over 37,000 snapshots from ninty-six students collected
-using their Marmoset automated grading system. They correlated both starting
-early with better final scores, and the length of a work session with score
-improvement. Marmoset's token system was designed to encourage students to
-start earlier, however, the data did not show significant evidence of students
-starting earlier in order to take advantage of additional release
-tokens~\cite{Spacco:2013:TIP:2462476.2465594, Spacco:2006:EMD:1140124.1140131}
+using their Marmoset automated assessment and feedback system in Spring
+2006. They correlated both starting early with better final scores, and the
+length of a work session with score improvement. In attempt to encourage
+students to start assignments earlier than they would normally, Marmoset was
+designed with a renewable token component that would permit students to receive
+feedback from additional assignment test cases at most three times in a one-day
+period. \spacco{} report, however, that their data do not show significant
+evidence of students starting earlier in order to be able to utilize additional
+tokens~\cite{Spacco:2013:TIP:2462476.2465594, Spacco:2006:EMD:1140124.1140131}.
 
-Similarly, Edwards et al. analyzed nearly 90,000 assignment submissions from
-1,101 students collected by Edwards's Web-CAT automated grading
-system~\cite{Edwards:2003:RCS:949344.949390}. Edwards et al. found that, among
-students who did not consistently have similar scores, these students both
+Edwards et al.\ analyzed nearly 90,000 assignment submissions from 1,101
+students collected over a five year period beginning in Spring 2004 using
+Edwards's Web-CAT automated assessment and feedback
+system~\cite{Edwards:2003:RCS:949344.949390}. Edwards et al.\ found that, among
+students who did not score consistently across assignments, these students both
 started and finished earlier when receiving an \emph{A} or \emph{B} score, than
 when receiving a \emph{C}, \emph{D}, or \emph{F} score. Furthermore, they also
 showed a correlation between starting earlier and assignment
 score~\cite{Edwards:2009:CEI:1584322.1584325}.
 
-Helminen et al. reported on student programming and testing behaviors collected
-by an online code editor and execution environment they created. While students
-were only required to submit their assignments through the environment, many
-used it for development and testing. With this environment Helminen et al. were
-able to capture detailed student activity including when students started and
-stopped working, edits made to their code and associated tests, commands issued
-for testing, and when students made a submission.  They found few students took
-advantage of their automated feedback, likely due to the significant test
-coverage from test cases provided with the
+Helminen et al.\ reported on student programming and testing behaviors
+collected by their online code editor and execution environment in Fall
+2012. While students were only required to submit their assignments through the
+environment, many used it for development and testing. With this environment,
+Helminen et al.\ were able to capture detailed student activity including when
+students started and stopped working, edits made to their code and associated
+tests, commands issued for testing, and when students made a submission.  They
+found that few students took advantage of the automated feedback provided by
+the system. Helminen et al.\ speculated this result was due to the already
+significant test coverage from test cases provided with the
 assignments~\cite{Helminen:2013:RAI:2526968.2526970}.
 
-Most recently, Falkner et al. looked at the impact of the granularity of
+Most recently, Falkner et al.\ looked at the impact of the granularity of
 assignment scores on student submission behavior. They found that student
 scores improved with an increase in assignment score
-granularity~\cite{Falkner:2014:IEA:2538862.2538896}.
+granularity~\cite{Falkner:2014:IEA:2538862.2538896}. While it may seem
+intuitive that assignments with more precise scoring will generally improve
+student scores, their research provides evidence supporting that claim.
 
-The impact of these studies are a growing corpus of student submission
-behavior, and a growing amount of past submission data to be analyzed in the
-future. In our study, we hope to add to this corpus by comparing our results
-with previous results, and by looking at the impact of an introduced feedback
-delay on student submission behavior.
+Overall, the impact of these studies are an ever increasing corpus of student
+submission behavior contained within an extraordinary number of assignment
+submissions. These submissions and the student behavior they represent contain
+a surfeit of knowledge that computer science education researchers have only
+just begun to understand. In this study, we hope to reveal some of this
+knowledge by comparing our analysis results with previous results, and by
+looking at the impact of a delay in feedback on student submission behavior.
