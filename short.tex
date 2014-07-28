@@ -66,7 +66,7 @@
 \newcommand{\spacco}{Spacco et al.}
 
 \newif\iffull
-\fulltrue
+\fullfalse
 
 
 %%% Document Portion:
@@ -74,19 +74,9 @@
 \begin{document}
 
 %% Front Matter:
-\input{sections/title}          % First Page
-\maketitle             % Make Title Page
-
+\input{sections/title}
 \begin{frontmatter}
-\approvalpage
-\copyrightpage
-\input{sections/dedication}
-\input{sections/acknowledgements}
-\input{sections/vitae}
 \input{sections/abstract}
-\tableofcontents
-\listoffigures
-\listoftables
 \end{frontmatter}
 
 
@@ -106,15 +96,7 @@
 \subimport{chap4/}{feedback}
 \include{sections/conclusion}
 
-\ssp   % bibliography can be single-spaced for UC thesis format
 \bibliography{resources/references}
 \bibliographystyle{abbrv}%{unsrt}%{alpha}{siam}{apalike}{ieeetr}{plain}{acm}{abbrv}
-%\bibliographystyle{IEEE-Alpha}
-
-
-%\part*{\addcontentsline{toc}{part}{Appendices}Appendices}
-%\appendix
-
-%\include{Appendix}
 
 \end{document}
