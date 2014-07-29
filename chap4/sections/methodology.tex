@@ -115,8 +115,9 @@ Section~\localref{sec:sub_impact} and Section~\localref{sec:session_impact}.
 \locallabel{fig:architecture}
 \end{figure}
 
-In this section we describe our rationale for creating a new feedback and
-assessment system, and provide a high-level overview of its architecture.
+In this section we describe our rationale for creating a new real-time feedback
+and assessment system, as well as provide a high-level overview of the system's
+architecture.
 
 \subsubsection{Rationale}
 We chose to design and build our own system for a number of reasons. First, and
@@ -125,24 +126,26 @@ curriculum in order to encourage more instructors to use the system in their
 classes. We specifically designed our system to match existing department
 submission and assessment work flows.
 
-In a similar vein, the \emph{workers}, processes that execute student code as
-described in detail in Section~\textbf{Architecture Overview}, must run on
-existing lab machines in order to provide a consistent test and development
-environment without requiring additional resources from the technical support
-department. Having a consistent environment also contributes to instructor
-adoption of the system. Additionally, by utilizing existing machines we are
-able to provide significant \emph{worker} redundancy making it possible to have
-zero issues with the most volatile part of the system at no additional cost to
-our department.\footnote{A redesign and implementation of this component was
+In a similar vein, we designed the \emph{workers}, processes that execute
+student code as described in detail in Section~\textbf{Architecture Overview},
+such that they would run on existing lab machines in order to provide a
+consistent test and development environment without requiring additional
+resources from the technical support department. Having a consistent
+environment also contributes to instructor adoption of the
+system. Additionally, by utilizing existing machines we are able to provide
+significant \emph{worker} redundancy making it possible to have zero issues
+with the most volatile part of the system at no additional cost to our
+department.\footnote{A redesign and implementation of this component was
   required in order to achieve this result. The system has since run with a
   peak activity for three months without a single issue.}
 
 Finally, by building our own system we could ensure that we had total knowledge
 of all components of the feedback and assessment system. This knowledge allows
-us to easily adjust and control the various aspects of the system as necessary
-for both current research and future research efforts.
+us to easily adjust and control the various aspects of the submission,
+feedback, and assessment processes as necessary for both current research and
+future research efforts.
 
-In designing the system we had two primary goals:
+In designing the feedback and assessment system we had two primary goals:
 
 \begin{itemize}
 \item Students should be able to make assignment submissions from either the
