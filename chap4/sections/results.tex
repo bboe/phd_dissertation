@@ -1,14 +1,16 @@
 \section{Results}\locallabel{sec:results}
 While our initial motivation for this study was to look at the effect of the
-feedback delay, the data we collected allowed us to provide answers to
-additional questions that have been asked by other researchers. In some cases,
-our results confirm those of other researchers, and in others contradict their
-previous results. In particular, we compare our results to those of
-\spacco{}~\cite{Spacco:2013:TIP:2462476.2465594}. Where our results differ, we
-draw conclusions using information from both result sets.
+feedback delay on student submission behavior, the data we collected also
+allows us to offer new insights into questions previously investigated by other
+researchers. The analysis of our submission data lends support to some existing
+answers to these questions, and contradicts others. In particular, we compare
+our results to those of \spacco{} collected in Spring
+2006.~\cite{Spacco:2013:TIP:2462476.2465594}. Where our results differ, we draw
+new conclusions using information from both our results, and theirs.
 
 In this section we present the results obtained from an analysis of the 20,777
-submissions collected from six classes. We seek to answer the following
+submissions collected from seven UCSB computer science classes from Winter
+Quarter 2013 through Spring Quarter 2014. We seek to answer the following
 questions:
 
 \begin{itemize}
@@ -47,15 +49,22 @@ questions:
 \locallabel{fig:percent_score}
 \end{figure}
 
-Most educators encourage their students to start early on
+Many educators encourage their students to start early on
 assignments. Intuitively, starting early gives students more time to receive
-feedback and improve the work they submit by the deadline. With a real-time
-feedback and assessment system, an earlier start provides even more
-opportunities for feedback, as there are no external human dependencies. Prior
-work in the field has shown that such a correlation does in fact
-exist~\cite{Spacco:2013:TIP:2462476.2465594,
-  Edwards:2009:CEI:1584322.1584325}. We sought to verify that our results were
-consistent.
+feedback from the instructor and teaching assistants in order to make
+improvements to the work they submit by the deadline. However, with traditional
+assessment, is it unlikely for an instructor to offer multiple early assessment
+iterations to all students. With a real-time feedback and assessment system, on
+the other hand, starting early additionally offers all students multiple
+opportunities for assignment feedback and assessment. Furthermore, the feedback
+provided by these systems can then be leveraged by the student and instructor
+in office hours.
+
+Prior work in the field has shown that a positive correlation does in fact
+exist between starting early and assignment
+score~\cite{Spacco:2013:TIP:2462476.2465594,
+  Edwards:2009:CEI:1584322.1584325}. We sought to verify that our results are
+consistent with those of the prior work.
 
 Figure~\localref{fig:relative_start_time} plots the number of hours before an
 assignment is due of a group's first submission against the final score the
@@ -72,22 +81,23 @@ mostly worked without using the system in order to receive feedback.
 While Figure~\localref{fig:relative_start_time} shows a correlation with start
 time and final score, we can break down relative start times even further to a
 per-assignment basis. Figure~\localref{fig:percent_score} compares the average
-score of the first 10\% of groups to make a submission on an assignment, with
-that of all groups, and the last 10\% of groups to make their first
+score of the first 10\% of groups to make a submission on an assignment, to
+that of all groups, and to the last 10\% of groups to make their first
 submission. The assignments are sorted according to the first 10\% value, and
 then the last 10\% value. Assignments with fewer than thirty groups are
 excluded so that at least three groups make up each of the 10\% categories. Of
 the thirty-seven assignments that meet the criteria, the first 10\% of groups
-all received 100\% in twenty-six, with only five where the last 10\% also
-received 100\%. In the other twenty-one, the last 10\% scored significantly
-worse.
+all received 100\% in twenty-six (70\%) assignments, only five (20\%) of which,
+where the last 10\% of groups also all received 100\%. In the other twenty-one,
+the last 10\% scored significantly worse than the average.
 
-In the cases where the first 10\% of groups did not receive 100\% there are a
+In the cases where the first 10\% of groups did not receive 100\%, there are a
 few outliers where the average is higher than the first 10\% of groups to
-submit. Of those five cases, all of them were lab assignments in which there
-were multiple lab periods. It is likely that a subset of the first 10\% groups
-are a group from one of the earlier labs who made an early submission as
-directed, but didn't necessarily intentionally start earlier on the assignment.
+submit. All of those five cases were lab assignments where each student
+attended one of many lab sessions. It is likely that a subset of the first 10\%
+groups to submit all emanate from an early lab session where they were directed
+to make their first submission at a point they would not otherwise have made
+it.
 
 \subsection{Does Time Pressure Affect Behavior?}
 \locallabel{sec:time}
