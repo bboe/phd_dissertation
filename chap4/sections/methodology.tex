@@ -1,7 +1,7 @@
 \section{Methodology} \locallabel{sec:methodology}
 
-In this section we describe the classes in our study, the concept of a feedback
-delay, and provide some details on our system architecture.
+In this section we describe the classes in our study, explain the concept of a
+feedback delay, and briefly provide an overview of our system architecture.
 
 \subsection{Classes}
 
@@ -12,40 +12,47 @@ delay, and provide some details on our system architecture.
 \locallabel{fig:class_info}
 \end{figure}
 
-Our study involves multiple instances of two courses. The first course,
-\emph{CS24}, is the second required course in UCSB's lower division Computer
-Science curriculum that builds upon student's prior knowledge of \emph{C} in
-order to educate them on basic data structures, and basic object oriented
-programming in \emph{C++}. The second course, \emph{CS64}, is a lower division
-computer architecture course that educates students on assembly programming and
-the basics of computer architecture including digital design. In total, there
-are five instances of \emph{CS24}, and two instances of \emph{CS64} represented
-in this study. A single instructor taught \cm[24]{13} and \cf[24]{13}, and the
-remainder were taught by another instructor. All classes were taught during a
-ten-week quarter including the summer instance.
+Our study involves seven instances of two UCSB computer science courses from
+Winter quarter 2013 through Spring quarter 2014. The first course, \emph{CS24},
+is the second required course in UCSB's lower division computer science
+curriculum and builds upon students' prior knowledge of \emph{C} in order to
+introduce them to data structures, and object oriented programming in
+\emph{C++}. The second course, \emph{CS64}, is a lower division computer
+architecture course that educates students on assembly programming and the
+basics of computer architecture, including digital design. In total, there are
+five instances of \emph{CS24}, and two instances of \emph{CS64} represented in
+this study. A single instructor taught \cm[24]{13} and \cf[24]{13}, and all
+others were taught by another individual instructor. All classes were taught
+during a ten-week quarter including \cm[24]{13}, the only summer instance in
+the study.
 
-Figure~\localref{fig:class_info} shows the relevant information for each of the
-classes in this study. The purple bars indicate the number of students who
-provided consent in each of the classes. The cyan bars indicate the number of
-unique groups to make submissions on the class's assignments, and the pink bars
-indicate the average number of submissions made by each student. Submissions
-for non-programming assignments are excluded.
+While the submission system supports both programming assignments and
+\emph{fill in the blank}-type assignments, we only consider programming
+assignments in this study. Figure~\localref{fig:class_info} provides useful
+information for each class in this study. The purple bars indicate the number
+of consent giving students that made at least one submission, and the pink bars
+indicate the average number of submissions made by each student. Finally, the
+cyan bars indicate the number of unique groups that made at least one
+submission to any of a class's assignments. Most students formed the same group
+across assignments, however, that was not a requirement.
 
-We distinguish between students and groups because the feedback and assessment
-system supports an instructor defined group size on a per assignment basis
-allowing students to manually form groups for such assignments. Where groups
-are concerned, only submissions for which we have the consent of all group
-members are included. This grouping functionality was only introduced in
-September 2014, and thus it was only utilized in \cf[24]{13} and
-\cw[24]{14}. In those classes, the groups did not remain consistent as students
-could change partners, or chose to work independently (considered a single
-student group) from assignment to assignment.
+We distinguish between students and groups because our feedback and assessment
+system enforces an instructor defined maximum group size per assignment. When
+the maximum group size is more than one, students are able to join into groups
+with other students up to the maximum group size. With regard to consent giving
+students, we only include submissions in this study if we have consent from all
+group members. This grouping functionality was only introduced in September
+2013, therefore it was only utilized by classes \cf[24]{13} and \cw[24]{14}. In
+addition to a few students changing groups between assignments, a few worked
+independently on assignments and thus are counted as a single-student group.
 
-The average number of submissions is low for \cw[24]{13} due to only using the
-feedback and assessment system for half of the quarter. The average number of
-submissions per student for \cm[24]{13} is relatively high due to students
-making post-deadline submissions as discussed in
-Section~\localref{sec:deadline}.
+Two classes have an average number of submissions which stand out. First, the
+average number of submissions is low for \cw[24]{13} due to only using the
+feedback and assessment system for half of the quarter. In the first half of
+the quarter, the students made submissions using the archaic submission system
+that provides no feedback. Second, the average number of submissions per
+student for \cm[24]{13} is relatively high due to students making post-deadline
+submissions as discussed in Section~\localref{sec:deadline}.
 
 
 \subsection{Feedback Delay} \locallabel{sec:delay}

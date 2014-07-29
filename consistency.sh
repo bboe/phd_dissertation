@@ -59,7 +59,7 @@ fi
 grep -iPR "(^|\s+)CS(\s+|$)" sections/ chap*/
 if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 1)"
-    echo -e "replace instances of 'Computer Science' with 'computer science'"
+    echo -e "replace instances of 'CS' with 'computer science'"
     echo -n  "$(tput setaf 0)"
 fi
 
