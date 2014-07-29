@@ -43,9 +43,9 @@ sixty-five instances that Hairball and the manual analysis labeled differently,
 Hairball was accurate for thirty-two of the instances. Many of the remaining
 thirty-three instances were not possible for Hairball to label as \correct{}
 due to initialization taking place outside of the \initzone{}. For example, an
-initially hidden sprite, can correctly have its position initialized just
-before the sprite becomes visible. In spite of this discrepancy, these results
-overall indicate that Hairball is successful at pointing out problems in
+initially hidden sprite can correctly have its position initialized just before
+the sprite becomes visible. In spite of this discrepancy, these results overall
+indicate that Hairball is successful at pointing out problems in
 initialization.
 
 \subsection{Say and Sound Synchronization}
@@ -73,8 +73,8 @@ instances undetected by Hairball were labeled \incom{} by manual
 analysis. Hairball failed to detect these instances due to a separation of the
 \say{} and \playsound{} blocks with a \broadcast{} block. To detect such
 instances, Hairball would need to additionally inspect all scripts triggered by
-the broadcast event to ensure none of them interfered with either the speech
-bubble or the playing of the sound file.
+the broadcast event to ensure none of them interfered with either the display
+of the speech bubble or the playing of the sound file.
 
 \subsection{Broadcast and Receive}
 \begin{figure}[!t]
@@ -89,7 +89,7 @@ bubble or the playing of the sound file.
 \end{figure}
 
 Figure~\localref{fig:broadcastreceive} shows the results of detecting and
-labeling broadcast and receive instances. Here, the manual analysis differed
+labeling instances of broadcast and receive. Here, the manual analysis differed
 from Hairball by additionally verifying that the intended action is performed
 for \correct{} instances. Hairball is limited to static analysis, thus it is
 unable to perform this additional step.

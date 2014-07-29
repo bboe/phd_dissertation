@@ -25,7 +25,7 @@ executed. Intuitively, instances labeled \incor{} should indicate the concept
 was implemented incorrectly. Finally, instances labeled \incom{} should
 indicate that only a subset of the required blocks for a concept was
 discovered. A single \sprogram{} may contain multiple instances of a concept
-distributed across any or all of the labels. Ideally instances labeled
+distributed across any or all of the labels. Ideally, instances labeled
 \correct{} should not require manual analysis, whereas instances with any other
 label should be inspected manually.
 
@@ -54,8 +54,8 @@ In any program, correctly setting the initial state is important.  In
 \sprogram{s}, the significance is different.  \sprogram{s} are comprised of
 animations, and in the runtime environment, they may run from start to finish
 and be restarted again.  Alternatively, they may be stopped in the middle and
-restarted again.  We want to determine statically whether the code runs the
-same way in these two events.
+restarted again.  We want to determine via static analysis whether the code
+runs the same way in these two events.
 
 The first problem is where to start the analysis.  In traditional programs,
 execution starts at \emph{main}. However, \sprogram{s} have no such globally
@@ -77,7 +77,7 @@ location the \initzone{}.
 
 Attribute modifying Scratch blocks can be labeled as \rel{} or
 \abs{}. \emph{Relative} Scratch blocks alter the attribute based upon its
-current value whereas \abs{} Scratch blocks directly set the attribute. As
+current value, whereas \abs{} Scratch blocks directly set the attribute. As
 such, only \abs{} blocks can be considered initialization
 blocks. Table~\localref{table:initialstate} shows our categorization for a
 subset of attribute modifying Scratch blocks.
@@ -129,7 +129,7 @@ by looking for sequential \say{} and \playsound{} blocks and verifies the
 instances are implemented using the appropriate method.  A \correct{} instance
 contains the previously described three blocks in the proper order.  Instances
 following the method requiring manual timing are labeled \semincor{}. Instances
-that have both \say{} and \playsound{} blocks but do not match either of these
+that have both \say{} and \playsound{} blocks, but do not match either of these
 methods are labeled \incor{}, and isolated uses of \say{} or \playsound{}
 blocks are labeled \incom{}.
 
