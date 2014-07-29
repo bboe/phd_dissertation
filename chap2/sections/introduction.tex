@@ -17,11 +17,13 @@ frameworks have been employed as part of automated
 assessment~\cite{Spacco:2006:EMD:1140124.1140131,
   Edwards:2003:RCS:949344.949390}.  When students are given creative freedom
 with a sensory assignment---which is an integral feature of languages such as
-Alice and Scratch---there is neither a text-based output file with which to
-diff, nor a straightforward way to perform unit-testing.  For Scratch, for
-example, evaluation typically requires that each \sprogram{} be individually
-opened and run.  Inspection of the code requires many mouse clicks and
-navigation through the stage, sprites, and all of their associated scripts.
+Alice and Scratch---there is neither a text-based output file to compare to an
+expected output, nor a straightforward way to perform unit-testing.  For
+example, Scratch evaluation typically requires that each \sprogram{} be
+individually opened and run.  Inspection of \sprogram{} code requires many
+mouse clicks and navigation through a number of Scratch objects including the
+\stage{} and all \emph{sprites} as well as the associated \emph{scripts} of
+each.
 
 To assist with assessment of \sprogram{s}, we propose a static analysis tool.
 Inspired by the Scratch mascot, a cat, and the concept of lint, a static
@@ -30,7 +32,7 @@ Hairball~\cite{Johnson78lint}. We propose two roles for Hairball:
 \emph{formative assessment}---inspired by lint, we envision students using
 Hairball to check their \sprogram{s} for potential problems, and
 \emph{summative assessment}---accelerating manual analysis of assignments by
-verifying the presence and correctness of certain programming constructs as
+verifying the presence and correctness of certain programming constructs, as
 well as directing the manual analysis toward potential problems. We developed a
 plugin architecture so that, in Python, Hairball can be extended and adapted
 for evaluation of specific assignments, and tested Hairball on fifty-eight
@@ -41,17 +43,16 @@ The challenges we explore in this study relate to where the line should be
 drawn between what Hairball can do with static analysis, and where manual
 examination of the \sprogram{} is necessary.  We find that each has its own
 strengths.  Hairball can quickly differentiate between \sprogram{s} that do, or
-do not, contain certain targeted constructs, and is particularly helpful for
-identifying instances of various constructs and implementations that are not
-robust but may not immediately cause obvious errors at runtime.  Manual
-analysis, however, is still needed to evaluate the overall aesthetic effect and
-cohesion of a visual or auditory assignment.
+do not, contain certain targeted constructs. Hairball is also particularly
+helpful for identifying instances of various constructs and implementations
+that are not robust but may not immediately cause obvious errors at runtime.
+Manual analysis, however, is still needed to evaluate the overall aesthetic
+effect and cohesion of a visual or auditory assignment.
 
 We begin in Section~\localref{sec:background} by providing a background on
-automated analysis in general and for Scratch in particular. We then describe
-our Hairball framework in Section~\localref{sec:framework}. The Hairball
-plugins we developed for our analysis are described in
-Section~\localref{sec:plugins}. We describe our methodology in
-Section~\localref{sec:methodology}, and results in
+automated analysis in general and for Scratch in particular. We describe our
+Hairball framework in Section~\localref{sec:framework}. The Hairball plugins we
+developed for our analysis are described in Section~\localref{sec:plugins}. We
+describe our methodology in Section~\localref{sec:methodology}, and results in
 Section~\localref{sec:results}. Finally, in Section~\localref{sec:conclude} we
 conclude.

@@ -16,19 +16,21 @@ assessment systems is that they are not applicable to \sprogram{s}.
 
 Scratch is a block-based programming language from
 MIT~\cite{Maloney:2010:SPL:1868358.1868363}.  \sprogram{s} consist of
-two-dimensional interactive animations.  Objects, or sprites, move on the
-screen as a result of user input or scripts in a \sprogram{}.  Sound and video
-can also be integrated into \sprogram{s}.  Scratch was designed to allow
-students to learn computer science programming while employing great creativity
-in their work.  This creative freedom is one of the reasons that \sprogram{s}
-are challenging to analyze.
+two-dimensional interactive animations.  Objects, or \emph{sprites}, move on
+the screen as a result of user input or scripts in a \sprogram{}.  Sound and
+video can also be integrated into \sprogram{s}.  Scratch was designed to allow
+students to learn computer science programming, while employing great
+creativity in their work.  This creative freedom is one of the reasons that
+\sprogram{s} are challenging to analyze.
 
-An additional challenge in Scratch analysis is that \sprogram{s} are developed
-and run within a graphical user interface.  Independent segments of code, known
-as scripts, are associated with Scratch sprites, e.g., the Scratch Cat, and
-tied to a triggering event.  There is no central \emph{main} point of
-execution.  Instead, \sprogram{s} might begin when a parallel set of scripts
-beginning with a \greenflag{} hat block are triggered.
+An additional challenge in Scratch analysis compared to typical programming
+language analysis is that \sprogram{s} are developed and run within a graphical
+user interface. Rather than producing an easy to analyze text file, independent
+segments of code, known as scripts, are associated with Scratch \emph{sprites},
+e.g., the Scratch Cat, and tied to a triggering event.  There is no central
+\emph{main} point of execution.  Instead, \sprogram{s} might begin when a
+parallel set of \emph{scripts} beginning with a \greenflag{} hat block are
+triggered.
 
 Little prior work has looked at automated Scratch analysis.  Adams and Webster
 describe using scripts and custom modifications to the Squeak source code of
