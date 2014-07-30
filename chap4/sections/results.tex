@@ -31,9 +31,9 @@ questions:
 \begin{figure}[!t]
 \centering
 \includegraphics[width=3.3in]{graphs/Start_Time_Before_Deadline_and_Final_Score.eps}
-\caption{Compares the number of hours prior to the deadline that groups started
-  the assignment to the final score they received. Both the size and color of
-  each circle correspond to the number of groups represented at that
+\caption{Compares the number of hours prior to assignment deadline that groups
+  started the assignment to the final score they received. Both the size and
+  color of each circle correspond to the number of groups represented at that
   position. The circles are plotted such that smaller circles are strictly in
   front of larger circles.}
 \locallabel{fig:relative_start_time}
@@ -73,10 +73,10 @@ assignment start times with higher scores. While it may seem odd that groups
 can receive 100\% on an assignment having started only an hour or less prior to
 the deadline, this result is merely an artifact of our active data
 collection. Our data collection methodology only provides a lower bound to how
-long prior to the deadline a group began working. We verified that a small
-number of groups, distributed uniformly across assignments, would make their
-first submission in the last hour. This behavior indicates that some groups
-mostly worked without using the system in order to receive feedback.
+long prior to assignment deadline a group began working. We verified that a
+small number of groups, distributed uniformly across assignments, would make
+their first submission in the last hour. This behavior indicates that some
+groups mostly worked without using the system in order to receive feedback.
 
 While Figure~\localref{fig:relative_start_time} shows a correlation with start
 time and final score, we can break down relative start times even further to a
@@ -106,7 +106,7 @@ it.
 \centering
 \includegraphics[width=3.3in]{graphs/Submissions_by_Time_of_Day.eps}
 \caption{Visualizes the time of day submissions were made excluding submissions
-  within a day of the deadline. Note the \PM{4} peak and the larger peak
+  within a day of their deadline. Note the \PM{4} peak and the larger peak
   starting at \PM{9} lasting through midnight.}
 \locallabel{fig:by_time_far}
 \end{figure}
@@ -115,8 +115,8 @@ it.
 \centering
 \includegraphics[width=3.3in]{graphs/Submissions_by_Time_of_Day_Near_Deadline.eps}
 \caption{Visualizes the time of day submissions were made including only
-  submissions within a day of the deadline. The \PM{11} peak corresponds to the
-  hour prior to the deadline for most assignments.}
+  submissions within a day of their deadline. The \PM{11} peak corresponds to
+  the hour prior to the deadline for most assignments.}
 \locallabel{fig:by_time_near}
 \end{figure}
 
@@ -133,7 +133,7 @@ without the added pressure of an impending deadline''
 ~\cite{Spacco:2013:TIP:2462476.2465594}. Our results indicate otherwise.
 
 Figure~\localref{fig:by_time_far} depicts the number of submissions made at
-each time of day for submissions made more than a day from the deadline. We
+each time of day for submissions made more than a day from their deadline. We
 observe a steady increase in the number of submissions beginning at \AM{9} and
 peaking at \PM{4}. This peak is followed by a decrease in submissions through
 \PM{6}. Our results are nearly identical to that of \spacco{}, however, rather
@@ -179,8 +179,8 @@ submissions have a similar hour-prior to deadline distribution.
 \begin{figure}[!t]
 \centering \includegraphics[width=3.3in]{graphs/Submissions_by_Days_Before_Deadline.eps}
 \caption{Shows the number of submissions by the number of days each submission
-  was made prior to the deadline grouped by improvement category.  Submissions
-  that improve the group's maximum assignment score are labeled
+  was made prior to their deadline grouped by improvement category.
+  Submissions that improve the group's maximum assignment score are labeled
   \emph{Improvement}, and those that tie are labeled \emph{No
     Improvement}. \emph{Worse} submissions are those that result in a local
   minimum, and all submissions between the group's maximum assignment score and
@@ -192,71 +192,71 @@ submissions have a similar hour-prior to deadline distribution.
 \centering
 \includegraphics[width=3.3in]{graphs/Submission_Improvement_by_Days_Before_Deadline.eps}
 \caption{Depicts the percentage of submissions in each improvement category by
-  the number of days each submission was made prior to the deadline.}
+  the number of days each submission was made prior to its deadline.}
 \locallabel{fig:days_improvement}
 \end{figure}
 
-The previous section described at how submission behavior is altered by an
-assignment deadline. In this section we look at the effect of a pending
-deadline on submission efficiency. There are a number of ways one could define
-submission efficiency. One metric is to look at amount of change in source code
+The previous section describes how submission behavior is altered by assignment
+deadlines. In this section we look at the effect of a pending deadline on
+submission efficiency. There are a number of ways to define submission
+efficiency. One metric is to look at the amount of change in source code
 between submissions. Another is to look at the change in cyclomatic complexity
 between submissions. While each of these metrics may provide interesting
 insights into student behavior, we are more interested in correlations with
 changes in groups' scores between submissions. Thus, we consider efficiency by
 looking at improvements and regressions in subsequent submissions based on the
-change in score. The score is altered by a submission passing more or fewer
-tests. We quantify changes in submission efficiency by classifying subsequent
-submissions into one of four categories:
+change in score between submissions. A change in score is a result of a
+subsequent submission passing more or fewer test cases. We quantify changes in
+submission efficiency by classifying subsequent submissions into one of four
+categories:
 
 \begin{description}
   \item[Improvement] \hfill \\ The submission increases the group's maximum
     score on the assignment.
   \item[No Improvement] \hfill \\ The submission has the same score as the
-    group's running maximum score.
+    group's maximum score.
   \item[No Improvement 2] \hfill \\ The submission's score is less than the
-    running maximum score and is not lower than the localized minimum score.
-  \item[Worse] \hfill \\ The submission results in a localized minimum
-    score. That is, it is the lowest score since the last \emph{Improvement}
-    submission.
+    group's maximum score and is not lower than the local-minimum score.
+  \item[Worse] \hfill \\ The submission results in a local-minimum score. That
+    is, it is the lowest score since the last \imp{} submission.
 \end{description}
 
 Figure~\localref{fig:days_submissions} depicts the total number of submissions
 made in the days prior to each submission's respective deadline according to
 their respective category. The figure only extends to seven days, as the number
-of submissions more than seven days prior to the deadline is insignificant. Our
-results show that a majority of submissions are made in the two days prior to
-the deadline and this observation is consistent with \spacco[.]{} In contrast,
-however, we observe a much higher percentage of \imp{} submissions when
-compared to their \emph{positive}
+of submissions more than seven days prior to their deadline is
+insignificant. Our results show that a majority of submissions are made in the
+two days prior to their deadline; this observation is consistent with
+\spacco[.]{} In contrast, however, we observe a much higher percentage of
+\imp{} submissions when compared to \spacco{}'s \emph{positive}
 snapshots~\cite{Spacco:2013:TIP:2462476.2465594}.
 
 The likely reason for this discrepancy is the difference between their
-passively collected snapshots and our actively collected submissions. Where a
-snapshot may not represent a complete unit of work, a submission often does as
-groups explicitly make submissions in order to receive feedback. One other
-difference is our \imp{} submissions are only submissions that improve upon a
-group's maximum score. It is unclear from \spacco{}'s description if a snapshot
-that improves the score of a \emph{negative} snapshot is considered
-\emph{positive} even its score does not improve the group's maximum score. If
-this is the case, then the number of \emph{positive} snapshots is inflated in
-their results when compared to ours.
+passively collected snapshots and our actively collected submissions. While a
+snapshot may not represent a complete unit of work, a submission often does
+because groups explicitly make submissions in order to receive feedback. One
+other difference is our \imp{} submissions are only submissions that improve
+upon a group's maximum score. It is unclear from \spacco{}'s description if a
+snapshot that improves the score of a \emph{negative} snapshot is considered
+\emph{positive} even if its score does not improve the group's maximum
+score. If this is the case, then the number of \emph{positive} snapshots is
+inflated in their results as compared to ours.
 
-Regardless, we think the comparison of efficiency between submissions is more
-interesting than comparison between snapshots as there are still a significant
-number of submissions that are not
-\imp{}. Figure~\localref{fig:days_improvement} shows the relative percent of
-submissions in each category by the number of days prior to the
-deadline. Overall, the difference in submission efficiency is insignificant
-with respect to the number of days prior to the deadline. While our deadlines
-were distributed such that 24\% and 25\% of submissions were made for
-assignments with a Monday and Friday deadline respectively, there was no
-difference in submission efficiency with respect to the day of week a
-submission was made on.
+Regardless, we think a comparison of efficiency between submissions is more
+interesting than a comparison between snapshots, because, despite submissions
+representing a unit of work, there are still a significant number of
+submissions that are not \imp{}. Figure~\localref{fig:days_improvement} shows
+the relative percent of submissions in each category by the number of days
+prior to their deadline. Overall, the difference in submission efficiency is
+insignificant with respect to the number of days prior to assignment
+deadline. While our deadlines were distributed such that 24\% and 25\% of
+submissions were made to assignments with a Monday and Friday deadline
+respectively, there was no difference in submission efficiency with respect to
+the day of week a submission was made.
 
-An analysis of the hour of day of each submission also produced no significant
-changes in submission efficiency. Thus, these results convince us that time
-pressure does not affect submission efficiency.
+An analysis of the hour of day of each submission also resulted in no
+significant changes in submission efficiency. Thus, these results convince us
+that time pressure does not affect submission efficiency.
 
 \subsection{Why Do Students Submit Well After an Assignment's Deadline?}
 \locallabel{sec:deadline}
