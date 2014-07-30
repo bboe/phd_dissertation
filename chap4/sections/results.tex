@@ -474,41 +474,53 @@ time to its prior submission. We refer to this window of time as the
 We investigate the ideal window size for which to discover work
 sessions. \spacco{} arbitrarily chose a window size of twenty
 minutes~\cite{Spacco:2013:TIP:2462476.2465594}. While this window size may have
-been appropriate for their data set where snapshots were collected passively
-upon changes, it is not appropriate for our data set due to the fact that
-students actively submitted only when they desired feedback. Furthermore, we
-have assignments with a feedback delay of fifty minutes, where students
-regularly make no more than one submission in any fifty-minute
-period. Therefore, the window size we select to group submissions into work
-sessions must be at least fifty minutes in length.
+been appropriate for their data, where snapshots were collected passively upon
+changes to students' code, it is not appropriate for our data due to the fact
+that students actively submitted only when they desired feedback. Furthermore,
+it would not make sense for us to define a window size fewer than fifty minutes
+due to inclusion of assignments with a feedback delay of fifty minutes, where
+groups regularly make no more than one submission in any fifty-minute
+period. Thus, the window size we select must be at least fifty minutes in
+length.
 
 There are two forms of error that we must mitigate when selecting a window
-size. The first is error in distinguishing between work and non-work time
-within the window size. Intuitively, this error is reduced by minimizing the
-window size due to the fact that any non-work periods longer than the window
-size will not be included as part of the work session. The second is error in
-classifying the time between two submissions as part of the previous work
-session or not. For instance, if we select the window size as sixty minutes,
-then this error corresponds to the number of subsequent submissions that occur
-over sixty minutes, which represent actual work time. While we can measure the
-number of subsequent submissions over a given window size, we cannot measure
-either error due to a lack of information as to when students are actually
-working. We accept these errors, and assume that it equally effects working
-sessions independent of the feedback delay time.
+size:
 
-Rather than arbitrarily choosing a value, we attempt to select an idea window
+\begin{itemize}
+\item The first error is due to not being able to distinguish between work and
+  non-work time occurring between submissions in a work session. While a
+  student may make two submissions in a period of time shorter than the window
+  size, they may not have worked for the entire period between those two
+  submissions. Intuitively, this error is reduced by minimizing the window size
+  due to the fact that any non-work periods longer than the window size will
+  not be included as part of the work session.
+\item The second error is a result of selecting a window size that is too small
+  to encompass actual periods of student working time between two submissions.
+  For instance, if we select the window size as sixty minutes, then this error
+  corresponds to the number of subsequent submissions representing more than
+  sixty minutes of actual work.
+\end{itemize}
+
+Although we can measure the number of subsequent submissions over a given
+window size, we cannot measure either error due to a lack of information as to
+when students are actually working. We accept these errors, and assume that
+they equally effect working sessions independent of the feedback delay
+time.
+
+Rather than arbitrarily choosing a value, we attempt to select an ideal window
 size based on features of our data. We use the maximum session length as a
 heuristic for limiting the window size, as it is unlikely that more than a
-handful of all sessions are longer than eight hours plus some additional time
-to account for error due to breaks during one or more
-windows. Figure~\localref{fig:work_sessions} shows the effect of increasing the
-window size on the number of work sessions created. This figure shows that for
-our data the maximum number of work sessions occurs with a window size of
-approximately twenty minutes, after which the number of work sessions gradually
-decreases. This decrease indicates that as the window size grows, more work
-sessions are merged together than the number of new work sessions created by
-grouping two independent submissions together. Aside from the twenty-minute
-peak, there are no other points of interest in this figure.
+handful of all sessions are longer than eight hours in addition to time to
+account for the error in work time between two
+submissions. Figure~\localref{fig:work_sessions} shows the effect of increasing
+the window size on the number of work sessions created. This figure reveals
+that for our data the maximum number of work sessions occurs with a window size
+of approximately twenty minutes, after which the number of work sessions
+gradually decreases. This decrease indicates that as the window size grows, the
+number of work sessions merged together is more significant than the number of
+new work sessions created by the grouping of two independent submissions. Aside
+from the twenty-minute peak, there are no other points of interest in this
+figure.
 
 Figure~\localref{fig:window_size} plots a number of lines corresponding to
 various work session lengths as the window size increases. The four
@@ -524,20 +536,20 @@ non-vertical lines correspond to:
 Of these four lines, we find only the duration of the single longest work
 session to be of interest as there are a number of distinct window sizes that
 result in increasing the longest duration. The red vertical lines on the figure
-highlight the window sizes of interest, that is, they are the window sizes just
+highlight the window sizes of interest, i.e., they are the window sizes just
 prior to a significant increase in maximum work session length. We excluded
-consideration of points of interest at larger window sizes, as it is infeasible
-for 10\% of all work sessions to be over eight hours in length. Additionally we
-exclude the point of interest that occurs just after fifty minutes due to its
-proximity with our longest feedback delay.
+consideration of points of interest at larger window sizes due to the
+infeasibility for 10\% of all work sessions to be over eight hours in
+length. Additionally, we exclude the point of interest that occurs just after
+fifty minutes due to its proximity with our longest feedback delay.
 
 We select the left-most point of interest, seventy-nine minutes, as the window
 size we use in the remainder of the results section. Note, however, that where
 statistical significance is concerned, we verified that each highlighted window
 size in Figure~\localref{fig:window_size} produces consistent results with
 those produced using the seventy-nine minute window size. This comparison shows
-that our analysis is unaffected by the specific choice of window size from
-those we highlighted.
+that our analysis is unaffected by the specific choice of window size from the
+options we highlighted with red lines.
 
 \subsubsection{Properties of Work Session Lengths}
 
