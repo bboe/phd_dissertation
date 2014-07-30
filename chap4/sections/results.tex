@@ -271,13 +271,13 @@ that time pressure does not affect submission efficiency.
 \end{figure}
 
 An interesting aspect of real-time feedback and assessment systems that prior
-work has not touched upon, is student usage of these systems beyond the
-assignment deadline in order to make improvements to their work and verify the
-correctness of those improvements. These systems inherently provide this
-functionality and some students take advantage of it.
+work has not touched upon, is student usage of these systems beyond an
+assignment's deadline in order to make improvements to their work and verify
+the correctness of those improvements. These systems inherently provide this
+functionality, and some students take advantage of it.
 
 Figure~\localref{fig:late} shows the percentage of groups by assignment that
-made one or more submissions more than two days following an assignment
+made one or more submissions more than two days following an assignment's
 deadline. Of the seventy-six assignments, only sixteen are shown in the
 figure. Five (6.6\%) assignments were excluded for representing fewer than ten
 groups. A majority of these assignments were the first assignment of a class
@@ -375,17 +375,23 @@ assignments.
 \end{figure}
 
 As indicated in Section~\localref{sec:delay}, we sought to measure the impact
-that altering the feedback delay has on student behavior. In this section, we
-present those results. We first look at the impact of the feedback delay on the
-time between submissions. Figure~\localref{fig:delta_delay} plots the time
-between subsequent submissions grouped by each of the assignment feedback delay
-times. Note the y-axis is shown in a log-scale and the size and color of the
-circle represent the number of submission gaps represented by the individual
-circle. The figure clearly shows an increasing amount of time between
-submissions for the largest grouping of gaps as the feedback delay increases.
+of altering assignment feedback delay on student submission behavior. Here, we
+first look at the impact of the feedback delay on the time between subsequent
+submissions made by the same group. Figure~\localref{fig:delta_delay} plots the
+time between subsequent submissions grouped by assignments sharing the same
+feedback delay value to a five-minute precision and combining those with a
+feedback delay of more than thirty minutes. Note that the x-axis is shown in a
+log-scale, and the size and color of each circle represents the relative number
+of submission gaps represented by that circle. For instance, with a feedback
+delay of ten minutes, the most significant gap between subsequent submissions
+is around ten minutes as indicated by the bright cyan large circle in that
+position. This figure clearly shows by the shift in position of the bright cyan
+large circles in each row, that as the feedback delay increases, so does the
+most significant grouping of subsequent submission gaps. This result indicates
+that delays in feedback affect student submission behavior.
 
 Figure~\localref{fig:delta_efficiency} shows the relative efficiency of
-submissions grouped by the feedback delay. The results appear to indicate that
+submissions grouped by the feedback delay. This figure appears to indicate that
 there is a significant improvement in submission efficiency with delays of
 thirty minutes or more. Using Student's t-test, we compared the percent of
 \imp{} submissions for each feedback delay fewer than thirty minutes, to those
@@ -394,33 +400,34 @@ statistically significant with P=0.0095.
 
 For comparison, Figure~\localref{fig:delta_category} depicts the time between
 submissions for each of the improvement categories. The aggregate results from
-the figure indicate that the most common time between a group's submissions is
+the figure indicate that the most common time between subsequent submissions is
 approximately ten minutes. Furthermore, there is a consistent spike in time
-between submissions just prior to the 1,000-minute mark. Overall, there is not
-a significant difference in time between submissions with respect to
-improvement category. However, the shape of the individual scatter lines
-provide two insights:
+between submissions just prior to the 1,000-minute mark. This time corresponds
+with a diurnal working pattern of our students. Overall, there is not a
+significant difference in time between submissions with respect to improvement
+category. However, the shape of the individual scatter lines provides two
+insights:
 
 \begin{itemize}
 \item Relatively the most \noii{} submissions occur in the first few seconds as
-  indicated by the size and color of its first circle compared to the other
-  categories. Recall that \noii{} submissions occur in the period after a
-  \worse{} submission and prior to an \imp{} submission. The short period of
-  time between these submissions and their corresponding former submissions is
-  too small to have understood any feedback these groups may have received and
-  suggests these groups did not independently test whatever changes they made
-  prior to resubmission.
+  indicated by the size and color of the \noii{} category's first circle
+  compared with the other categories. Recall that \noii{} submissions occur in
+  the period after a \worse{} submission and prior to an \imp{}
+  submission. This short period of time between these submissions and their
+  corresponding former submissions is too small for a group to have understood
+  any feedback received, suggesting these groups did not independently test
+  whatever changes they made prior to resubmission.
 \item Interestingly, with respect to \worse{} submissions, the spike around the
   1,000-minute mark is the most significant compared to other categories. This
   data suggest that long breaks have an initially negative impact on assignment
   progress.
 \end{itemize}
 
-These results confirm that changes in the feedback delay have an impact on
+Our results confirm that changes in the feedback delay have an impact on
 student submission behavior. In general, as the feedback delay increases
 students wait longer to submit, and when comparing delays of less than thirty
-minutes to those of thirty or more minutes, the students are more likely to
-improve upon their previous score.
+minutes to those of thirty minutes or more, the students are more likely to
+improve upon their previous score with longer feedback delays.
 
 \subsection{Does Delaying Feedback Impact Student Work Sessions?} \locallabel{sec:session}
 Section~\localref{sec:sub_impact} showed that a delay in feedback has an impact
