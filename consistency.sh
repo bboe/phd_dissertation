@@ -28,6 +28,14 @@ if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 0)"
 fi
 
+grep -iPzoR "consent\s+giv" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "replace instances of 'consent give' with 'consent-giv'"
+    echo -n  "$(tput setaf 0)"
+fi
+
+
 grep -iPzoR "real(\s+)time" sections/ chap*/
 if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 1)"
