@@ -586,66 +586,70 @@ Score & Count & Mean Work Time & stderr & No Progress & stderr \\ \hline \hline
 \locallabel{table:times}
 \end{table}
 
-Before considering the impact the feedback delay has on work session, we first
-compare a few general properties of our work sessions to that of the work
-sessions discovered by \spacco[.]{}
+Before considering the impact of the feedback delay on work sessions, we first
+compare a few general properties of our work sessions to the passively
+collected work sessions of \spacco[.]{}
 
-Using our window size, we are able to group submissions into work sessions, and
-thus approximate the length of a work session as the time between the first and
-last submission in a work session. Rather than looking at the improvement
-between individual submissions as we did in
+Having defined a window size, we are able to group submissions into work
+sessions, and thus approximate the length of a work session as the time between
+the first and last submission in a work session. Rather than looking at the
+improvement between individual submissions as we did in
 Figure~\localref{fig:delta_category}, Figure~\localref{fig:session_improvement}
-plots the percent score change made between the first and last submissions in a
+plots the percent score change made between the first and last submission in a
 work session against the length of the work session. In this figure circles at
-the 0\% change would be considered \noi{}, and a significant majority of
-sessions would be considered \imp{} due to the significant imbalance between
-the number of sessions that improves the score as compared to those that reduce
-the score. The red line is the trend-line and an F-test of the data confirms
-that there is a statistically significant correlation between the length of a
-work session and the percent of score change. Our results are consistent with
+0\% score change on the y-axis would be considered \noi{}, and a vast majority
+of changes in work sessions would be considered \imp{} due to the significant
+imbalance between the number of sessions that improve the score when compared
+to those that reduce the score. The red line represents the trend-line and an
+F-test of the data confirms that there is a statistically significant positive
+correlation between the length of a work session and the percent change in
+score. This analysis indicates that longer work sessions are more likely to
+result in increased improvements in score. These results are consistent with
 those of \spacco{}~\cite{Spacco:2013:TIP:2462476.2465594}.
 
-We can approximate the total time spent on an assignment by summing the length
-of all the work sessions by group for an
+We approximate the total time spent on an assignment by summing the length of
+all the work sessions by group for an
 assignment. Figure~\localref{fig:time_score} plots the final score compared to
 the total time spent on an assignment. The red trend-line shows there is a
-statistically significant negative correlation. This indicates that the longer
-groups work on an assignment the less likely they are to score well. These
-results contradict the results of \spacco{} where they found a statistically
-significant positive correlation.
+statistically significant negative correlation between the total work time and
+the final score. This negative correlation indicates that the longer a group
+works on an assignment the less likely they are to score well. These results
+contradict the results of \spacco{} where they found a statistically
+significant positive correlation between the two.
 
-This negative correlation intuitively makes sense under the assumption that a
-majority of groups who do not complete an assignment do not do so due to a lack
-of effort. Although groups who complete an assignment are more likely to start
+This result intuitively makes sense under the assumption that a majority of
+groups who do not complete an assignment do not do so due to a lack of
+effort. Although groups who complete an assignment are more likely to start
 earlier, these groups, on average, spend much less time working on an
 assignment. Table~\localref{table:times} confirms this intuition by showing
 that the mean work time of groups who receive 100\% on an assignment is nearly
-half that of all groups who receive scores between 0\% and 100\% with little
+half that of all groups who receive scores between 0\% and 100\%, with little
 error. The \emph{No progress} column shows that groups who complete an
-assignment spend more time improving upon their assignment score, whereas
-groups, who do not, spend over 50\% of their assignment time without making
-forward progress.
+assignment spend a larger percentage of their time improving upon their
+assignment score, whereas groups, who do not, spend over 50\% of their
+assignment time without making forward progress.
 
-That begs the question why are groups who complete an assignment likely to
-spend less time on it, and why are they more efficient? While we cannot
-precisely answer that question we offer two possible explanations:
+That begs the questions, why are groups who complete an assignment likely to
+spend less time on it, and why are these groups more efficient? While we cannot
+precisely answer these questions, we offer two possible explanations:
 
 \begin{itemize}
 \item In general, successful students simply may have a better understanding of
-  the material, resulting in more productive work sessions, and overall
+  assignment material, resulting in more productive work sessions, and overall
   reducing the amount of time to completion.
 \item Successful students are more likely to start earlier, thus providing them
-  with more opportunity to attend office hours. Via office hours these students
-  gain useful insights to the assignment, resulting in more forward progress
-  and overall reducing the time required to complete the assignment.
+  with more opportunity to attend office hours. Students who attend office
+  hours gain useful insights to an assignment, resulting in more forward
+  progress, and overall reduce the time required to complete an assignment.
 \end{itemize}
 
 From the opposite perspective of both explanations we can understand why
-unsuccessful students may spend more time on the assignment. Without a directed
-approach to an assignment, these students may figuratively spin their wheels
-making numerous unsuccessful attempts. In such cases, if these students are not
-performing their own testing, delays in feedback may have a negative effect on
-student performance if they wait for feedback.
+unsuccessful students may spend more time on an assignment. Without a directed
+approach to completing an assignment, these students may figuratively spin
+their wheels requiring significant time with little, if any, progress. In such
+cases, if these students are not performing their own testing, and waiting for
+feedback from the system, delays in feedback may have a negative effect on
+student performance.
 
 
 \subsubsection{Impact of Feedback Delay on Work Sessions}
