@@ -5,9 +5,9 @@ determining the level of competence demonstrated by students' \sprogram{s} for
 several computer science concepts. For each concept, we will compare the labels
 Hairball assigned to instances of the concept with those assigned via manual
 analysis. We will use the second manual analysis as the ground truth, and look
-at both false positive and false negative rates for Hairball and the manual
-analysis. Although our results include the labels \semincor{}, \incor{}, and
-\incom{} to demonstrate that Hairball can be used for more than binary
+at both the false positive and the false negative rates for Hairball and the
+manual analysis. Although our results include the labels \semincor{}, \incor{},
+and \incom{} to demonstrate that Hairball can be used for more than binary
 labeling, our assessment focuses on instances that are either labeled
 \correct{} or not. Thus, we consider a false positive to be an instance that
 was labeled \correct{}, when in fact it is not, and a false negative to be an
@@ -94,7 +94,7 @@ from Hairball by additionally verifying that the intended action is performed
 for \correct{} instances. Hairball is limited to static analysis, thus it is
 unable to perform this additional step.
 
-Overall, Manual analysis failed to discover twelve instances, and identified
+Overall, manual analysis failed to discover twelve instances, and identified
 388 \correct{} instances, of which, seventy-nine were false positives. Hairball
 discovered 100\% of the instances with zero false negatives. However, three of
 the 312 instances Hairball labeled as \correct{} were false positives. Although
@@ -117,10 +117,10 @@ to be \incor{}.
 \end{figure}
 
 Complex animation was especially difficult for Hairball to detect.  As
-Figure~\localref{fig:animation} shows, the manual analysis was 100\% accurate
-at labeling the forty-six instances found, and only failed to detect three
-instances. Hairball, on the other hand, discovered eleven \incom{} instances
-that the ground truth analysis determined to not be instances at all. Excluding
+Figure~\localref{fig:animation} shows, manual analysis was 100\% accurate at
+labeling the forty-six instances found, and only failed to detect three
+instances. Hairball, on the other hand, labeled eleven items as \incom{} that
+the ground truth analysis determined to not be instances at all. Excluding
 these instances, Hairball identified twenty-eight \correct{} instances, and
 twenty-one others with only two false negatives.
 
@@ -149,18 +149,20 @@ analysis recorded nothing.
 Figure~\localref{fig:summary} shows three sets of results across all four
 computer science concepts and the overall average. The first is the mislabel
 rate of manual analysis and Hairball. Percentages closer to zero indicate
-higher accuracy. We can see that Hairball is actually slightly more accurate
-overall than manual analysis; largely in part of its accuracy in labeling
+higher accuracy. We see that Hairball is actually slightly more accurate
+overall than manual analysis; largely due to Hairball's accuracy in labeling
 broadcast and receive instances.
 
 The second set of results is the rate of false positives. Manual analysis's
 overall false positive rate of 11.7\% indicates that manual analysis is quite
 error prone. On the other hand, Hairball's false positive rate of 0.4\%
-strongly indicates that instances Hairball labels as \correct{} can be trusted.
+strongly indicates Hairball is accurate at labeling \correct{} instances.
 
 Finally, the third set of results is the rate of false negatives. The lack of
 false negatives for manual analysis makes sense, considering Hairball was
 created according to the first manual analysis. Although Hairball has an
 overall false negative rate of 13.5\%, we believe this rate to be acceptable
 due to the fact that four out of five instances in our ground truth set were
-labeled \correct{}.
+labeled \correct{}, meaning the use of Hairball on a similar corpus of
+\sprogram{s} would reduce the set of instances requiring manual analysis by
+80\%.
