@@ -1,36 +1,35 @@
 \section{Related Work}\locallabel{sec:background}
 
 Providing automation for analyzing traditional programs is not a new concept.
-ASSYST is an automated assessment system that performs end-to-end, or
-input/output, type testing of
-submissions~\cite{Jackson:1997:GSP:268084.268210}. Both Marmoset by Spacco et
-al., and Web-CAT by Edwards, perform testing of code using student written unit
-tests~\cite{Spacco:2006:EMD:1140124.1140131,
-  Edwards:2003:RCS:949344.949390}. All of the aforementioned tools supplement
-the feedback the student receives with code coverage analysis and feedback from
-static analysis tools such as FindBugs by Cole et
-al.~\cite{Cole:2006:IYS:1176617.1176667}. Douce et al.\ performed a more
-detailed analysis of existing automated assessment
+Both ASSYST and Marmoset are automated assessment systems that perform
+end-to-end, or input/output, type testing of
+submissions~\cite{Spacco:2006:EMD:1140124.1140131,
+  Jackson:1997:GSP:268084.268210}. Web-CAT performs testing of code using
+student written unit tests~\cite{Edwards:2003:RCS:949344.949390}. All of the
+aforementioned tools supplement the feedback students receive with code
+coverage analysis and feedback from static analysis tools such as FindBugs by
+Cole et al.~\cite{Cole:2006:IYS:1176617.1176667}. Douce et al.\ performed a
+more detailed analysis of existing automated assessment
 systems~\cite{Douce:2005:ATA:1163405.1163409}.  The problem with existing
 assessment systems is that they are not applicable to \sprogram{s}.
 
 Scratch is a block-based programming language from
 MIT~\cite{Maloney:2010:SPL:1868358.1868363}.  \sprogram{s} consist of
 two-dimensional interactive animations.  Objects, or \emph{sprites}, move on
-the screen as a result of user input or scripts in a \sprogram{}.  Sound and
-video can also be integrated into \sprogram{s}.  Scratch was designed to allow
-students to learn computer science programming, while employing great
-creativity in their work.  This creative freedom is one of the reasons that
-\sprogram{s} are challenging to analyze.
+the screen as a result of either user input or the execution of scripts in a
+\sprogram{}.  Sound and video can also be integrated into \sprogram{s}.
+Scratch was designed to allow students to learn computer science programming
+while employing great creativity in their work.  This creative freedom is one
+of the reasons that \sprogram{s} are challenging to analyze.
 
 An additional challenge in Scratch analysis compared to typical programming
 language analysis is that \sprogram{s} are developed and run within a graphical
 user interface. Rather than producing an easy to analyze text file, independent
-segments of code, known as scripts, are associated with Scratch \emph{sprites},
-e.g., the Scratch Cat, and tied to a triggering event.  There is no central
-\emph{main} point of execution.  Instead, \sprogram{s} might begin when a
-parallel set of \emph{scripts} beginning with a \greenflag{} hat block are
-triggered.
+segments of code, known as \emph{scripts}, are associated with Scratch
+\emph{sprites}, e.g., the Scratch Cat, and tied to a triggering event.  There
+is no central \emph{main} point of execution.  Instead, \sprogram{s} might
+begin when a parallel set of \emph{scripts} beginning with a \greenflag{} hat
+block are triggered.
 
 Little prior work has looked at automated Scratch analysis.  Adams and Webster
 describe using scripts and custom modifications to the Squeak source code of
@@ -68,7 +67,7 @@ such as:
 \item Which \sprogram{s} do not properly initialize the start state?
 \vspace*{-.025in}
 \item Which \sprogram{s} do not properly implement complex animations
-  (requiring the application of timing, costume changes, motion, and loops)?
+  (requiring the application of timing, costume change, motion, and loops)?
 \vspace*{-.025in}
 \end{itemize}
 \vspace*{0.25in}

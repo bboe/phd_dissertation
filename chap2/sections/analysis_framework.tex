@@ -5,20 +5,20 @@ on a set of \sprogram{s} automatically. Without automated analysis, inspection
 and execution requires opening each \sprogram{} manually. This manual process
 is time-consuming and error-prone.  Our second goal is that Hairball is easily
 extendable so that new Scratch analysis plugins can be created with only a
-basic amount of Python experience, and anyone can make use of available
-plugins.
+basic amount of Python experience. Moreover, anyone should be able to make use
+of available plugins.
 
 
 \subsection{Plugin Architecture}
 We used the object-oriented features of Python to develop a base class from
 which Hairball plugins can be derived. Python was chosen due to the authors'
 experience with Python and its increased adoption in introductory computer
-science classes. However, Python was mainly chosen due to the open source
-Python package \emph{Kurt} that provides simple access to all the elements
-contained within a \sprogram{}, i.e., the images, sounds, stages (backgrounds),
-sprites and most importantly the scripts~\cite{Radvan:2012:Online}.\footnote{As
-  part of our work, we made a few contributions that are now a core part of the
-  \emph{Kurt} Python package.}
+science classes. A strong contributing factor to this decision is the open
+source Python package \emph{Kurt} that provides simple access to all the
+elements contained within a \sprogram{}, i.e., the images, sounds, stages
+(backgrounds), sprites and most importantly the
+scripts~\cite{Radvan:2012:Online}.\footnote{As part of our work, we made a few
+  contributions that are now a core part of the \emph{Kurt} Python package.}
 
 Implementing a Hairball plugin simply requires extending the base class and
 overloading a single method. The method's sole parameter is a handle to the
