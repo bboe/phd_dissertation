@@ -93,7 +93,7 @@ if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 0)"
 fi
 
-grep -PR "[^&](\s+|^)\d{1,2}(\s+|$)" sections/ chap*/sections/
+grep -PR "[^&](\s+|^)\d{1,2}[.,;]?(\s+|$)" sections/ chap*/sections/
 if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 1)"
     echo -e "Spell out one or two-digit numbers."
