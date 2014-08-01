@@ -2,17 +2,15 @@
 In this section we describe four Hairball plugins written to perform
 \sprogram{} static analysis.  The plugins were designed to analyze \sprogram{s}
 submitted as part of our two-week interdisciplinary Animal Tlatoque summer
-camp~\cite{Franklin:2013:SBO}.  Notice that some of the traditional topics,
-e.g., variables and conditionals, are not represented, and that loops are
-represented in a very specific way (defined as animation). The plugins target
-the computer science concepts used in the camp's cumulative assignment, an
-interactive movie about an animal. For this assignment, students were to
-demonstrate state initialization, use of \broadcast{} and \receive{} blocks,
-synchronization between \say{} and \playsound{} blocks, and creation of complex
-animation. While these plugins were developed for our summer camp, each
-provides valuable feedback that is generally useful both as a lint-like tool
-for individual developers of \sprogram{s} and for others who are tasked with
-analyzing numerous \sprogram{s}.
+camp~\cite{Franklin:2013:SBO}. The plugins target the computer science concepts
+used in the camp's cumulative assignment, an interactive movie about an
+animal. For this assignment, students were to demonstrate state initialization,
+use of \broadcast{} and \receive{} blocks, synchronization between \say{} and
+\playsound{} blocks, and creation of complex animation. While these plugins
+were developed for our summer camp, each provides valuable feedback that is
+generally useful both as a lint-like tool for individual developers of
+\sprogram{s} and for others who are tasked with analyzing numerous
+\sprogram{s}.
 
 Each Hairball plugin for the camp strives to evaluate whether, or to what
 extent, the \sprogram{} demonstrated competence in an area. These plugins
@@ -60,20 +58,20 @@ runs the same way in these two events.
 The first problem is where to start the analysis.  In traditional programs,
 execution starts at \emph{main}. However, \sprogram{s} have no such globally
 defined starting point. Therefore, we taught our students to start their
-\sprogram{} using the green flag button, so the starting point for our
+\sprogram{} using the green flag button. Thus the starting point for our
 evaluation is the \greenflag{} block.
 
 The most complex problem, and the problem that introduces the possibility of
 error into our analysis, is that sprites are placed on the stage during
 implementation thus giving them an implicit set of attributes, which we will
 refer to as the base attributes. Explicit initialization for a particular
-attribute, e.g., position or orientation, is only required when one of the
-\sprogram{'s} scripts modifies the attribute. Thus, the challenge is
+attribute, e.g., position or orientation, is only required when that attribute
+is modified by a script of the \sprogram{}. Thus, the challenge is
 distinguishing segments of scripts that perform initialization from those that
 perform general modification. To discover instances of initialization, we first
 determine the set of blocks that can be considered initialization blocks and
-then we restrict the location such blocks can appear in a script. We call this
-location the \initzone{}.
+then we restrict the location within the scripts that we search for these
+blocks. We call this location the \initzone{}.
 
 Attribute modifying Scratch blocks can be labeled as \rel{} or
 \abs{}. \emph{Relative} Scratch blocks alter the attribute based upon its
@@ -100,18 +98,18 @@ unnecessary initialization, we did not include it as part of our analysis.
 
 \subsubsection{Say and Sound Synchronization}
 Synchronization between a speech bubble (\say{} block) and sound file
-(\playsound{} block) is not straightforward in Scratch.  The desired behavior
-is that, at the same time, a speech bubble appears with the message, and a
-sound file plays of a voice speaking the message.  When the sound is complete,
-the speech bubble disappears.
+(\playsound{} block) is not straightforward in Scratch. The desired behavior is
+that whenever a speech bubble appears with a message a sound file of a voice
+speaking the message plays. When the sound is complete, the speech bubble
+disappears.
 
 Achieving this effect is complicated by the timing semantics of the two forms
 of the \say{} block, and the two forms of the \playsound{} block in Scratch.
 One form of the \say{} block places the speech bubble on the screen
 indefinitely (until replaced by another \say{} block, or \emph{erased} with an
 empty \say{} block), while the other, \sayfor{}, puts a speech bubble on the
-screen for $n$ seconds (and, as a side-effect, delays execution of the script
-for $n$ seconds.)  Similarly, there are two forms of the block for playing a
+screen for $n$ seconds and, as a side-effect, delays execution of the script
+for $n$ seconds. Similarly, there are two forms of the block for playing a
 sound clip: \playsounddone{} plays the sound synchronously, while \playsound{}
 plays the sound asynchronously.
 
