@@ -266,32 +266,32 @@ the students switched approaches after their first \com{} snapshot.
 
 Our curriculum development and test process, as described in
 Section~\localref{sec:classes} and visualized in Figure~\localref{fig:process},
-allowed us to focus analysis on issues we became aware of due to the collected
-field notes. However, the field notes were not always complete. During manual
-analysis of the students' snapshots we noticed a number of snapshots whose
-execution did not produce consistent results. These snapshots should have
-consistently \caught{} the \zebra{}, however, only did so approximately 50\% of
-the time. We discovered the problem to be a race condition within Scratch where
-the detection of the intersection between two sprites may not occur in the
-brief period of time that the sprites intersect. Instead, the next block in the
-script, always a rotation block, would execute and the rotation would result in
-the separation of the two sprites; i.e., the two sprites were no longer
-intersecting. In-class education researchers confirmed having observed this
-issue, however, we had no data to quantify the number of students affected. We
-hypothesized that students affected by this issue may have struggled completing
-the assignment.
+allowed us to focus analysis on issues we became aware of due to the in-class
+researchers' field notes. However, the field notes were not always
+complete. During manual analysis of the students' snapshots we noticed a number
+of snapshots that produced inconsistent results across multiple
+executions. These snapshots should have consistently \caught{} the \zebra{},
+however, only did so approximately 50\% of the time. We discovered the problem
+to be a race condition within Scratch where the detection of the intersection
+between two sprites may not occur in the brief period of time that the sprites
+intersect. Instead, the next block in the script, always a rotation block,
+would execute and the rotation would result in the separation of the two
+sprites; i.e., the two sprites were no longer intersecting. In-class education
+researchers confirmed having observed this issue, however, we had no data to
+quantify the number of students affected. We hypothesized that students
+affected by this issue may have struggled completing the assignment.
 
 In order to quantify the students affected, we wrote a Hairball plugin to track
 the \net{}'s \exe{}, i.e., the sequence of blocks beginning with
 \netclicked{}. We wanted to discover snapshots where the \net{}'s \exe{}
-matches that of one we manually verified as exhibiting the race condition. We
-labeled \exe{s} by programming them in Scratch, and executing the \sprogram{}
-up to twenty times. If within these twenty executions we observed inconsistency
-in the \catch{ing} of the \zebra{}, the \exe{} was labeled as exhibiting the
-race condition; otherwise it was not. While it is possible for a race condition
-to emerge at a lessor frequency, we assume that in such cases few, if any,
-students were affected. No race condition exhibiting \exe{s} required more than
-eight executions to detect.
+matches that of one of the \exe{s} we manually verified as exhibiting the race
+condition. We manually verified \exe{s} by programming them in Scratch, and
+executing the \sprogram{} up to twenty times. If we observed inconsistency in
+the \catch{ing} of the \zebra{} within these twenty executions, then the \exe{}
+was labeled as exhibiting the race condition; otherwise it was not. While it is
+possible for a race condition to emerge at a lessor frequency, we assume that
+few, if any, students were affected by these cases. No race condition
+exhibiting \exe{} required more than eight executions to detect.
 
 What resulted was a Hairball plugin with a state machine that handled all
 \exe{s} of the \net{} shared by more than any ten snapshots. We only handled
@@ -320,15 +320,15 @@ the assignment by the addition of one or more blocks that \emph{fixed} the race
 condition.
 
 Fortunately, a majority of students were able to avoid the race condition. We
-sampled a few of those students and discovered the following three approaches
-that students used to avoid encountering the race condition:
+sampled the snapshots of a few of these students and discovered the following
+three approaches that students used to avoid encountering the race condition:
 
 \begin{enumerate}
 \item The student immediately removed some or all of the provided code thus
   starting with a modified base-project.
 \item In \stwo{}, the student simply appended \glideto{} blocks to the code.
 \item The student immediately added an additional \glideDIST{} block resulting
-  in consistent intersection between the \net{} and \zebra{}.
+  in consistent intersection between the \net{} and the \zebra{}.
 \end{enumerate}
 
 Students were also able to \emph{fix} the race condition using the above
@@ -345,14 +345,14 @@ condition. Interestingly, the students who experienced the race condition were
 statistically significantly more likely to complete the assignment: 73\% and
 82\% compared to 39\% and 68\% (chi square, p \textless{} 0.028). This result
 was unexpected, nevertheless, the labels provided by our static analysis
-allowed us to discover the primary reason why students who did not experience
-the race condition, did not complete the assignment. Manual inspection of these
-snapshots revealed that a significant majority of these students either
-removed, or significantly altered the provided code in their first
-snapshot. The only other reason we discovered was due to race condition
-avoidance approach~\#3. However, in each of these cases, it was apparent the
-addition was accidental based on the subsequent modifications made by these
-students.
+indirectly allowed us to discover the primary reason why students who did not
+experience the race condition, did not complete the assignment. Manual
+inspection of these labeled snapshots revealed that a large majority of these
+students either removed, or significantly altered the provided code in their
+first snapshot. The only other reason we discovered was due to race condition
+avoidance approach~\#3 where, in each of these cases, it was apparent that the
+avoidance of the race condition was unintentional based on the subsequent
+erratic modifications made by these students.
 
 Overall, the effect of these results is that we are now able to adjust our
 assignment so that students are less likely to encounter a Scratch race
@@ -365,27 +365,27 @@ positive effect on learning.
 
 Scratch is built such that students can double click on any script, i.e., one
 or more connected blocks, in order to execute that script. During \sone{},
-in-class education researchers noted in their field notes that some students
-took advantage of this behavior in order to execute scripts they created. While
-manually executing disjoint scripts in this manner may trigger the success
-screen we built into the assignment, the education researchers found that
-students exhibiting this behavior did not understand the concept of a
-script. Instead, these students viewed the blocks as independent entities not
-sequentially triggered by an event (i.e., \netclicked{}), and therefore these
+in-class education researchers described in their field notes that some
+students took advantage of this behavior in order to execute scripts they
+created. While manually executing disjoint scripts in this manner may trigger
+the success screen we built into the assignment, the education researchers
+found that students exhibiting this behavior did not understand the concept of
+a script. Instead, these students viewed the blocks as independent entities not
+sequentially triggered by an event (e.g., \netclicked{}), and therefore these
 students did not exhibit the conceptual understanding of sequential execution
-we had intended. Furthermore, the education researchers noted in their field
-notes that students would \dce{} a script in order to move from the start
-location to the first sprite, and then alter that script to perform the next
-step of the sequence. Thus, as another use of scaffolding in the assignment, we
-disabled the \dce{} feature in \stwo{} in attempt to prevent students from
-going down an unintended path while completing the assignment.
+we had intended. Furthermore, the education researchers noted that students
+would \dce{} a script in order to move from the start location to the first
+sprite, and then alter that script to perform the next step of the
+sequence. Thus, as another use of scaffolding in the assignment, we disabled
+the \dce{} feature in \stwo{} in attempt to prevent students from going down an
+unintended path while completing the assignment.
 
 \subsubsection{Double Click to Execute Filters}
 Once aware of the problem, we sought to retroactively identify students who may
 have utilized this \dce{} approach. We wrote a Hairball plugin to filter out
 snapshots determined to not demonstrate the \dce{} behavior. The following
-paragraphs detail, in-order, our approach to filtering snapshots to approximate
-the students affected by the \dce{} behavior.
+paragraphs detail, in order, our approach to filtering out snapshots in attempt
+to approximate the students affected by the \dce{} behavior.
 
 \textbf{\emph{Complete} Snapshots}: Any snapshots that when emulated by our
 plugin result in the \net{} \catch{ing} any two or more sprites are
@@ -396,7 +396,7 @@ student demonstrates success, we are not concerned about their \dce{} use.
 \textbf{Motionless Snapshots}: Any snapshots that result in no movement due to
 either having zero scripts or having only a single \netclicked{} script with no
 movement blocks are filtered. These snapshots do not result in any motion and
-thus are not indicative of the \dce{} behavior.
+thus are not indicative of the \dce{} behavior that we are concerned with.
 
 \textbf{\net{} Ends in Expected Location}: Each \sprogram{} file, i.e., each
 snapshot, stores the last location of all its sprites. We compare the stored
