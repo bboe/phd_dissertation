@@ -387,35 +387,35 @@ snapshots determined to not demonstrate the \dce{} behavior. The following
 paragraphs detail, in order, our approach to filtering out snapshots in attempt
 to approximate the students affected by the \dce{} behavior.
 
-\textbf{\emph{Complete} Snapshots}: Any snapshots that when emulated by our
-plugin result in the \net{} \catch{ing} any two or more sprites are
-filtered. Furthermore, any chronologically subsequent snapshots by the same
-student are filtered. The subsequent snapshots are filtered because, once a
-student demonstrates success, we are not concerned about their \dce{} use.
+\begin{description}
+\item [\emph{Complete} Snapshots] Any snapshots that when emulated by our
+  plugin result in the \net{} \catch{ing} any two or more sprites are
+  filtered. Furthermore, any chronologically subsequent snapshots by the same
+  student are filtered. The subsequent snapshots are filtered because, once a
+  student demonstrates success, we are not concerned about their \dce{} use.
+\item [Motionless Snapshots] Any snapshots that result in no movement due to
+  either having zero scripts or having only a single \netclicked{} script with
+  no movement blocks are filtered. These snapshots do not result in any motion
+  and thus are not indicative of \dce{} behavior that we are concerned with.
+\item [\net{} Ends in Expected Location] Each \sprogram{}, i.e., each snapshot,
+  stores the last location of all its sprites. We compare the stored location
+  of the \net{} to its final location as computed by our \net{} emulation
+  Hairball plugin. Snapshots containing movement whose emulated \net{} location
+  matches the \net{'s} stored location are filtered. These snapshots are
+  filtered because our emulation plugin does not support the \dce{} behavior,
+  thus it is not possible for these locations to match when the \dce{} behavior
+  is used.
+\item [Multiple \net{} Clicks] We expect students' scripts to execute only once
+  upon \netclicked{} following a reset of the environment via a click on the
+  \emph{green flag}. However, it is still possible to click on the \net{}
+  multiple times resulting in an execution for each of these clicks. In such
+  cases, the \net{} will initially be in an invalid state for all but the first
+  \net{} click. By performing the expected location test multiple times we are
+  able to both identify and filter snapshots exhibiting this multiple \net{}
+  click behavior. These snapshots are filtered for the same reason as those
+  filtered due to ending in an expected location.
+\end{description}
 
-\textbf{Motionless Snapshots}: Any snapshots that result in no movement due to
-either having zero scripts or having only a single \netclicked{} script with no
-movement blocks are filtered. These snapshots do not result in any motion and
-thus are not indicative of the \dce{} behavior that we are concerned with.
-
-\textbf{\net{} Ends in Expected Location}: Each \sprogram{} file, i.e., each
-snapshot, stores the last location of all its sprites. We compare the stored
-location of the \net{} to the final location of the \net{} as reported by our
-\net{} emulation Hairball plugin. Snapshots containing movement whose emulated
-\net{} location matches its stored location are filtered. These snapshots are
-filtered because the \net{}'s stored location matches the emulated location
-only when the in-Scratch execution matches the execution of our emulation
-plugin, and our emulation plugin does not support the \dce{} behavior.
-
-\textbf{Multiple \net{} Clicks}: We expect students' scripts to execute only
-once \netclicked{} following a reset of the environment via a click on the
-\emph{green flag}. However, it is still possible to click on the \net{}
-multiple times resulting in an execution for each click. In such cases, the
-\net{} will initially be in an invalid state for all but the first click. Thus,
-by performing the expected location test multiple times we are able to both
-identify and filter snapshots exhibiting this multiple \net{} click
-behavior. These snapshots are filtered for the same reason as those filtered
-due to ending in an expected location.
 
 \subsubsection{Double Click to Execute Snapshots}
 
@@ -426,17 +426,19 @@ due to ending in an expected location.
 \locallabel{fig:dc_snapshots}
 \end{figure}
 
-After applying all the filters, we counted the number of snapshots per student
-that may exhibit the \dce{} behavior. Figure~\localref{fig:dc_snapshots} shows
-the number of potential snapshots by student for both \sone{} and
-\stwo{}. Recall that the \dce{} functionality was disabled completely in
-\stwo{}, thus we hoped that this filtering would result in a significant
-decrease in the number of snapshots to manually inspect. However, that was not
-the case. In reality, this filtering only removed three of twenty-nine (10.3\%)
-and thirty of 120 (25.0\%) students respectively. Unfortunately, without more
-precise field notes, we cannot quantify the number of students affected because
-there is not sufficient information in the snapshots for us to even manually
-identify students exhibiting the \dce{} behavior.
+After applying all the filters, we counted the number of remaining snapshots
+per student that may exhibit the \dce{}
+behavior. Figure~\localref{fig:dc_snapshots} shows the number of potential
+snapshots by student for both \sone{} and \stwo{}. Recall that the \dce{}
+functionality was disabled completely in \stwo{}, thus we hoped that this
+filtering would result in nearly zero \stwo{} snapshots and a significant
+decrease in the number of \sone{} students whose snapshots we would manually
+inspect. However, that was not the case. In reality, this filtering only
+removed three of twenty-nine (10.3\%) and thirty of 120 (25.0\%) students
+respectively. Unfortunately, without more precise field notes, we cannot
+quantify the number of students affected because there is not sufficient
+information in the snapshots for us to even manually identify students
+exhibiting the \dce{} behavior.
 
 It is important to note that while we could not proceed, it was not due to a
 limitation of static analysis. The Hairball plugin we wrote considerably helped
