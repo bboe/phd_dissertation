@@ -14,64 +14,64 @@ We created and utilized Hairball plugins to help answer the three questions we
 sought to answer (Section~\localref{sec:results}). In total, 102 of the 149
 students for whom we had consent completed the assignment. While an overall
 68\% is not impressive, the percentage increased from 52\% to 73\% due to
-improvements we made after \sone{}. While there is more room for improvement
-with respect to the success of the students, we consider this increase to be a
-success of the improvements we made to both our Scratch interface and the
-curriculum.
+modifications we made to both our Scratch interface and our curriculum after
+\sone{}. While there is more room for improvement with respect to student
+success on the assignment, we consider this increase to be a success of our
+modifications between the two iterations of the assignment.
 
 The single most important change we made was the addition of the \glideto{}
 block as it enabled the use of only a single block for each of the three
 essential \emph{pick up} actions. Recall that our goal was not for students to
 understand position and orientation changes, but simply for them to program
 sequential code that \emph{picks up} all the objects. Based on these results,
-we believe additional instructional scaffolding would be beneficial. Students
-should first be asked to solve the challenge using only \glideto{}, and once
-mastering that task, should be challenged with a similar task using only one of
-the \emph{Orient and Glide} approaches. In both cases, only the necessary
-blocks should be available for students to use.
+we believe additional instructional scaffolding would be beneficial. For
+instance, students should first be asked to solve the challenge using only
+\glideto{}, and once mastering that task, should then be challenged with a
+similar task using only one of the \emph{Orient and Glide} approaches. In both
+cases, only the necessary blocks should be available for students to use.
 
 \subsection{Static Analysis}
 Hairball plugins were written to quantify students challenged with issues
-identified by education researchers in the field notes. We described one such
-plugin identifying that 40\% of all students experienced a Scratch race
+identified by education researchers' field notes. We described one such plugin
+identifying that 40\% of all students experienced a Scratch race
 condition. Interestingly, 78\% of those students completed the assignment
 indicating a statistically significant correlation between experiencing the
 race condition and completing the assignment. While we were successful in
 writing automated assessment for the race condition issue, we could not do the
-same for the \dce{} issue. The plugin was able to filter half the snapshots,
-however, the root issue was that even with manual analysis we could not
-precisely differentiate between snapshots exhibiting this behavior and normal
-behavior due to the lack of information contained in the snapshots. In this
-regard, we consider the use of the plugin a success as it helped us swiftly
-determine the large subset of submissions that may exhibit the behavior. This
+same for the \dce{} issue. The plugin filtered half the snapshots, however, the
+root issue was that even with manual analysis we could not precisely
+differentiate between snapshots exhibiting this behavior and normal behavior
+due to the lack of information contained in the snapshots. In this regard, we
+consider the use of the plugin a success as it helped us swiftly determine the
+large subset of submissions that may exhibit the \dce{} behavior. This
 information, in turn, permitted us to come to the aforementioned conclusion.
 
 The two most significant benefits of using static analysis in assignment
 assessment are the speed of assessment, and the accuracy of assessment. While
 there is overhead involved in creating static analysis, it is a one-time
 overhead with essentially infinite scaling capabilities. The overhead for
-training a human, on the other hand, may require less time, but has no scaling
-capabilities. Furthermore, static analysis will consistently produce the same
-results, whereas humans are significantly less likely to do so.
+training a human, on the other hand, may require less time, but does not
+scale. Furthermore, static analysis will consistently produce the same results,
+whereas humans are significantly less likely to do so.
 
 Another significant advantage of incorporating static analysis in assignment
 assessment is due to the dramatic reduction in overhead required with each
 iteration of assessment criteria; of which, we had many. With only the addition
 of a short amount of time required to adapt our static analysis to updated
 assessment criteria, we were otherwise able to rerun the entire modified
-assessment across all snapshots in the matter of minutes. A human, conversely,
-could at best assess six snapshots in a minute. Assuming that is feasible, each
-assessment criteria iteration would have required 2.6 hours for analysis of our
-935 snapshots. While, in general, the number of assessment criteria iterations
-can be reduced with more in-depth up-front preparation, using static analysis
-permits a flexibility in assignment assessment that is not limited by human
-factors.
+assignment assessment across all snapshots in the matter of
+minutes. Conversely, a human could at best assess six snapshots in a
+minute. Assuming that is feasible, each assessment criteria iteration would
+have required 2.6 hours for analysis of our 935 snapshots. While, in general,
+the number of assessment criteria iterations can be reduced with more in-depth
+up-front preparation, using static analysis permits a flexibility in assignment
+assessment that is not limited by human factors.
 
-Finally, the plugins written for our assessment of this assignment will be used
-in future iterations of the assignment to support additional interface and
-curriculum changes. The use of Hairball plugins in our assessment shows the
-usefulness of static analysis tools in the development of \nth{4}--\nth{6}
-grade curriculum. In the future, we hope to incorporate the use of these
-plugins to provide real-time feedback and assessment to students and
-instructors as students work on the assignment through the use of an automated
-snapshot collection system.
+Finally, the plugins written for our assessment will be used in future
+iterations of the assignment to validate additional interface and curriculum
+changes. The use of Hairball plugins in our assessment shows the usefulness of
+static analysis tools in the development of \nth{4}--\nth{6} grade
+curriculum. In the future, we hope to incorporate these plugins in an automated
+snapshot collection and feedback system in order to provide real-time feedback
+and assessment to students and instructors as students progress through an
+assignment.
