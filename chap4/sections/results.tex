@@ -1,7 +1,7 @@
 \section{Results}\locallabel{sec:results}
 While our initial motivation for this study was to look at the effect of the
-feedback delay on student submission behavior, the data we collected also
-allows us to offer new insights into questions previously investigated by other
+feedback delay on student submission behavior, the data we collected also allow
+us to offer new insights into questions previously investigated by other
 researchers. The analysis of our submission data lends support to some existing
 answers to these questions, and contradicts others. In particular, we compare
 our results to those of \spacco{} collected in Spring
@@ -51,7 +51,7 @@ questions:
 
 Many educators encourage their students to start early on
 assignments. Intuitively, starting early gives students more time to receive
-feedback from the instructor and teaching assistants in order to make
+feedback from their instructor and teaching assistants in order to make
 improvements to the work they submit by the deadline. However, with traditional
 assessment, is it unlikely for an instructor to offer multiple early assessment
 iterations to all students. With a real-time feedback and assessment system, on
@@ -60,23 +60,24 @@ opportunities for assignment feedback and assessment. Furthermore, the feedback
 provided by these systems can then be leveraged by the student and instructor
 in office hours.
 
-Prior work in the field has shown that a positive correlation does in fact
+Prior work in this field has shown that a positive correlation does in fact
 exist between starting early and assignment
 score~\cite{Spacco:2013:TIP:2462476.2465594,
   Edwards:2009:CEI:1584322.1584325}. We sought to verify that our results are
 consistent with those of the prior work.
 
-Figure~\localref{fig:relative_start_time} plots the number of hours before an
-assignment is due of a group's first submission against the final score the
-group receives. Our data statistically significantly correlate earlier
-assignment start times with higher scores. While it may seem odd that groups
-can receive 100\% on an assignment having started only an hour or less prior to
-the deadline, this result is merely an artifact of our active data
-collection. Our data collection methodology only provides a lower bound to how
-long prior to assignment deadline a group began working. We verified that a
-small number of groups, distributed uniformly across assignments, would make
-their first submission in the last hour. This behavior indicates that some
-groups mostly worked without using the system in order to receive feedback.
+Figure~\localref{fig:relative_start_time} plots the number of hours between a
+group's first on-time assignment submission and the corresponding assignment
+deadline against the final score the group receives. Our data statistically
+significantly correlate earlier assignment start times with higher
+scores. While it may seem odd that groups can receive 100\% on an assignment
+having started only an hour or less prior to the deadline, this result is
+merely an artifact of our active data collection. Our data collection
+methodology only provides a lower bound to how long prior to assignment
+deadline a group began working. We verified that a small number of groups,
+distributed uniformly across assignments, would make their first submission in
+the last hour. This behavior indicates that some groups mostly worked without
+using the system in order to receive feedback.
 
 While Figure~\localref{fig:relative_start_time} shows a correlation with start
 time and final score, we can break down relative start times even further to a
@@ -87,17 +88,17 @@ submission. The assignments are sorted according to the first 10\% value, and
 then the last 10\% value. Assignments with fewer than thirty groups are
 excluded so that at least three groups make up each of the 10\% categories. Of
 the thirty-seven assignments that meet the criteria, the first 10\% of groups
-all received 100\% in twenty-six (70\%) assignments, only five (20\%) of which,
-where the last 10\% of groups also all received 100\%. In the other twenty-one,
-the last 10\% scored significantly worse than the average.
+all received 100\% on twenty-six (70\%) assignments, only five (20\%) of which,
+the last 10\% of groups also all received 100\%. In the other twenty-one, the
+last 10\% scored significantly worse than the average.
 
 In the cases where the first 10\% of groups did not receive 100\%, there are a
 few outliers where the average is higher than the first 10\% of groups to
 submit. All of those five cases were lab assignments where each student
 attended one of many lab sessions. It is likely that a subset of the first 10\%
-groups to submit all emanate from an early lab session where they were directed
-to make their first submission at a point they would not otherwise have made
-it.
+of groups to submit all emanate from an early lab session where they were
+directed to make their first submission at a point in their development process
+that they would not otherwise have made it.
 
 \subsection{Does Time Pressure Affect Behavior?}
 \locallabel{sec:time}
@@ -122,15 +123,16 @@ it.
 
 Motivated by the work of \spacco{}, we wanted to see if our real-time feedback
 and assessment system, which required students to actively make assignment
-submissions, measured similar student working behavior. \spacco{} discovered
-their students produced the most work in days prior to the deadline at
-\PM{4}. The amount of work significantly dropped at \PM{6} and remained nearly
-consistent until \AM{1}. Although all of their assignment deadlines were at
-\PM{6}, they attributed the peak in work between \PM{4} and \PM{6} as the time
-that students preferred to work and thus suggested that ``setting the deadline
-a couple of hours later might allow students to work at their preferred time
-without the added pressure of an impending deadline''
-~\cite{Spacco:2013:TIP:2462476.2465594}. Our results indicate otherwise.
+submissions, measured similar student working behavior to their passively
+collected snapshots. \spacco{} discovered their students produced the most work
+in days prior to the deadline at \PM{4}. The amount of work significantly
+dropped at \PM{6} and remained nearly consistent until \AM{1}. Although all of
+their assignment deadlines were at \PM{6}, they attributed the peak in work
+between \PM{4} and \PM{6} as the time that students preferred to work and thus
+suggested that ``setting the deadline a couple of hours later might allow
+students to work at their preferred time without the added pressure of an
+impending deadline'' ~\cite{Spacco:2013:TIP:2462476.2465594}. Our results
+indicate otherwise.
 
 Figure~\localref{fig:by_time_far} depicts the number of submissions made at
 each time of day for submissions made more than a day from their deadline. We
@@ -152,8 +154,8 @@ Figure~\localref{fig:by_time_far} that were made within one day of their
 deadline. Our hypothesis was that a more significant majority of the
 submissions would be made in the hours just prior to their assignment
 deadline. Figure~\localref{fig:by_time_near} confirms that hypothesis. While
-there is little change in the figure shape prior to \AM{11}, there is only a
-slight increase in work during the \AM{11} to \PM{3} range. A sharp spike in
+there is little difference in the figure shape prior to \AM{11}, there is only
+a slight increase in work during the \AM{11} to \PM{3} range. A sharp spike in
 submissions occurs at \PM{4} and has a gradual decrease until \PM{6}. This
 decrease in submissions occurs in both figures, and we suspect this decrease
 corresponds with the time students leave campus, head home, and eat dinner,
@@ -252,9 +254,9 @@ insignificant with respect to the number of days prior to assignment
 deadline. While our deadlines were distributed such that 24\% and 25\% of
 submissions were made to assignments with a Monday and Friday deadline
 respectively, there was no difference in submission efficiency with respect to
-the day of week a submission was made.
+the day of the week a submission was made.
 
-An analysis of the hour of day of each submission also resulted in no
+An analysis of the hour of the day of each submission also resulted in no
 significant changes in submission efficiency. Thus, these results convince us
 that time pressure does not affect submission efficiency.
 
@@ -295,7 +297,7 @@ after this two-day period provided the student with no direct grade-benefits.
 Five of the assignments in Figure~\localref{fig:late} are from \cm[24]{13},
 which comprised only seventeen consenting students whereas the next smallest
 class, \cs[64]{14}, comprised forty-eight consenting students. \cm[24]{13}'s
-small class size is significant as a higher percentage of the students were
+small class size is significant as a larger percentage of the students were
 able to receive assistance in office hours from both the teaching assistant and
 the instructor.
 
@@ -411,12 +413,12 @@ insights:
 \begin{itemize}
 \item Relatively the most \noii{} submissions occur in the first few seconds as
   indicated by the size and color of the \noii{} category's first circle
-  compared with the other categories. Recall that \noii{} submissions occur in
-  the period after a \worse{} submission and prior to an \imp{}
-  submission. This short period of time between these submissions and their
-  corresponding former submissions is too small for a group to have understood
-  any feedback received, suggesting these groups did not independently test
-  whatever changes they made prior to resubmission.
+  compared to the first circle of other categories. Recall that \noii{}
+  submissions occur in the period after a \worse{} submission and prior to an
+  \imp{} submission. This short period of time between these submissions and
+  their corresponding former submissions is too small for a group to have
+  understood any feedback received, suggesting these groups did not
+  independently test whatever changes they made prior to resubmission.
 \item Interestingly, with respect to \worse{} submissions, the spike around the
   1,000-minute mark is the most significant compared to other categories. This
   data suggest that long breaks have an initially negative impact on assignment
@@ -587,7 +589,7 @@ Score & Count & Mean Work Time & stderr & No Progress & stderr \\ \hline \hline
 \end{table}
 
 Before considering the impact of the feedback delay on work sessions, we first
-compare a few general properties of our work sessions to the passively
+compare a few general properties of our work sessions to those of the passively
 collected work sessions of \spacco[.]{}
 
 Having defined a window size, we are able to group submissions into work
@@ -640,7 +642,8 @@ precisely answer these questions, we offer two possible explanations:
 \item Successful students are more likely to start earlier, thus providing them
   with more opportunity to attend office hours. Students who attend office
   hours gain useful insights to an assignment, resulting in more forward
-  progress, and overall reduce the time required to complete an assignment.
+  progress, and an overall reduction in the time required to complete an
+  assignment.
 \end{itemize}
 
 From the opposite perspective of both explanations we can understand why
