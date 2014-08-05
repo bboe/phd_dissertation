@@ -8,7 +8,7 @@ feedback delay, and briefly provide an overview of our system architecture.
 \begin{figure}[!t]
 \centering \includegraphics[width=3.3in]{graphs/Class_Information.eps}
 \caption{Visualizes the number of groups, students, and average number of
-  submissions by student for each of the seven classes in the study.}
+  submissions by student for each of the seven classes in our study.}
 \locallabel{fig:class_info}
 \end{figure}
 
@@ -20,31 +20,32 @@ introduce them to data structures, and object oriented programming in
 \emph{C++}. The second course, \emph{CS64}, is a lower division computer
 architecture course that educates students on assembly programming and the
 basics of computer architecture, including digital design. In total, there are
-five instances of \emph{CS24}, and two instances of \emph{CS64} represented in
-this study. A single instructor taught \cm[24]{13} and \cf[24]{13}, and all
-others were taught by another individual instructor. All classes were taught
-during a ten-week quarter including \cm[24]{13}, the only summer instance in
-the study.
+five instances of \emph{CS24}, and two instances of \emph{CS64} represented. A
+single instructor taught \cm[24]{13} and \cf[24]{13}, and all others were
+taught by another individual instructor. All classes were taught during a
+ten-week quarter including \cm[24]{13}, the only summer instance represented.
 
 While our feedback and assessment system supports both programming assignments
 and \emph{fill in the blank}-type assignments, we only consider programming
-assignments in this study. Figure~\localref{fig:class_info} provides useful
-information for each class in this study. The purple bars indicate the number
-of consent-giving students that made at least one submission, and the pink bars
-indicate the average number of submissions made by each student. Finally, the
-cyan bars indicate the number of unique groups that made at least one
-submission to any of a class's assignments. Most students formed the same group
-across assignments, however, that was not a requirement.
+assignments as students were expected to make relatively many more submissions
+to \emph{fill in the blank}-type assignments in order to reach the correct
+answers. Figure~\localref{fig:class_info} provides useful information for each
+class in this study. The purple bars indicate the number of consent-giving
+students that made at least one submission, and the pink bars indicate the
+average number of submissions made by each student. Finally, the cyan bars
+indicate the number of unique groups that made at least one submission to any
+of a class's assignments. While most students formed the same groups across
+assignments, that was not a requirement. Thus, some students changed groups
+across assignments, and a few chose to work independently on some
+assignments. The latter are treated as single-student groups.
 
 We distinguish between students and groups because our feedback and assessment
 system enforces an instructor defined maximum group size per assignment. When
 the maximum group size is more than one, students are able to join into groups
 with other students up to the maximum group size. With regard to consent-giving
 students, we only include submissions in this study if we have consent from all
-group members. This grouping functionality was only introduced in September
-2013, therefore it was only utilized by classes \cf[24]{13} and \cw[24]{14}. In
-addition to a few students changing groups between assignments, a few worked
-independently on assignments and thus are counted as a single-student group.
+group members. This grouping functionality was introduced in September 2013,
+therefore it was only utilized by classes \cf[24]{13} and \cw[24]{14}.
 
 Two classes have an average number of submissions which stand out. First, the
 average number of submissions is low for \cw[24]{13} due to only using the
@@ -58,12 +59,12 @@ submissions as discussed in Section~\localref{sec:deadline}.
 \subsection{Feedback Delay} \locallabel{sec:delay}
 The primary educational purpose of a real-time feedback and assessment system
 is to provide feedback to students so that they may iteratively achieve mastery
-on their assignments. The use of these systems has positive side effects
-including reducing assessment time while increasing assessment equitability. As
-many instructors have previously observed, however, student usage of real-time
-feedback and assessment systems may result in dependency upon the system. This
-dependency could inhibit students from expanding their knowledge of
-compilation, execution, testing, and debugging processes.
+on their assignments. The use of these systems has positive side effects for
+instructors including reducing assessment time while increasing assessment
+equitability. As many instructors have previously observed, however, student
+usage of real-time feedback and assessment systems may result in dependency
+upon the system. This dependency could inhibit students from expanding their
+knowledge of compilation, execution, testing, and debugging processes.
 
 Researchers have made various attempts to solve this dependency
 problem. Web-CAT ensures students develop testing skills by requiring students
@@ -80,7 +81,8 @@ used~\cite{Spacco:2013:TIP:2462476.2465594}. This result suggests that the
 standard assignment test cases, which students could always get feedback from,
 provided sufficient coverage for students to complete their
 assignments. Furthermore, this observation may be indicative of a problem with
-requiring instructors to properly partition their test cases.
+requiring instructors to properly partition their test cases into
+\emph{standard} and \emph{release} tests.
 
 We built our system in order to take an alternative approach that can be
 transparently utilized by UCSB's existing computer science curriculum, and
@@ -130,20 +132,22 @@ In a similar vein, we designed the \emph{workers}, processes that execute
 student code as described in detail in Section~\textbf{Architecture Overview},
 such that they would run on existing lab machines in order to provide a
 consistent test and development environment without requiring additional
-resources from the technical support department. Having a consistent
-environment also contributes to instructor adoption of the
-system. Additionally, by utilizing existing machines we are able to provide
-significant \emph{worker} redundancy making it possible to have zero issues
-with the most volatile part of the system at no additional cost to our
-department.\footnote{A redesign and implementation of this component was
-  required in order to achieve this result. The system has since run with a
-  peak activity for three months without a single issue.}
+resources from the technical support department. Running the workers in this
+consistent environment also contributes to instructor adoption of the system
+due to minimizing the distinct components instructors would require
+modifications to in the common event that they need specific software or
+libraries for one of their assignments. Additionally, by utilizing existing
+machines we are able to provide significant \emph{worker} redundancy making it
+possible to have zero issues with the most volatile part of the system at no
+additional cost to our department.\footnote{A redesign and implementation of
+  this component was required in order to achieve this result. The system has
+  since run with a peak activity for three months without a single issue.}
 
 Finally, by building our own system we could ensure that we had total knowledge
 of all components of the feedback and assessment system. This knowledge allows
 us to easily adjust and control the various aspects of the submission,
-feedback, and assessment processes as necessary for both current research and
-future research efforts.
+feedback, and assessment processes as necessary for both current and future
+research efforts.
 
 In designing the feedback and assessment system we had two primary goals:
 
@@ -155,7 +159,7 @@ In designing the feedback and assessment system we had two primary goals:
 \end{itemize}
 
 We believe the first goal was met due to the absence of complaints regarding
-usability of the system by the more than 300 students who used the system. We
+usability of our system by the more than 300 students who have used it. We
 confirmed we met the second goal when, on more than one occasion, an instructor
 had to find additional work for their teaching assistants due to a significant
 reduction in assessment time.
@@ -181,7 +185,7 @@ the \emph{submission verifier} and the \emph{worker proxies}.
 All of the components, save for the \emph{workers}, run on a single machine as
 we have yet to experience any web service related performance issues. While
 there is a single point of failure at that machine, a manual failover to the
-development machine requires only minutes, with at worst an hour of data
+development machine requires only minutes, with at most an hour of data
 loss. Moreover, providing redundancy on these components is trivial because the
 system was designed to support this expansion pending available hardware.
 
