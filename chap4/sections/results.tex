@@ -28,27 +28,6 @@ questions:
 \subsection{Does Starting Early Help?}
 \locallabel{sec:early}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Start_Time_Before_Deadline_and_Final_Score.eps}
-\caption{Compares the number of hours prior to assignment deadline that groups
-  started the assignment to the final score they received. Both the size and
-  color of each circle correspond to the number of groups represented at that
-  position. The circles are plotted such that smaller circles are strictly in
-  front of larger circles.}
-\locallabel{fig:relative_start_time}
-\end{figure}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Comparision_of_First_and_Last_Submitters.eps}
-\caption{Compares the average final score of the first 10\% of groups to submit
-  to the average and to the last 10\% of groups to submit by assignment. The
-  first 10\% of groups to submit had perfect scores on twenty-seven of the
-  thirty-eight assignments.}
-\locallabel{fig:percent_score}
-\end{figure}
-
 Many educators encourage their students to start early on
 assignments. Intuitively, starting early gives students more time to receive
 feedback from their instructor and teaching assistants in order to make
@@ -66,6 +45,17 @@ score~\cite{Spacco:2013:TIP:2462476.2465594,
   Edwards:2009:CEI:1584322.1584325}. We sought to verify that our results are
 consistent with those of the prior work.
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/Start_Time_Before_Deadline_and_Final_Score.eps}
+\caption{Compares the number of hours prior to assignment deadline that groups
+  started the assignment to the final score they received. Both the size and
+  color of each circle correspond to the number of groups represented at that
+  position. The circles are plotted such that smaller circles are strictly in
+  front of larger circles.}
+\locallabel{fig:relative_start_time}
+\end{figure}
+
 Figure~\localref{fig:relative_start_time} plots the number of hours between a
 group's first on-time assignment submission and the corresponding assignment
 deadline against the final score the group receives. Our data statistically
@@ -78,6 +68,16 @@ deadline a group began working. We verified that a small number of groups,
 distributed uniformly across assignments, would make their first submission in
 the last hour. This behavior indicates that some groups mostly worked without
 using the system in order to receive feedback.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/Comparision_of_First_and_Last_Submitters.eps}
+\caption{Compares the average final score of the first 10\% of groups to submit
+  to the average and to the last 10\% of groups to submit by assignment. The
+  first 10\% of groups to submit had perfect scores on twenty-seven of the
+  thirty-eight assignments.}
+\locallabel{fig:percent_score}
+\end{figure}
 
 While Figure~\localref{fig:relative_start_time} shows a correlation with start
 time and final score, we can break down relative start times even further to a
@@ -103,24 +103,6 @@ that they would not otherwise have made it.
 \subsection{Does Time Pressure Affect Behavior?}
 \locallabel{sec:time}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Submissions_by_Time_of_Day.eps}
-\caption{Visualizes the time of day submissions were made excluding submissions
-  within a day of their deadline. Note the \PM{4} peak and the larger peak
-  starting at \PM{9} lasting through midnight.}
-\locallabel{fig:by_time_far}
-\end{figure}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Submissions_by_Time_of_Day_Near_Deadline.eps}
-\caption{Visualizes the time of day submissions were made including only
-  submissions within a day of their deadline. The \PM{11} peak corresponds to
-  the hour prior to the deadline for most assignments.}
-\locallabel{fig:by_time_near}
-\end{figure}
-
 Motivated by the work of \spacco{}, we wanted to see if our real-time feedback
 and assessment system, which required students to actively make assignment
 submissions, measured similar student working behavior to their passively
@@ -133,6 +115,24 @@ suggested that ``setting the deadline a couple of hours later might allow
 students to work at their preferred time without the added pressure of an
 impending deadline'' ~\cite{Spacco:2013:TIP:2462476.2465594}. Our results
 indicate otherwise.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[trim=0 .12in 0 .10in, clip, width=4.215in]{graphs/Submissions_by_Time_of_Day.eps}
+\caption{Visualizes the time of day submissions were made excluding submissions
+  within a day of their deadline. Note the \PM{4} peak and the larger peak
+  starting at \PM{9} lasting through midnight.}
+\locallabel{fig:by_time_far}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[trim=0 .12in 0 .10in, clip, width=4.215in]{graphs/Submissions_by_Time_of_Day_Near_Deadline.eps}
+\caption{Visualizes the time of day submissions were made including only
+  submissions within a day of their deadline. The \PM{11} peak corresponds to
+  the hour prior to the deadline for most assignments.}
+\locallabel{fig:by_time_near}
+\end{figure}
 
 Figure~\localref{fig:by_time_far} depicts the number of submissions made at
 each time of day for submissions made more than a day from their deadline. We
@@ -178,18 +178,6 @@ submissions have a similar hour-prior to deadline distribution.
 \subsection{Does Time Pressure Affect Efficiency?}
 \locallabel{sec:efficiency}
 
-\begin{figure}[!t]
-\centering \includegraphics[width=5.25in]{graphs/Submissions_by_Days_Before_Deadline.eps}
-\caption{Shows the number of submissions by the number of days each submission
-  was made prior to their deadline grouped by improvement category.
-  Submissions that improve the group's maximum assignment score are labeled
-  \emph{Improvement}, and those that tie are labeled \emph{No
-    Improvement}. \emph{Worse} submissions are those that result in a local
-  minimum, and all submissions between the group's maximum assignment score and
-  the local minimum are labeled \emph{No Improvement 2}.}
-\locallabel{fig:days_submissions}
-\end{figure}
-
 The previous section describes how submission behavior is altered by assignment
 deadlines. In this section we look at the effect of a pending deadline on
 submission efficiency. There are a number of ways to define submission
@@ -214,6 +202,18 @@ categories:
   \item[Worse] \hfill \\ The submission results in a local-minimum score. That
     is, it is the lowest score since the last \imp{} submission.
 \end{description}
+
+\begin{figure}[!t]
+\centering \includegraphics[width=5.25in]{graphs/Submissions_by_Days_Before_Deadline.eps}
+\caption{Shows the number of submissions by the number of days each submission
+  was made prior to their deadline grouped by improvement category.
+  Submissions that improve the group's maximum assignment score are labeled
+  \emph{Improvement}, and those that tie are labeled \emph{No
+    Improvement}. \emph{Worse} submissions are those that result in a local
+  minimum, and all submissions between the group's maximum assignment score and
+  the local minimum are labeled \emph{No Improvement 2}.}
+\locallabel{fig:days_submissions}
+\end{figure}
 
 Figure~\localref{fig:days_submissions} depicts the total number of submissions
 made in the days prior to each submission's respective deadline according to
@@ -370,12 +370,6 @@ assignments.
 \locallabel{fig:delta_efficiency}
 \end{figure}
 
-\begin{figure}[!t]
-\centering \includegraphics[width=5.75in]{graphs/Time_Between_Submissions_by_Improvement_Category.eps}
-\caption{Plots the time between submissions by their improvement category.}
-\locallabel{fig:delta_category}
-\end{figure}
-
 As indicated in Section~\localref{sec:delay}, we sought to measure the impact
 of altering assignment feedback delay on student submission behavior. Here, we
 first look at the impact of the feedback delay on the time between subsequent
@@ -399,6 +393,12 @@ thirty minutes or more. Using Student's t-test, we compared the percent of
 \imp{} submissions for each feedback delay fewer than thirty minutes, to those
 of each feedback delay thirty minutes or longer. The difference was
 statistically significant with P=0.0095.
+
+\begin{figure}[!t]
+\centering \includegraphics[width=5.75in]{graphs/Time_Between_Submissions_by_Improvement_Category.eps}
+\caption{Plots the time between submissions by their improvement category.}
+\locallabel{fig:delta_category}
+\end{figure}
 
 For comparison, Figure~\localref{fig:delta_category} depicts the time between
 submissions for each of the improvement categories. The aggregate results from
@@ -456,23 +456,6 @@ time to its prior submission. We refer to this window of time as the
 \subsubsection{Determining an Appropriate Window Size}
 \locallabel{sec:window}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Number_of_Work_Sessions_by_Window_Size.eps}
-\caption{Plots the number of work sessions as the window size increases.}
-\locallabel{fig:work_sessions}
-\end{figure}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Work_Session_Duration_by_Window_Size.eps}
-\caption{Shows the change in work session duration as the window size
-  changes. The red vertical lines indicate points of interest due to
-  significant changes in the longest duration work session. The red lines occur
-  at window sizes seventy-nine, 112, 152, and 285.}
-\locallabel{fig:window_size}
-\end{figure}
-
 We investigate the ideal window size for which to discover work
 sessions. \spacco{} arbitrarily chose a window size of twenty
 minutes~\cite{Spacco:2013:TIP:2462476.2465594}. While this window size may have
@@ -503,6 +486,13 @@ size:
   sixty minutes of actual work.
 \end{itemize}
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/Number_of_Work_Sessions_by_Window_Size.eps}
+\caption{Plots the number of work sessions as the window size increases.}
+\locallabel{fig:work_sessions}
+\end{figure}
+
 Although we can measure the number of subsequent submissions over a given
 window size, we cannot measure either error due to a lack of information as to
 when students are actually working. We accept these errors, and assume that
@@ -523,6 +513,16 @@ number of work sessions merged together is more significant than the number of
 new work sessions created by the grouping of two independent submissions. Aside
 from the twenty-minute peak, there are no other points of interest in this
 figure.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/Work_Session_Duration_by_Window_Size.eps}
+\caption{Shows the change in work session duration as the window size
+  changes. The red vertical lines indicate points of interest due to
+  significant changes in the longest duration work session. The red lines occur
+  at window sizes seventy-nine, 112, 152, and 285.}
+\locallabel{fig:window_size}
+\end{figure}
 
 Figure~\localref{fig:window_size} plots a number of lines corresponding to
 various work session lengths as the window size increases. The four
@@ -571,23 +571,6 @@ options we highlighted with red lines.
 \locallabel{fig:time_score}
 \end{figure}
 
-\begin{table}
-\centering
-\begin{tabular}{|c||c|c|c|c|c|} \hline
-Score & Count & Mean Work Time & stderr & No Progress & stderr \\ \hline \hline
-0\% & 142 & 54m & 6 & 50\% & 4 \\ \hline
-0\%--100\% & 616 & 119m & 6 & 58\% & 2 \\ \hline
-100\% & 1509 & 60m & 2 & 34\% & 1 \\ \hline
-\end{tabular}
-\caption{Lists properties of group work times (79 minute window) grouped by
-  those that scored 0\%, between 0\% and 100\%, and 100\%. The \emph{mean work
-    time} is the mean time groups in each grouping spent working on the
-  assignment along with the corresponding \emph{stderr}. \emph{No progress}
-  represents the mean percent of time that groups in each grouping spent
-  without improving their maximum score.}
-\locallabel{table:times}
-\end{table}
-
 Before considering the impact of the feedback delay on work sessions, we first
 compare a few general properties of our work sessions to those of the passively
 collected work sessions of \spacco[.]{}
@@ -618,6 +601,23 @@ the final score. This negative correlation indicates that the longer a group
 works on an assignment the less likely they are to score well. These results
 contradict the results of \spacco{} where they found a statistically
 significant positive correlation between the two.
+
+\begin{table}
+\centering
+\begin{tabular}{|c||c|c|c|c|c|} \hline
+Score & Count & Mean Work Time & stderr & No Progress & stderr \\ \hline \hline
+0\% & 142 & 54m & 6 & 50\% & 4 \\ \hline
+0\%--100\% & 616 & 119m & 6 & 58\% & 2 \\ \hline
+100\% & 1509 & 60m & 2 & 34\% & 1 \\ \hline
+\end{tabular}
+\caption{Lists properties of group work times (79 minute window) grouped by
+  those that scored 0\%, between 0\% and 100\%, and 100\%. The \emph{mean work
+    time} is the mean time groups in each grouping spent working on the
+  assignment along with the corresponding \emph{stderr}. \emph{No progress}
+  represents the mean percent of time that groups in each grouping spent
+  without improving their maximum score.}
+\locallabel{table:times}
+\end{table}
 
 This result intuitively makes sense under the assumption that a majority of
 groups who do not complete an assignment do not do so due to a lack of
