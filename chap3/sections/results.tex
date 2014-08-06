@@ -148,25 +148,6 @@ accomplished via a \pointtoward{} block. When invoked as
 \pointtoward[\zebra{}]{}, the \net{} will orient itself toward the
 \zebra{}. This block was only made available in \stwo{}.
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/approach_student_success.eps}
-\caption{Shows the completion rate of each approach by student grouped by
-  \sone{} and \stwo{}. An approach for a student is \com{} if any of the
-  student's \com{} snapshots utilizes that approach. An approach for a student
-  is \incom{} if they utilize the approach in any \incom{} snapshot and the
-  approach is not found in any of the student's \com{} snapshots.}
-\locallabel{fig:approach_student_success}
-\end{figure}
-
-\begin{figure}[!t]
-\centering \includegraphics[width=5.25in]{graphs/approach_bar_Sequential2.eps}
-\caption{Shows how many students utilized each approach in \stwo{} snapshots
-  for three categories: \emph{all} snapshots, snapshots up to the first \com{}
-  or last \incom{}, and the \emph{last} snapshot.}
-\locallabel{fig:approach_bar_s2}
-\end{figure}
-
 A student may utilize a combination of these high-level approaches to complete
 the assignment. For instance, in a single snapshot a student may use the
 \emph{orient and glide} approach via a \rel{} orientation block to \catch{} the
@@ -180,6 +161,17 @@ starting point for all students utilized an \abs{} orientation approach. In
 order to accurately assess what approach combination the students explicitly
 utilized, the code provided in the base-project was excluded from our approach
 combination analysis.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/approach_student_success.eps}
+\caption{Shows the completion rate of each approach by student grouped by
+  \sone{} and \stwo{}. An approach for a student is \com{} if any of the
+  student's \com{} snapshots utilizes that approach. An approach for a student
+  is \incom{} if they utilize the approach in any \incom{} snapshot and the
+  approach is not found in any of the student's \com{} snapshots.}
+\locallabel{fig:approach_student_success}
+\end{figure}
 
 Figure~\localref{fig:approach_student_success} shows a comparison of the
 overall completion rate by student of each approach by assignment
@@ -229,6 +221,14 @@ categories:
   snapshot, or their last snapshot if all of their snapshots were \incom{}
 \end{description}
 
+\begin{figure}[!t]
+\centering \includegraphics[width=5.25in]{graphs/approach_bar_Sequential2.eps}
+\caption{Shows how many students utilized each approach in \stwo{} snapshots
+  for three categories: \emph{all} snapshots, snapshots up to the first \com{}
+  or last \incom{}, and the \emph{last} snapshot.}
+\locallabel{fig:approach_bar_s2}
+\end{figure}
+
 Figure~\localref{fig:approach_bar_s2} quantifies the number of students who
 utilize each approach in \stwo{} snapshots for each of the aforementioned
 categories. There are two primary observations: The first is that the
@@ -249,20 +249,6 @@ the students switched approaches after their first \com{} snapshot.
 
 \subsection{Quantifying Students Affected by a Scratch Race Condition}
 \locallabel{sub:race}
-
-\begin{figure}[!t]
-\centering \includegraphics[width=5.25in]{graphs/race_condition_Sequential1.eps}
-\caption{Shows the breakdown of students affected by the race condition issue
-  in Scratch for \sone{}.}
-\locallabel{fig:rc_s1}
-\end{figure}
-
-\begin{figure}[!t]
-\centering \includegraphics[width=5.25in]{graphs/race_condition_Sequential2.eps}
-\caption{Shows the breakdown of students affected by the race condition issue
-  in Scratch for \stwo{}.}
-\locallabel{fig:rc_s2}
-\end{figure}
 
 Our curriculum development and test process, as described in
 Section~\localref{sec:classes} and visualized in Figure~\localref{fig:process},
@@ -307,6 +293,20 @@ have expended effort to resolve the race condition. We label these snapshots as
 \emph{fixed}. Additionally, for each student with one or more snapshots
 exhibiting the race condition, we consider whether or not they completed the
 assignment.
+
+\begin{figure}[!t]
+\centering \includegraphics[trim=0 .48in 0 0, clip, width=5.45in]{graphs/race_condition_Sequential1.eps}
+\caption{Shows the breakdown of students affected by the race condition issue
+  in Scratch for \sone{}.}
+\locallabel{fig:rc_s1}
+\end{figure}
+
+\begin{figure}[!t]
+\centering \includegraphics[trim=0 .5in 0 0, clip, width=5.30in]{graphs/race_condition_Sequential2.eps}
+\caption{Shows the breakdown of students affected by the race condition issue
+  in Scratch for \stwo{}.}
+\locallabel{fig:rc_s2}
+\end{figure}
 
 Figure~\localref{fig:rc_s1} and Figure~\localref{fig:rc_s2} show the breakdown
 of all students grouped by whether or not they have at least one snapshot

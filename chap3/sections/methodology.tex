@@ -1,12 +1,22 @@
 \section{Methodology} \locallabel{sec:methodology}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.75in]{graphs/process.eps}
-\caption{Visualizes the iterative process of evaluating and improving both our
-  curriculum and our static analysis of \sprogram{s}.}
-\locallabel{fig:process}
-\end{figure}
+Our study is informed by design-based research methods and uses both
+qualitative and quantitative data and analysis. Design-based research studies
+simultaneously inform the development of curriculum, research, and practice,
+allowing us to iteratively improve our curriculum as we learn more about
+student learning~\cite{barab04,brown92,wang05}. These changes in curriculum in
+turn change the learning outcomes. As we are in the initial stages of what will
+be both a technological (modified interface) and curricular innovation, we
+require a research plan that is able to inform the simultaneous separate but
+coordinated development along both technological and curricular
+directions. Wang defines design-based research as:
+
+\begin{quote}
+A systematic but flexible methodology aimed to improve educational practices
+through iterative analysis, design, development, and implementation, based on
+collaboration among researchers and practitioners in real-world settings, and
+leading to contextually-sensitive design principals and theories~\cite{wang05}.
+\end{quote}
 
 \begin{table}
 \centering
@@ -30,24 +40,6 @@ S2E & \nth{4} & 25 & 117 & No & Local\\ \hline  % PEADAHLIN
   remote.}
 \locallabel{table:classes}
 \end{table}
-
-Our study is informed by design-based research methods and uses both
-qualitative and quantitative data and analysis. Design-based research studies
-simultaneously inform the development of curriculum, research, and practice,
-allowing us to iteratively improve our curriculum as we learn more about
-student learning~\cite{barab04,brown92,wang05}. These changes in curriculum in
-turn change the learning outcomes. As we are in the initial stages of what will
-be both a technological (modified interface) and curricular innovation, we
-require a research plan that is able to inform the simultaneous separate but
-coordinated development along both technological and curricular
-directions. Wang defines design-based research as:
-
-\begin{quote}
-A systematic but flexible methodology aimed to improve educational practices
-through iterative analysis, design, development, and implementation, based on
-collaboration among researchers and practitioners in real-world settings, and
-leading to contextually-sensitive design principals and theories~\cite{wang05}.
-\end{quote}
 
 \subsection{Classes} \locallabel{sec:classes}
 This study involved eight \nth{4} grade, one \nth{5} grade, and one \nth{6}
@@ -74,6 +66,14 @@ students' development process does not accurately reflect student
 understanding~\cite{Piech:2012:MSL:2157136.2157182,brennan12}. The snapshot
 generation, collection, and verification process is described in
 Section~\localref{sub:collection}.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.75in]{graphs/process.eps}
+\caption{Visualizes the iterative process of evaluating and improving both our
+  curriculum and our static analysis of \sprogram{s}.}
+\locallabel{fig:process}
+\end{figure}
 
 Computer science researchers read the field notes and manually inspected a
 subset of student snapshots to discover how student approaches to the
@@ -128,27 +128,6 @@ removed all but the following blocks:
 \subsection{The Sequential Execution Assignment}
 \locallabel{sub:sequential_execution}
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/screen_s1.eps}
-\caption{Depicts the initial screen for \sone{} including five sprites. The
-  students were tasked with to moving the \net{} to \catch{} the \bear{}, the
-  \horse{}, and the \zebra{} in any order while avoiding the \snake{}. \stwo{}
-  visually differs only by the absence of the \snake{}.}
-\locallabel{fig:screen_s1}
-\end{figure}
-
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=4.0in]{graphs/screen_blocks.eps}
-\caption{Depicts the script and comments provided in the base-project to the
-  students in \stwo{}. The script was the same in \sone{'s} base-project,
-  however, the comments were not included.}
-\locallabel{fig:initial_blocks}
-\end{figure}
-
-
 In this study we consider only the first assignment given to the three
 \emph{waves} of classes. The high-level goal of this assignment was for
 students to demonstrate competency programming a sequence of instructions that
@@ -169,6 +148,16 @@ assignment. However, the latter two waves of classes had their own iterations
 of the sequential execution assignment, \sone{} and \stwo{}, which, we discuss
 below.
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/screen_s1.eps}
+\caption{Depicts the initial screen for \sone{} including five sprites. The
+  students were tasked with to moving the \net{} to \catch{} the \bear{}, the
+  \horse{}, and the \zebra{} in any order while avoiding the \snake{}. \stwo{}
+  visually differs only by the absence of the \snake{}.}
+\locallabel{fig:screen_s1}
+\end{figure}
+
 \subsubsection{Iteration 1: \sone{}} \locallabel{sub:s1}
 The first iteration of the sequential execution assignment, referred to as
 \sone{}, presents students with the \stage{} and five sprites arranged as shown
@@ -179,6 +168,15 @@ the middle right, and the \zebra{}, located in the lower left. The students are
 permitted to program the \net{} to \catch{} these sprites in any order they
 desire. However, in \sone{}, the students are presented with an obstacle to
 avoid, the \snake{}, located in the lower right.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=4.0in]{graphs/screen_blocks.eps}
+\caption{Depicts the script and comments provided in the base-project to the
+  students in \stwo{}. The script was the same in \sone{'s} base-project,
+  however, the comments were not included.}
+\locallabel{fig:initial_blocks}
+\end{figure}
 
 The students were provided with a base-project that moves the \net{} such that
 it already \catch{es} the \zebra{} using a combination of \glideDIST{} and
