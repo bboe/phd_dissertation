@@ -18,8 +18,13 @@ i.e., they are used to indicate the need for additional manual
 analysis. However, any false positives produced by Hairball are cause for
 concern.
 
-
 \subsection{Initialization}
+We begin with initialization. Recall from Section~\localref{sec:plugins} that
+Hairball looks for attributes that are modified, and expects to find a
+corresponding \abs{} block in the \initzone{} in order to consider an instance
+\correct{}. The manual analysis, on the other hand, only involved running the
+\sprogram{} twice, and confirming that the two executions matched.
+
 \begin{figure}[!t]
 \centering
 \includegraphics[trim=.3in .15in .3in .15in, clip,
@@ -30,12 +35,6 @@ concern.
   negatives.}
 \locallabel{fig:initialization}
 \end{figure}
-
-We begin with initialization. Recall from Section~\localref{sec:plugins} that
-Hairball looks for attributes that are modified, and expects to find a
-corresponding \abs{} block in the \initzone{} in order to consider an instance
-\correct{}. The manual analysis, on the other hand, only involved running the
-\sprogram{} twice, and confirming that the two executions matched.
 
 Figure~\localref{fig:initialization} provides the classification of the 348
 initialization instances discovered across the fifty-eight \sprogram{s}. Of the
@@ -48,7 +47,6 @@ the sprite becomes visible. In spite of this discrepancy, these results overall
 indicate that Hairball is successful at pointing out problems in
 initialization.
 
-\subsection{Say and Sound Synchronization}
 \begin{figure}[!t]
 \centering
 \includegraphics[trim=.3in .15in .3in .15in, clip,
@@ -59,7 +57,7 @@ initialization.
 \locallabel{fig:saysoundsync}
 \end{figure}
 
-
+\subsection{Say and Sound Synchronization}
 Figure~\localref{fig:saysoundsync} shows the results of identifying and
 labeling instances of synchronization between speech bubbles and sound
 files. Manual analysis identified 237 \correct{} instances, and a total of
@@ -76,7 +74,6 @@ instances, Hairball would need to additionally inspect all scripts triggered by
 the broadcast event to ensure none of them interfered with either the display
 of the speech bubble or the playing of the sound file.
 
-\subsection{Broadcast and Receive}
 \begin{figure}[!t]
 \centering
 \includegraphics[trim=.3in .15in .3in .15in, clip,
@@ -88,6 +85,7 @@ of the speech bubble or the playing of the sound file.
 \locallabel{fig:broadcastreceive}
 \end{figure}
 
+\subsection{Broadcast and Receive}
 Figure~\localref{fig:broadcastreceive} shows the results of detecting and
 labeling instances of broadcast and receive. Here, the manual analysis differed
 from Hairball by additionally verifying that the intended action is performed
@@ -133,7 +131,6 @@ single larger animation. Additionally, Hairball considered a move, wait, and
 change in appearance as an \incom{} animation instance. In such cases, manual
 analysis recorded nothing.
 
-\subsubsection{Summary Results}
 \begin{figure}[!t]
 \centering \includegraphics[trim=.3in .15in .2in .15in, clip,
   width=5.25in]{graphs/AutoSummary.eps}
@@ -146,6 +143,7 @@ analysis recorded nothing.
 \locallabel{fig:summary}
 \end{figure}
 
+\subsubsection{Summary Results}
 Figure~\localref{fig:summary} shows three sets of results across all four
 computer science concepts and the overall average. The first is the mislabel
 rate of manual analysis and Hairball. Percentages closer to zero indicate

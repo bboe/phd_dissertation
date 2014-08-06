@@ -29,25 +29,6 @@ label should be inspected manually.
 
 
 \subsubsection{Initial State}
-
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|} \hline
-Category & Relative&Absolute\\ \hline \hline
-Costume& next costume & switch to costume x\\ \hline
-Visibility& & show/hide\\ \hline
-Orientation&turn clockwise x degrees&point in direction x\\ \hline
-Position&move x steps, go to x,y,&go to x,y\\
-&glide z secs to x,y, etc.&go to x,y\\ \hline
-Size&change size by x\% & set size to x\%\\ \hline
-Background&next background & switch to background x\\ \hline
-\end{tabular}
-\caption{Lists the five categories of initial state, and provides a subset of
-  the \rel{} and \abs{} modification blocks for each category.}
-\locallabel{table:initialstate}
-\end{table}
-
-
 In any program, correctly setting the initial state is important.  In
 \sprogram{s}, the significance is different.  \sprogram{s} are comprised of
 animations, and in the runtime environment, they may run from start to finish
@@ -72,6 +53,23 @@ perform general modification. To discover instances of initialization, we first
 determine the set of blocks that can be considered initialization blocks and
 then we restrict the location within the scripts that we search for these
 blocks. We call this location the \initzone{}.
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Category & Relative&Absolute\\ \hline \hline
+Costume& next costume & switch to costume x\\ \hline
+Visibility& & show/hide\\ \hline
+Orientation&turn clockwise x degrees&point in direction x\\ \hline
+Position&move x steps, go to x,y,&go to x,y\\
+&glide z secs to x,y, etc.&go to x,y\\ \hline
+Size&change size by x\% & set size to x\%\\ \hline
+Background&next background & switch to background x\\ \hline
+\end{tabular}
+\caption{Lists the five categories of initial state, and provides a subset of
+  the \rel{} and \abs{} modification blocks for each category.}
+\locallabel{table:initialstate}
+\end{table}
 
 Attribute modifying Scratch blocks can be labeled as \rel{} or
 \abs{}. \emph{Relative} Scratch blocks alter the attribute based upon its
