@@ -103,6 +103,13 @@ to be \incor{}.
 
 
 \subsection{Complex Animation}
+Complex animation was especially difficult for Hairball to detect.  As
+Figure~\localref{fig:animation} shows, manual analysis was 100\% accurate at
+labeling the forty-six instances found, and only failed to detect three
+instances. Hairball, on the other hand, labeled eleven items as \incom{} that
+the ground truth analysis determined to not be instances at all. Excluding
+these instances, Hairball identified twenty-eight \correct{} instances, and
+twenty-one others with only two false negatives.
 
 \begin{figure}[!t]
 \centering \includegraphics[trim=.3in .15in .3in .15in, clip,
@@ -113,14 +120,6 @@ to be \incor{}.
   false negatives.}
 \locallabel{fig:animation}
 \end{figure}
-
-Complex animation was especially difficult for Hairball to detect.  As
-Figure~\localref{fig:animation} shows, manual analysis was 100\% accurate at
-labeling the forty-six instances found, and only failed to detect three
-instances. Hairball, on the other hand, labeled eleven items as \incom{} that
-the ground truth analysis determined to not be instances at all. Excluding
-these instances, Hairball identified twenty-eight \correct{} instances, and
-twenty-one others with only two false negatives.
 
 Hairball identified too many instances of complex animation due to the
 subjective nature of what is considered an animation.  For example, Hairball
