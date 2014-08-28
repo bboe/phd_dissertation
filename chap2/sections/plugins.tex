@@ -107,8 +107,9 @@ indefinitely (until replaced by another \say{} block, or \emph{erased} with an
 empty \say{} block), while the other, \sayfor{}, puts a speech bubble on the
 screen for $n$ seconds and, as a side-effect, delays execution of the script
 for $n$ seconds. Similarly, there are two forms of the block for playing a
-sound clip: \playsounddone{} plays the sound synchronously, while \playsound{}
-plays the sound asynchronously.
+sound clip: \playsounddone{} plays the entire sound file before continuing
+execution of the script, while \playsound{} starts playing the sound and
+immediately continues with the script execution.
 
 There are two methods to produce the desired effect.  The first is to
 asynchronously play the sound via the \playsound{} block followed by a
