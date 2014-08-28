@@ -19,12 +19,14 @@ reconciled.
 
 Hairball was then programmed to match the methodology agreed upon by the staff
 members when classifying the concepts, and subsequently used to statically
-analyze all of the \sprogram{s}.  When there were discrepancies between
-Hairball and the manual analysis, we performed a second manual analysis to
-determine which was correct, Hairball or the initial manual analysis. In
-Section~\localref{sec:results}, we compare the results between Hairball and the
-reconciled manual analysis using the results of the second manual analysis as a
-ground truth.
+analyze all of the \sprogram{s}. We define our ground truth data set as all
+instances that were labeled identically by both manual analysis and
+Hairball. We performed a second manual analysis for each instance that Hairball
+and the manual analysis labeled differently to determine which was correct,
+Hairball or the initial manual analysis. The results of this second manual
+analysis were added to our ground truth data set. In
+Section~\localref{sec:results}, we compare both Hairball and our initial manual
+analysis to our ground truth data set.
 
 Because the assignments are sensory in nature (auditory, visual), we are not
 attempting to create Hairball to replace manual analysis.  Instead, we are
