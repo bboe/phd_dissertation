@@ -12,15 +12,15 @@ generally useful both as a lint-like tool for individual developers of
 \sprogram{s} and for others who are tasked with analyzing numerous
 \sprogram{s}.
 
-Each Hairball plugin for the camp strives to evaluate whether, or to what
-extent, the \sprogram{} demonstrated competence in an area. These plugins
-attempt to discover instances of the aforementioned concepts contained within a
-\sprogram{} and label each instance as \correct{}, \semincor{}, \incor{}, or
-\incom{}. Instances labeled \correct{} should indicate that the concept was
-implemented correctly. Instances labeled \semincor{} should indicate that the
-concept was implemented in a way that may not always work when
-executed. Intuitively, instances labeled \incor{} should indicate the concept
-was implemented incorrectly. Finally, instances labeled \incom{} should
+Each Hairball plugin for the camp was designed to evaluate whether, or to what
+extent, the \sprogram{} demonstrated competence in an area. More precisely,
+these plugins were designed to discover instances of the aforementioned
+concepts contained within a \sprogram{} and label each instance as \correct{},
+\semincor{}, \incor{}, or \incom{}. Instances labeled \correct{} should
+indicate that the concept was implemented correctly. Instances labeled
+\semincor{} should indicate that the concept was implemented in a way that may
+not always work when executed. Instances labeled \incor{} should indicate the
+concept was implemented incorrectly. Finally, instances labeled \incom{} should
 indicate that only a subset of the required blocks for a concept was
 discovered. A single \sprogram{} may contain multiple instances of a concept
 distributed across any or all of the labels. Ideally, instances labeled
@@ -61,8 +61,7 @@ Category & Relative&Absolute\\ \hline \hline
 Costume& next costume & switch to costume x\\ \hline
 Visibility& & show/hide\\ \hline
 Orientation&turn clockwise x degrees&point in direction x\\ \hline
-Position&move x steps, go to x,y,&go to x,y\\
-&glide z secs to x,y, etc.&go to x,y\\ \hline
+Position&move x steps & go to x,y\\ \hline
 Size&change size by x\% & set size to x\%\\ \hline
 Background&next background & switch to background x\\ \hline
 \end{tabular}
