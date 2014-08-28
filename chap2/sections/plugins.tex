@@ -111,14 +111,28 @@ sound clip: \playsounddone{} plays the entire sound file before continuing
 execution of the script, while \playsound{} starts playing the sound and
 immediately continues with the script execution.
 
-There are two methods to produce the desired effect.  The first is to
-asynchronously play the sound via the \playsound{} block followed by a
-\sayfor{} block with duration equal to the elapsed time of the sound.
-Unfortunately, the timing must be manually determined and needs to be updated
-whenever the sound file changes.  The second, is to use a \say{} block to
-display the message, followed by a \playsounddone{} block, ending with an empty
-\say{} block to clear the previous speech bubble. The campers were taught the
-latter method as the correct approach.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/saysound.eps}
+\caption{Shows the two methods for synchronizing messages from the \say{}
+  blocks with sound files played through the \playsound{} blocks. While both
+  methods can produce the desired effect, the method on the right requires
+  manually setting an appropriate duration in the \sayfor{} block and thus is
+  not as robust to modifications, whereas the method on the left guarantees
+  synchronization between the play of the sound file and the display of the
+  message.}  \locallabel{fig:saysound}
+\end{figure}
+
+Figure~\localref{fig:saysound} depicts the two methods to produce the desired
+effect. The first, displayed on the right, is to asynchronously play the sound
+via the \playsound{} block followed by a \sayfor{} block with duration equal to
+the elapsed time of the sound. Unfortunately, the timing must be manually
+determined and needs to be updated whenever the sound file changes. The second,
+displayed on the left, is to use a \say{} block to display the message,
+followed by a \playsounddone{} block, ending with an empty \say{} block to
+remove the speech bubble. The campers were taught the latter method as the
+correct approach because it is robust to modifications of both the sound file,
+and to the message in the \say{} block.
 
 Thus the say and sound synchronization plugin detects instances of this concept
 by looking for sequential \say{} and \playsound{} blocks and verifies the
