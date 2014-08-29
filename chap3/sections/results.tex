@@ -251,22 +251,23 @@ the students switched approaches after their first \com{} snapshot.
 \subsection{Quantifying Students Affected by a Scratch Race Condition}
 \locallabel{sub:race}
 
-Our curriculum development and test process, as described in
-Section~\localref{sec:classes} and visualized in Figure~\localref{fig:process},
-allowed us to focus analysis on issues we became aware of due to the in-class
-researchers' field notes. However, the field notes did not always capture the
-relevant information. During manual analysis of the students' snapshots we
-noticed a number of snapshots that produced inconsistent results across
-multiple executions. These snapshots should have consistently \caught{} the
-\zebra{}, however, only did so approximately 50\% of the time. We discovered
-the problem to be a race condition within Scratch where the detection of the
-intersection between two sprites may not occur in the brief period of time that
-the sprites intersect. Instead, the next block in the script, always a rotation
-block, would execute and the rotation would result in the separation of the two
-sprites; i.e., the two sprites were no longer intersecting. In-class education
-researchers confirmed having observed this issue, however, their field notes
-did not quantify the number of students affected. We hypothesized that students
-affected by this issue may have struggled completing the assignment.
+Our curriculum development and testing process, as described in
+Section~\localref{sec:methodology} and visualized in
+Figure~\localref{fig:process}, allowed us to focus analysis on issues we became
+aware of due to the in-class researchers' field notes. However, the field notes
+did not always capture the relevant information. During manual analysis of the
+students' snapshots we noticed a number of snapshots that produced inconsistent
+results across multiple executions. These snapshots should have consistently
+\caught{} the \zebra{}, however, only did so approximately 50\% of the time. We
+discovered the problem to be a race condition within Scratch where the
+detection of the intersection between two sprites may not occur in the brief
+period of time that the sprites intersect. Instead, the next block in the
+script, always a rotation block, would execute and the rotation would result in
+the separation of the two sprites; i.e., the two sprites were no longer
+intersecting. In-class education researchers confirmed having observed this
+issue, however, their field notes did not quantify the number of students
+affected. We hypothesized that students affected by this issue may have
+struggled completing the assignment.
 
 In order to quantify the students affected, we wrote a Hairball plugin to track
 the \net{}'s \exe{}, i.e., the sequence of blocks beginning with
