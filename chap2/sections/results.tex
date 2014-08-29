@@ -32,14 +32,17 @@ corresponding \abs{} block in the \initzone{} in order to consider an instance
 \caption{Compares the initialization instance labels. Note that this analysis
   used only the \correct{} and \incor{} labels. Manual analysis resulted in
   thirty-two false positives, and Hairball resulted in thirty-three false
-  negatives.}
+  negatives. Note that for this concept there are exactly 348 possible
+  instances as each of the fifty-eight \sprogram{s} have six attributes that
+  require initialization if modified.}
 \locallabel{fig:initialization}
 \end{figure}
 
 Figure~\localref{fig:initialization} provides the classification of the 348
 initialization instances discovered across the fifty-eight \sprogram{s}. Of the
-sixty-five instances that Hairball and the manual analysis labeled differently,
-Hairball was accurate for thirty-two of the instances. Many of the remaining
+sixty-five instances that Hairball and the initial manual analysis labeled
+differently, Hairball was accurate for thirty-two of the instances based on the
+ground truth, i.e., our second manual analysis. Many of the remaining
 thirty-three instances were not possible for Hairball to label as \correct{}
 due to initialization taking place outside of the \initzone{}. For example, an
 initially hidden sprite can correctly have its position initialized just before
