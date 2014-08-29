@@ -384,9 +384,10 @@ unintended path while completing the assignment.
 \subsubsection{Double Click to Execute Filters}
 Once aware of the problem, we sought to retroactively identify students who may
 have utilized this \dce{} approach. We wrote a Hairball plugin to filter out
-snapshots determined to not demonstrate the \dce{} behavior. The following
-paragraphs detail, in order, our approach to filtering out snapshots in attempt
-to approximate the students affected by the \dce{} behavior.
+snapshots that we could statically determine to not demonstrate the \dce{}
+behavior. The following paragraphs detail, in order, the static analysis
+filters we created in attempt to approximate the students affected by the
+\dce{} behavior.
 
 \begin{description}
 \item [\emph{Complete} Snapshots] Any snapshots that when emulated by our
