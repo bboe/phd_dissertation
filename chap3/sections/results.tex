@@ -383,8 +383,10 @@ unintended path while completing the assignment.
 
 \subsubsection{Double Click to Execute Filters}
 Once aware of the problem, we sought to retroactively identify students who may
-have utilized this \dce{} approach. We wrote a Hairball plugin to filter out
-snapshots that we could statically determine to not demonstrate the \dce{}
+have utilized this \dce{} approach. Ideally, we wanted a plugin that would
+positively identify these students based on their snapshots. However, with the
+information provided in the snapshots we could only incrementally filter out
+snapshots matching models that we verified do not demonstrate the \dce{}
 behavior. The following paragraphs detail, in order, the static analysis
 filters we created in attempt to approximate the students affected by the
 \dce{} behavior.
