@@ -37,14 +37,14 @@ identifying that 40\% of all students experienced a Scratch race
 condition. Interestingly, 78\% of those students completed the assignment
 indicating a statistically significant correlation between experiencing the
 race condition and completing the assignment. While we were successful in
-writing automated assessment for the race condition issue, we could not do the
-same for the \dce{} issue. The plugin filtered half the snapshots, however, the
-root issue was that even with manual analysis we could not precisely
-differentiate between snapshots exhibiting this behavior and normal behavior
-due to the lack of information contained in the snapshots. In this regard, we
-consider the use of the plugin a success as it helped us swiftly determine the
-large subset of submissions that may exhibit the \dce{} behavior. This
-information, in turn, permitted us to come to the aforementioned conclusion.
+writing a Hairball plugin for the race condition issue, we could not do the
+same for the \dce{} issue. The problem was that even with manual analysis we
+could not precisely differentiate between snapshots exhibiting this behavior
+and normal behavior due to the lack of information contained in the
+snapshots. In this regard, we consider the use of static analysis a success as
+it helped us swiftly determine the large subset of submissions that may exhibit
+the \dce{} behavior. This information, in turn, permitted us to come to the
+aforementioned conclusion.
 
 The two most significant benefits of using static analysis in assignment
 assessment are the speed of assessment, and the accuracy of assessment. While
@@ -59,13 +59,13 @@ assessment is due to the dramatic reduction in overhead required with each
 iteration of assessment criteria; of which, we had many. With only the addition
 of a short amount of time required to adapt our static analysis to updated
 assessment criteria, we were otherwise able to rerun the entire modified
-assignment assessment across all snapshots in the matter of
-minutes. Conversely, a human could at best assess six snapshots in a
-minute. Assuming that is feasible, each assessment criteria iteration would
-have required 2.6 hours for analysis of our 935 snapshots. While, in general,
-the number of assessment criteria iterations can be reduced with more in-depth
-up-front preparation, using static analysis permits a flexibility in assignment
-assessment that is not limited by human factors.
+assignment assessment across all snapshots in a matter of minutes. Conversely,
+a human could at best assess six snapshots in a minute. Assuming that is
+feasible, each assessment criteria iteration would have required 2.6 hours for
+analysis of our 935 snapshots. While, in general, the number of assessment
+criteria iterations can be reduced with more in-depth up-front preparation,
+using static analysis permits a flexibility in assignment assessment that is
+not limited by human factors.
 
 Finally, the plugins written for our assessment will be used in future
 iterations of the assignment to validate additional interface and curriculum

@@ -312,7 +312,7 @@ assignment.
 
 Figure~\localref{fig:rc_s1} and Figure~\localref{fig:rc_s2} show the breakdown
 of all students grouped by whether or not they have at least one snapshot
-exhibiting the race condition. In total eleven and forty-four students (38\%
+exhibiting the race condition. In total, eleven and forty-four students (38\%
 and 37\%) have snapshots exhibiting the race condition for \sone{} and \stwo{}
 respectively. Of those, three and nine students (27\% and 20\%) were unable to
 complete the assignment. Six and twenty-four students (55\% and 55\%) took a
@@ -326,7 +326,7 @@ sampled the snapshots of a few of these students and discovered the following
 three approaches that students used to avoid encountering the race condition:
 
 \begin{enumerate}
-\item The student immediately removed some or all of the provided code thus
+\item The student immediately removed some or all of the provided code, thus
   starting with a modified base-project.
 \item In \stwo{}, the student simply appended \glideto{} blocks to the code.
 \item The student immediately added an additional \glideDIST{} block resulting
@@ -348,7 +348,7 @@ statistically significantly more likely to complete the assignment: 73\% and
 82\% compared to 39\% and 68\% (chi square, p \textless{} 0.028). This result
 was unexpected, nevertheless, the labels provided by our static analysis
 indirectly allowed us to discover the primary reason why students who did not
-experience the race condition, did not complete the assignment. Manual
+experience the race condition did not complete the assignment. Manual
 inspection of these labeled snapshots revealed that a large majority of these
 students either removed, or significantly altered the provided code in their
 first snapshot. The only other reason we discovered was due to race condition
@@ -378,15 +378,15 @@ students did not exhibit the conceptual understanding of sequential execution
 we had intended. Furthermore, the education researchers noted that students
 would \dce{} a script in order to move from the start location to the first
 sprite, and then alter that script to perform the next step of the
-sequence. Thus, as another use of scaffolding in the assignment, we disabled
-the \dce{} feature in \stwo{} in attempt to prevent students from going down an
-unintended path while completing the assignment.
+sequence. Thus, as another use of instructional scaffolding in the assignment,
+we disabled the \dce{} feature in \stwo{} in attempt to prevent students from
+going down an unintended path while completing the assignment.
 
 \subsubsection{Double Click to Execute Filters}
 Once aware of the problem, we sought to retroactively identify students who may
 have utilized this \dce{} approach. Ideally, we wanted a plugin that would
 positively identify these students based on their snapshots. However, with the
-information provided in the snapshots we could only incrementally filter out
+information provided in the snapshots, we could only incrementally filter out
 snapshots matching models that we verified do not demonstrate the \dce{}
 behavior. The following paragraphs detail, in order, the static analysis
 filters we created in attempt to approximate the students affected by the
@@ -415,7 +415,7 @@ filters we created in attempt to approximate the students affected by the
   \emph{green flag}. However, it is still possible to click on the \net{}
   multiple times resulting in an execution for each of these clicks. In such
   cases, the \net{} will initially be in an invalid state for all but the first
-  \net{} click. By performing the expected location test multiple times we are
+  \net{} click. By performing the expected location test multiple times, we are
   able to both identify and filter snapshots exhibiting this multiple \net{}
   click behavior. These snapshots are filtered for the same reason as those
   filtered due to ending in an expected location.
