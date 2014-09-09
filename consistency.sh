@@ -35,6 +35,14 @@ if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 0)"
 fi
 
+grep -PzoR "In\s+this\s+\w+\s" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "add comma after 'In this ____'"
+    echo -n  "$(tput setaf 0)"
+fi
+
+
 grep -iPzoR "consent\s+giv" sections/ chap*/
 if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 1)"
