@@ -35,6 +35,20 @@ if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 0)"
 fi
 
+grep -PzoR "Overall\s" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "add comma after 'Overall'"
+    echo -n  "$(tput setaf 0)"
+fi
+
+grep -PzoR "Finally\s" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "add comma after 'Finally'"
+    echo -n  "$(tput setaf 0)"
+fi
+
 grep -PzoR "In\s+this\s+\w+\s" sections/ chap*/
 if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 1)"
