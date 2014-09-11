@@ -86,6 +86,13 @@ if [ $? -eq 0 ]; then
     echo -n  "$(tput setaf 0)"
 fi
 
+grep -niPzoR "\sSection\s+" sections/ chap*/
+if [ $? -eq 0 ]; then
+    echo -n  "$(tput setaf 1)"
+    echo -e "Section followed by space"
+    echo -n  "$(tput setaf 0)"
+fi
+
 
 grep -iPR "(\s+)project(s?)([^a-z]|$)" sections/ chap*/
 if [ $? -eq 0 ]; then
