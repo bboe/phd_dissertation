@@ -209,6 +209,14 @@ approach. None of our field notes provide any insight as to why the \rel{}
 approach was so prominent with the \emph{S1A} class, especially when compared
 to the insignificance of the \rel{} approach with \stwo{}.
 
+\begin{figure}[!t]
+\centering \includegraphics[width=5.25in]{graphs/approach_bar_Sequential2.eps}
+\caption{Shows how many students utilized each approach in \stwo{} snapshots
+  for three categories: \emph{all} snapshots, snapshots up to the first \com{}
+  or last \incom{}, and the \emph{last} snapshot.}
+\locallabel{fig:approach_bar_s2}
+\end{figure}
+
 Finally, we look at students' usage of an approach across snapshots in three
 categories:
 
@@ -221,14 +229,6 @@ categories:
 \item[last] the student utilized the approach in either their first \com{}
   snapshot, or their last snapshot if all of their snapshots were \incom{}
 \end{description}
-
-\begin{figure}[!t]
-\centering \includegraphics[width=5.25in]{graphs/approach_bar_Sequential2.eps}
-\caption{Shows how many students utilized each approach in \stwo{} snapshots
-  for three categories: \emph{all} snapshots, snapshots up to the first \com{}
-  or last \incom{}, and the \emph{last} snapshot.}
-\locallabel{fig:approach_bar_s2}
-\end{figure}
 
 Figure~\localref{fig:approach_bar_s2} quantifies the number of students who
 utilize each approach in \stwo{} snapshots for each of the aforementioned
@@ -288,14 +288,6 @@ condition or not. Of the 297 and 638 snapshots for \sone{} and \stwo{}
 respectively, only thirty-nine and thirty-eight respective snapshots (13\% and
 6\%) contained an \exe{} not explicitly handled by our plugin.
 
-In addition to labeling \exe{s} exhibiting the race condition, we labeled those
-resulting in a consistent intersection with the \zebra{}. Students with such a
-snapshot subsequent to a snapshot exhibiting the race condition are likely to
-have expended effort to resolve the race condition. We label these snapshots as
-\emph{fixed}. Additionally, for each student with one or more snapshots
-exhibiting the race condition, we consider whether or not they completed the
-assignment.
-
 \begin{figure}[!t]
 \centering \includegraphics[trim=0 .48in 0 0, clip, width=5.45in]{graphs/race_condition_Sequential1.eps}
 \caption{Shows the breakdown of students affected by the race condition issue
@@ -309,6 +301,14 @@ assignment.
   in Scratch for \stwo{}.}
 \locallabel{fig:rc_s2}
 \end{figure}
+
+In addition to labeling \exe{s} exhibiting the race condition, we labeled those
+resulting in a consistent intersection with the \zebra{}. Students with such a
+snapshot subsequent to a snapshot exhibiting the race condition are likely to
+have expended effort to resolve the race condition. We label these snapshots as
+\emph{fixed}. Additionally, for each student with one or more snapshots
+exhibiting the race condition, we consider whether or not they completed the
+assignment.
 
 Figure~\localref{fig:rc_s1} and Figure~\localref{fig:rc_s2} show the breakdown
 of all students grouped by whether or not they have at least one snapshot
@@ -421,15 +421,14 @@ filters we created in attempt to approximate the students affected by the
   filtered due to ending in an expected location.
 \end{description}
 
-
-\subsubsection{Double Click to Execute Snapshots}
-
 \begin{figure}[!t]
 \centering \includegraphics[width=5.25in]{graphs/dc_submissions.eps}
 \caption{Depicts the number of \dce{} snapshots we identified for each
   student.}
 \locallabel{fig:dc_snapshots}
 \end{figure}
+
+\subsubsection{Double Click to Execute Snapshots}
 
 After applying all the filters, we counted the number of remaining snapshots
 per student that may exhibit the \dce{}
