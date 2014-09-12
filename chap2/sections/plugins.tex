@@ -54,6 +54,13 @@ determine the set of blocks that can be considered initialization blocks and
 then we restrict the location within the scripts that we search for these
 blocks. We call this location the \initzone{}.
 
+Attribute modifying Scratch blocks can be labeled as \rel{} or
+\abs{}. \emph{Relative} Scratch blocks alter the attribute based upon its
+current value, whereas \abs{} Scratch blocks directly set the attribute. As
+such, only \abs{} blocks can be considered initialization
+blocks. Table~\localref{table:initialstate} shows our categorization for a
+subset of attribute modifying Scratch blocks.
+
 \begin{table}
 \centering
 \begin{tabular}{|c|c|c|} \hline
@@ -69,13 +76,6 @@ Background&next background & switch to background x\\ \hline
   the \rel{} and \abs{} modification blocks for each category.}
 \locallabel{table:initialstate}
 \end{table}
-
-Attribute modifying Scratch blocks can be labeled as \rel{} or
-\abs{}. \emph{Relative} Scratch blocks alter the attribute based upon its
-current value, whereas \abs{} Scratch blocks directly set the attribute. As
-such, only \abs{} blocks can be considered initialization
-blocks. Table~\localref{table:initialstate} shows our categorization for a
-subset of attribute modifying Scratch blocks.
 
 For an \abs{} block to be considered an initialization block, it must appear in
 the \initzone{}. We define the \initzone{} only for scripts beginning with a
