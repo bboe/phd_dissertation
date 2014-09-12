@@ -28,6 +28,17 @@ questions:
 \subsection{Does Starting Early Help?}
 \locallabel{sec:early}
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/Start_Time_Before_Deadline_and_Final_Score.eps}
+\caption{Compares the number of hours groups started an assignment before its
+  deadlines to the final score they received. Both the size and color of each
+  circle correspond to the number of groups represented at that position. The
+  circles are plotted such that smaller circles are strictly in front of larger
+  circles. The red line represents a best-fit trend-line of the data.}
+\locallabel{fig:relative_start_time}
+\end{figure}
+
 Many educators encourage their students to start early on
 assignments. Intuitively, starting early gives students more time to receive
 feedback from their instructor and teaching assistants in order to make
@@ -44,17 +55,6 @@ exist between starting early and assignment
 score~\cite{Spacco:2013:TIP:2462476.2465594,
   Edwards:2009:CEI:1584322.1584325}. We sought to verify that our results are
 consistent with those of the prior work.
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Start_Time_Before_Deadline_and_Final_Score.eps}
-\caption{Compares the number of hours groups started an assignment before its
-  deadlines to the final score they received. Both the size and color of each
-  circle correspond to the number of groups represented at that position. The
-  circles are plotted such that smaller circles are strictly in front of larger
-  circles. The red line represents a best-fit trend-line of the data.}
-\locallabel{fig:relative_start_time}
-\end{figure}
 
 Figure~\localref{fig:relative_start_time} plots the number of hours between a
 group's first on-time assignment submission and the corresponding assignment
@@ -237,14 +237,6 @@ snapshot that improves the score of a \emph{negative} snapshot is considered
 score. If this is the case, then the number of \emph{positive} snapshots is
 inflated in their results as compared to ours.
 
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Submission_Improvement_by_Days_Before_Deadline.eps}
-\caption{Depicts the percentage of submissions in each improvement category by
-  the number of days each submission was made prior to its deadline.}
-\locallabel{fig:days_improvement}
-\end{figure}
-
 Regardless, we think a comparison of efficiency between submissions is more
 interesting than a comparison between snapshots, because, despite submissions
 representing a unit of work, there are still a significant number of
@@ -256,6 +248,14 @@ deadline. While our deadlines were distributed such that 24\% and 25\% of
 submissions were made to assignments with a Monday and Friday deadline
 respectively, there was no difference in submission efficiency with respect to
 the day of the week a submission was made.
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/Submission_Improvement_by_Days_Before_Deadline.eps}
+\caption{Depicts the percentage of submissions in each improvement category by
+  the number of days each submission was made prior to its deadline.}
+\locallabel{fig:days_improvement}
+\end{figure}
 
 An analysis of the hour of the day of each submission also resulted in no
 significant changes in submission efficiency. Thus, these results convince us
@@ -469,6 +469,13 @@ groups regularly make no more than one submission in any fifty-minute
 period. Thus, the window size we select must be at least fifty minutes in
 length.
 
+\begin{figure}[!t]
+\centering
+\includegraphics[width=5.25in]{graphs/Number_of_Work_Sessions_by_Window_Size.eps}
+\caption{Plots the number of work sessions as the window size increases.}
+\locallabel{fig:work_sessions}
+\end{figure}
+
 There are two forms of error that we must mitigate when selecting a window
 size:
 
@@ -486,13 +493,6 @@ size:
   corresponds to the number of subsequent submissions representing more than
   sixty minutes of actual work.
 \end{itemize}
-
-\begin{figure}[!t]
-\centering
-\includegraphics[width=5.25in]{graphs/Number_of_Work_Sessions_by_Window_Size.eps}
-\caption{Plots the number of work sessions as the window size increases.}
-\locallabel{fig:work_sessions}
-\end{figure}
 
 Although we can measure the number of subsequent submissions over a given
 window size, we cannot measure either error due to a lack of information as to

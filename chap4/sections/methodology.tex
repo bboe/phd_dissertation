@@ -5,6 +5,13 @@ feedback delay, and briefly provide an overview of our system architecture.
 
 \subsection{Classes}
 
+\begin{figure}[!t]
+\centering \includegraphics[width=5.25in]{graphs/Class_Information.eps}
+\caption{Visualizes the number of groups, students, and average number of
+  submissions by student for each of the seven classes in our study.}
+\locallabel{fig:class_info}
+\end{figure}
+
 Our study involves seven instances of two UCSB computer science courses from
 Winter Quarter 2013 through Spring Quarter 2014. The first course, \emph{CS24},
 is the second required course in UCSB's lower division computer science
@@ -17,13 +24,6 @@ five instances of \emph{CS24}, and two instances of \emph{CS64} represented. A
 single instructor taught \cm[24]{13} and \cf[24]{13}, and all others were
 taught by another individual instructor. All classes were taught during a
 ten-week quarter including \cm[24]{13}, the only summer instance represented.
-
-\begin{figure}[!t]
-\centering \includegraphics[width=5.25in]{graphs/Class_Information.eps}
-\caption{Visualizes the number of groups, students, and average number of
-  submissions by student for each of the seven classes in our study.}
-\locallabel{fig:class_info}
-\end{figure}
 
 While our feedback and assessment system supports both programming assignments
 and \emph{fill in the blank}-type assignments, we only consider programming
@@ -149,12 +149,6 @@ In designing the feedback and assessment system we had two primary goals:
   assistants, including the time to prepare assignment test cases.
 \end{itemize}
 
-We believe the first goal was met due to the absence of complaints regarding
-usability of our system by the more than 300 students who have used it. We
-confirmed we met the second goal when, on more than one occasion, an instructor
-had to find additional work for their teaching assistants due to a significant
-reduction in assessment time.
-
 \begin{figure}[!t]
 \centering \includegraphics[width=5.25in]{graphs/architecture.eps}
 \caption{Provides an overview of the system architecture and how components
@@ -163,6 +157,12 @@ reduction in assessment time.
   environment.}
 \locallabel{fig:architecture}
 \end{figure}
+
+We believe the first goal was met due to the absence of complaints regarding
+usability of our system by the more than 300 students who have used it. We
+confirmed we met the second goal when, on more than one occasion, an instructor
+had to find additional work for their teaching assistants due to a significant
+reduction in assessment time.
 
 \subsubsection{Architecture Overview}
 Figure~\localref{fig:architecture} provides a diagram of the system
